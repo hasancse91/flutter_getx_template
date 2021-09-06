@@ -1,0 +1,52 @@
+name: flutter_getx_template
+description: Boilarplate template of Flutter GetX.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  get: 4.1.4
+  flutter_svg: ^0.22.0
+  dio: ^4.0.0
+  shared_preferences: ^2.0.6
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  cached_network_image: ^3.0.0
+  animations: ^2.0.0
+  logger: ^1.0.0
+  pretty_dio_logger: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.3
+  analyzer: ^1.5.0
+  dart_code_metrics: ^3.3.6
+  change_app_package_name: ^1.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - images/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Thin.ttf
+          weight: 200
+        - asset: fonts/Roboto-Light.ttf
+          weight: 200
+        - asset: fonts/Roboto-Regular.ttf
+          weight: 200
+        - asset: fonts/Roboto-Medium.ttf
+          weight: 300
+        - asset: fonts/Roboto-Bold.ttf
+          weight: 600
+        - asset: fonts/Roboto-Italic.ttf
+          style: italic

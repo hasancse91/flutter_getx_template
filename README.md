@@ -2,8 +2,12 @@
 
 A new Flutter project.
 
+## How to Build the project?
+- Create two configurations `main_dev` and `main_prod`
+
 ## How was this project developed?
-- Run this command to my required directory: `get create project`
+- Run this command to create project in the required directory: `get create project`
+
 
 
 

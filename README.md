@@ -7,6 +7,7 @@ A new Flutter project.
 
 ## How was this project developed?
 - Run this command to create project in the required directory: `get create project`
+- Create `main_view` by running this command: `get create page:main`
 
 
 

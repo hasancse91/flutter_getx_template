@@ -11,13 +11,10 @@ import 'package:get/get.dart';
 import '../controllers/main_controller.dart';
 
 class MainView extends GetView<MainController> {
-
-  // https://blog.logrocket.com/how-to-build-a-bottom-navigation-bar-in-flutter/
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: getPageOnSelectedMenu(controller.selectedMenuCode),
+      body: Obx(() => getPageOnSelectedMenu(controller.selectedMenuCode)),
       bottomNavigationBar:
           BottomNavBar(onNewMenuSelected: controller.onMenuSelected),
     );

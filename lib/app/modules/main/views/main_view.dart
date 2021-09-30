@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/base_view/base_view.dart';
 import 'package:flutter_getx_template/app/modules/favorite/views/favorite_view.dart';
 import 'package:flutter_getx_template/app/modules/home/views/home_view.dart';
 import 'package:flutter_getx_template/app/modules/main/model/menu_code.dart';
@@ -10,9 +11,14 @@ import 'package:get/get.dart';
 
 import '../controllers/main_controller.dart';
 
-class MainView extends GetView<MainController> {
+class MainView extends BaseView<MainController> {
   @override
-  Widget build(BuildContext context) {
+  PreferredSizeWidget? appBar(BuildContext context) {
+    return null;
+  }
+
+  @override
+  Widget body(BuildContext context) {
     return Scaffold(
       body: Obx(() => getPageOnSelectedMenu(controller.selectedMenuCode)),
       bottomNavigationBar:

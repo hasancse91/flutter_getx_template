@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
+import 'package:flutter_getx_template/app/core/base_view/base_view.dart';
+import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
 
 import '../controllers/favorite_controller.dart';
 
-class FavoriteView extends GetView<FavoriteController> {
+class FavoriteView extends BaseView<FavoriteController> {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('FavoriteView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'FavoriteView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+  PreferredSizeWidget? appBar(BuildContext context) {
+    return CustomAppBar(appBarTitleText: 'Favorite',);
+  }
+
+  @override
+  Widget body(BuildContext context) {
+    return Center(
+      child: Text(
+        'FavoriteView is working',
+        style: TextStyle(fontSize: 20),
       ),
     );
   }

@@ -1,6 +1,7 @@
+import 'package:flutter_getx_template/app/core/base_controller/base_controller.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class HomeController extends BaseController {
   //TODO: Implement HomeController
 
   final count = 0.obs;

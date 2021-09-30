@@ -17,6 +17,10 @@ abstract class BaseView<Controller extends BaseController>
 
   final Logger logger = BuildConfig.instance.config.logger;
 
+  Widget body(BuildContext context);
+
+  PreferredSizeWidget? appBar(BuildContext context);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -68,7 +72,6 @@ abstract class BaseView<Controller extends BaseController>
     );
   }
 
-
   Widget showErrorSnackBar(String message) {
     final snackBar = SnackBar(content: Text(message));
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
@@ -77,10 +80,6 @@ abstract class BaseView<Controller extends BaseController>
 
     return Container();
   }
-
-  Widget body(BuildContext context);
-
-  PreferredSizeWidget? appBar(BuildContext context);
 
   Color pageBackgroundColor() {
     return AppColors.pageBackground;

@@ -1,6 +1,7 @@
+import 'package:flutter_getx_template/app/core/base_controller/base_controller.dart';
 import 'package:get/get.dart';
 
-class FavoriteController extends GetxController {
+class FavoriteController extends BaseController {
   //TODO: Implement FavoriteController
 
   final count = 0.obs;

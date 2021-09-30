@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/base_view/base_view.dart';
+import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/settings_controller.dart';
 
-class SettingsView extends GetView<SettingsController> {
+class SettingsView extends BaseView<SettingsController> {
+
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('SettingsView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'SettingsView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+  PreferredSizeWidget? appBar(BuildContext context) {
+    return CustomAppBar(appBarTitleText: 'Settings',);
+  }
+
+  @override
+  Widget body(BuildContext context) {
+    return Center(
+      child: Text(
+        'SettingsView is working',
+        style: TextStyle(fontSize: 20),
       ),
     );
   }

@@ -2,7 +2,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_getx_template/app/network/pretty_dio_logger.dart';
 import 'package:flutter_getx_template/app/network/request_headers.dart';
-import 'package:flutter_getx_template/app/network/token_refresh_interceptor.dart';
 import 'package:flutter_getx_template/flavors/build_config.dart';
 
 class DioProvider {
@@ -51,18 +50,15 @@ class DioProvider {
   ///returns a Dio client with Access token in header
   ///Also adds a token refresh interceptor which retry the request when it's unauthorized
   static Dio get dioWithHeaderToken {
-    _addInterceptors(shouldRetryOnError: true);
+    _addInterceptors();
 
     return _instance!;
   }
 
-  static _addInterceptors({bool shouldRetryOnError = false}){
+  static _addInterceptors(){
     _instance ??= httpDio;
     _instance!.interceptors.clear();
     _instance!.interceptors.add(RequestHeaderInterceptor());
-    if(shouldRetryOnError){
-      _instance!.interceptors.add(TokenRefreshInterceptor());
-    }
     _instance!.interceptors.add(_prettyDioLogger);
 
   }

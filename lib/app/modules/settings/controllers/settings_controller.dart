@@ -1,6 +1,7 @@
+import 'package:flutter_getx_template/app/core/base_controller/base_controller.dart';
 import 'package:get/get.dart';
 
-class SettingsController extends GetxController {
+class SettingsController extends BaseController {
   //TODO: Implement SettingsController
 
   final count = 0.obs;

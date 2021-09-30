@@ -39,6 +39,9 @@ class _MyAppState extends State<MyApp> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.light
+        ),
         fontFamily: 'Roboto',
       ),
       debugShowCheckedModeBanner: false,

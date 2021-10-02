@@ -1,7 +1,7 @@
 
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_template/app/data/local/preference_manager.dart';
-import 'package:flutter_getx_template/app/data/local/preference_manager_impl.dart';
+import 'package:flutter_getx_template/app/data/local/preference/preference_manager.dart';
+import 'package:flutter_getx_template/app/data/local/preference/preference_manager_impl.dart';
 
 class RequestHeaderInterceptor extends InterceptorsWrapper {
   @override
@@ -13,14 +13,7 @@ class RequestHeaderInterceptor extends InterceptorsWrapper {
   }
 
   Future<Map<String, String>> getCustomHeaders() async {
-    var preference = PreferenceManagerImpl();
-    final String accessToken = preference.getString(PreferenceManager.keyToken);
     var customHeaders = {'content-type': 'application/json'};
-    if (accessToken.trim().isNotEmpty) {
-      customHeaders.addAll({
-        'Authorization': "Bearer $accessToken",
-      });
-    }
 
     return customHeaders;
   }

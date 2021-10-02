@@ -7,7 +7,7 @@ import 'package:flutter_getx_template/flavors/environment.dart';
 void main() {
   EnvConfig devConfig = EnvConfig(
     appName: "Flutter GetX Template Prod",
-    baseUrl: "https://aeon-dev-web-api.azurewebsites.net/api",
+    baseUrl: "https://api.github.com",
     shouldCollectCrashLog: true,
   );
 

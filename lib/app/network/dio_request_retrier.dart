@@ -1,7 +1,7 @@
 
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_template/app/data/local/preference_manager.dart';
-import 'package:flutter_getx_template/app/data/local/preference_manager_impl.dart';
+import 'package:flutter_getx_template/app/data/local/preference/preference_manager.dart';
+import 'package:flutter_getx_template/app/data/local/preference/preference_manager_impl.dart';
 
 import 'dio_provider.dart';
 

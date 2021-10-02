@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/base_view/base_view.dart';
+import 'package:flutter_getx_template/app/core/base/base_view.dart';
 import 'package:flutter_getx_template/app/modules/favorite/views/favorite_view.dart';
 import 'package:flutter_getx_template/app/modules/home/views/home_view.dart';
 import 'package:flutter_getx_template/app/modules/main/model/menu_code.dart';

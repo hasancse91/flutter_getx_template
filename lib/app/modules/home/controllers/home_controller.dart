@@ -1,21 +1,23 @@
-import 'package:flutter_getx_template/app/core/base_controller/base_controller.dart';
+import 'package:flutter_getx_template/app/core/base/base_controller.dart';
+import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
 import 'package:get/get.dart';
 
 class HomeController extends BaseController {
-  //TODO: Implement HomeController
+  final RxList<GithubRepoUiData> _githubRepoController = RxList.empty();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  List<GithubRepoUiData> get repositoryList => _githubRepoController.toList();
+
+  getGithubGetxRepositoryList() {
+    List<GithubRepoUiData> repoList = [];
+    for (int i = 0; i < 15; i++) {
+      var repo = GithubRepoUiData(
+          repositoryName: 'repo-name',
+          ownerLoginName: 'ownerLoginName',
+          ownerAvatar: 'ownerAvatar',
+          numberOfStar: 10,
+          numberOfFork: 4);
+      repoList.add(repo);
+    }
+    _githubRepoController(repoList);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

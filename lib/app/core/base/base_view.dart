@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_getx_template/app/core/base_controller/base_controller.dart';
+import 'package:flutter_getx_template/app/core/base/base_controller.dart';
 import 'package:flutter_getx_template/app/core/model/page_state.dart';
 import 'package:flutter_getx_template/app/core/values/app_colors.dart';
 import 'package:flutter_getx_template/app/core/widget/loading.dart';

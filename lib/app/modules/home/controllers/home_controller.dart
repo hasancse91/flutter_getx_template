@@ -16,7 +16,7 @@ class HomeController extends BaseController {
     _repository
         .searchRepository(
       GithubSearchQueryParam(
-        searchKeyWord: 'test',
+        searchKeyWord: 'flutter getx template',
         perPage: 10,
         pageNumber: 1,
       ),

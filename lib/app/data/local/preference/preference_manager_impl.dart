@@ -5,109 +5,69 @@ class PreferenceManagerImpl implements PreferenceManager {
   var _preference = SharedPreferences.getInstance();
 
   @override
-  String getString(String key, {String defValue = ""}) =>
-      _getStringFromPreference(key, defValue);
-
-  @override
-  void setString(String key, String value) =>
-      _setStringToPreference(key, value);
-
-  @override
-  int getInt(String key, {int defValue = 0}) =>
-      _getIntFromPreference(key, defValue);
-
-  @override
-  void setInt(String key, int value) => _setIntToPreference(key, value);
-
-  @override
-  double getDouble(String key, {double defValue = 0.0}) =>
-      _getDoubleFromPreference(key, defValue);
-
-  @override
-  void setDouble(String key, double value) =>
-      _setDoubleToPreference(key, value);
-
-  @override
-  bool getBool(String key, {bool defValue = false}) =>
-      _getBoolFromPreference(key, defValue);
-
-  @override
-  void setBool(String key, bool value) => _setBoolToPreference(key, value);
-
-  @override
-  List<String> getStringList(String key, {List<String> defValue = const []}) =>
-      _getStringListFromPreference(key, defValue);
-
-  @override
-  void setStringList(String key, List<String> value) =>
-      _setStringListToPreference(key, value);
-
-  @override
-  bool remove(String key) => _removeFromPreference(key);
-
-  _setStringToPreference(String key, String value) async {
-    await _preference.then((SharedPreferences pref) {
-      pref.setString(key, value);
-    });
+  Future<String> getString(String key, {String defValue = ""}) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.getString(key) ?? defValue;
   }
 
-  _getStringFromPreference(String key, String defValue) async {
-    return await _preference.then((SharedPreferences pref) {
-      return pref.getString(key) ?? defValue;
-    });
+  @override
+  Future<bool> setString(String key, String value) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.setString(key, value);
   }
 
-  _setIntToPreference(String key, int value) async {
-    await _preference.then((SharedPreferences pref) {
-      pref.setInt(key, value);
-    });
+  @override
+  Future<int> getInt(String key, {int defValue = 0}) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.getInt(key) ?? defValue;
   }
 
-  _getIntFromPreference(String key, int defValue) async {
-    return await _preference.then((SharedPreferences pref) {
-      return pref.getInt(key) ?? defValue;
-    });
+  @override
+  Future<bool> setInt(String key, int value) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.setInt(key, value);
   }
 
-  _setDoubleToPreference(String key, double value) async {
-    await _preference.then((SharedPreferences pref) {
-      pref.setDouble(key, value);
-    });
+  @override
+  Future<double> getDouble(String key, {double defValue = 0.0}) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.getDouble(key) ?? defValue;
   }
 
-  _getDoubleFromPreference(String key, double defValue) async {
-    return await _preference.then((SharedPreferences pref) {
-      return pref.getDouble(key) ?? defValue;
-    });
+  @override
+  Future<bool> setDouble(String key, double value) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.setDouble(key, value);
   }
 
-  _setBoolToPreference(String key, bool value) async {
-    await _preference.then((SharedPreferences pref) {
-      pref.setBool(key, value);
-    });
+  @override
+  Future<bool> getBool(String key, {bool defValue = false}) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.getBool(key) ?? defValue;
   }
 
-  _getBoolFromPreference(String key, bool defValue) async {
-    return await _preference.then((SharedPreferences pref) {
-      return pref.getBool(key) ?? defValue;
-    });
+  @override
+  Future<bool> setBool(String key, bool value) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.setBool(key, value);
   }
 
-  _setStringListToPreference(String key, List<String> value) async {
-    await _preference.then((SharedPreferences pref) {
-      pref.setStringList(key, value);
-    });
+  @override
+  Future<List<String>> getStringList(String key,
+      {List<String> defValue = const []}) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.getStringList(key) ?? defValue;
   }
 
-  _getStringListFromPreference(String key, List<String> defValue) async {
-    return await _preference.then((SharedPreferences pref) {
-      return pref.getStringList(key) ?? defValue;
-    });
+  @override
+  Future<bool> setStringList(String key, List<String> value) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.setStringList(key, value);
   }
 
-  _removeFromPreference(String key) async {
-    return await _preference.then((SharedPreferences pref) {
-      return pref.remove(key);
-    });
+  @override
+  Future<bool> remove(String key) async {
+    final SharedPreferences pref = await _preference;
+    return await pref.remove(key);
   }
 }

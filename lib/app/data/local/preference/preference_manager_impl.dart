@@ -13,14 +13,15 @@ class PreferenceManagerImpl implements PreferenceManager {
       _setStringToPreference(key, value);
 
   @override
-  int getInt(String key, {int defValue = 0}) => _getIntFromPreference(key);
+  int getInt(String key, {int defValue = 0}) =>
+      _getIntFromPreference(key, defValue);
 
   @override
   void setInt(String key, int value) => _setIntToPreference(key, value);
 
   @override
   double getDouble(String key, {double defValue = 0.0}) =>
-      _getDoubleFromPreference(key);
+      _getDoubleFromPreference(key, defValue);
 
   @override
   void setDouble(String key, double value) =>
@@ -28,14 +29,14 @@ class PreferenceManagerImpl implements PreferenceManager {
 
   @override
   bool getBool(String key, {bool defValue = false}) =>
-      _getBoolFromPreference(key);
+      _getBoolFromPreference(key, defValue);
 
   @override
   void setBool(String key, bool value) => _setBoolToPreference(key, value);
 
   @override
   List<String> getStringList(String key, {List<String> defValue = const []}) =>
-      _getStringListFromPreference(key);
+      _getStringListFromPreference(key, defValue);
 
   @override
   void setStringList(String key, List<String> value) =>

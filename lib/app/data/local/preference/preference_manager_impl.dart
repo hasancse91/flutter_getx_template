@@ -5,33 +5,37 @@ class PreferenceManagerImpl implements PreferenceManager {
   var _preference = SharedPreferences.getInstance();
 
   @override
-  String getString(String key) => _getStringFromPreference(key);
+  String getString(String key, {String defValue = ""}) =>
+      _getStringFromPreference(key, defValue);
 
   @override
   void setString(String key, String value) =>
       _setStringToPreference(key, value);
 
   @override
-  int getInt(String key) => _getIntFromPreference(key);
+  int getInt(String key, {int defValue = 0}) => _getIntFromPreference(key);
 
   @override
   void setInt(String key, int value) => _setIntToPreference(key, value);
 
   @override
-  double getDouble(String key) => _getDoubleFromPreference(key);
+  double getDouble(String key, {double defValue = 0.0}) =>
+      _getDoubleFromPreference(key);
 
   @override
   void setDouble(String key, double value) =>
       _setDoubleToPreference(key, value);
 
   @override
-  bool getBool(String key) => _getBoolFromPreference(key);
+  bool getBool(String key, {bool defValue = false}) =>
+      _getBoolFromPreference(key);
 
   @override
   void setBool(String key, bool value) => _setBoolToPreference(key, value);
 
   @override
-  List<String> getStringList(String key) => _getStringListFromPreference(key);
+  List<String> getStringList(String key, {List<String> defValue = const []}) =>
+      _getStringListFromPreference(key);
 
   @override
   void setStringList(String key, List<String> value) =>
@@ -46,9 +50,9 @@ class PreferenceManagerImpl implements PreferenceManager {
     });
   }
 
-  _getStringFromPreference(String key) async {
+  _getStringFromPreference(String key, String defValue) async {
     return await _preference.then((SharedPreferences pref) {
-      return pref.getString(key) ?? '';
+      return pref.getString(key) ?? defValue;
     });
   }
 
@@ -58,9 +62,9 @@ class PreferenceManagerImpl implements PreferenceManager {
     });
   }
 
-  _getIntFromPreference(String key) async {
+  _getIntFromPreference(String key, int defValue) async {
     return await _preference.then((SharedPreferences pref) {
-      return pref.getInt(key) ?? 0;
+      return pref.getInt(key) ?? defValue;
     });
   }
 
@@ -70,9 +74,9 @@ class PreferenceManagerImpl implements PreferenceManager {
     });
   }
 
-  _getDoubleFromPreference(String key) async {
+  _getDoubleFromPreference(String key, double defValue) async {
     return await _preference.then((SharedPreferences pref) {
-      return pref.getDouble(key) ?? 0.0;
+      return pref.getDouble(key) ?? defValue;
     });
   }
 
@@ -82,9 +86,9 @@ class PreferenceManagerImpl implements PreferenceManager {
     });
   }
 
-  _getBoolFromPreference(String key) async {
+  _getBoolFromPreference(String key, bool defValue) async {
     return await _preference.then((SharedPreferences pref) {
-      return pref.getBool(key) ?? false;
+      return pref.getBool(key) ?? defValue;
     });
   }
 
@@ -94,9 +98,9 @@ class PreferenceManagerImpl implements PreferenceManager {
     });
   }
 
-  _getStringListFromPreference(String key) async {
+  _getStringListFromPreference(String key, List<String> defValue) async {
     return await _preference.then((SharedPreferences pref) {
-      return pref.getStringList(key) ?? [];
+      return pref.getStringList(key) ?? defValue;
     });
   }
 

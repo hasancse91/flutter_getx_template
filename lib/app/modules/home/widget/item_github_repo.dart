@@ -16,15 +16,94 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
   @override
   Widget body(BuildContext context) {
     return ElevatedContainer(
-        child: Padding(
-      padding: const EdgeInsets.all(AppValues.padding),
+      child: Padding(
+        padding: const EdgeInsets.all(AppValues.padding),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              backgroundImage: NetworkImage(
+                dataModel.ownerAvatar,
+              ),
+              radius: 30.0,
+            ),
+            SizedBox(
+              width: 10.0,
+            ),
+            _getRepoDetails(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _getRepoDetails() {
+    return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(dataModel.repositoryName, style: cardTitleStyle),
-          Text(dataModel.ownerLoginName, style: cardSubtitleStyle)
+          Text(
+            dataModel.repositoryName,
+            style: cardTitleStyle,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          Text(
+            dataModel.ownerLoginName,
+            style: cardSubtitleStyle,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          _getRepoBottomView(),
         ],
       ),
-    ));
+    );
+  }
+
+  _getRepoBottomView() {
+    return Row(
+      children: [
+        _getDetailsView(
+          Icons.account_tree_outlined,
+          dataModel.numberOfFork.toString(),
+        ),
+        _getDetailsView(
+          Icons.star_border,
+          dataModel.numberOfStar.toString(),
+        ),
+        _getDetailsView(
+          Icons.visibility_outlined,
+          dataModel.watchers.toString(),
+        ),
+      ],
+    );
+  }
+
+  _getDetailsView(IconData iconData, String value) {
+    return Expanded(
+      child: Row(
+        children: [
+          Icon(
+            iconData,
+            size: 20.0,
+            color: Colors.grey,
+          ),
+          SizedBox(
+            width: 2.0,
+          ),
+          Text(
+            value,
+            style: TextStyle(color: Colors.grey),
+          ),
+        ],
+      ),
+    );
   }
 }

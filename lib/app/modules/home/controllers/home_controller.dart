@@ -30,12 +30,15 @@ class HomeController extends BaseController {
     List<GithubRepoUiData> repoList = [];
     response.items?.forEach((element) {
       var repo = GithubRepoUiData(
-          repositoryName: element.name != null ? element.name! : "Null",
-          ownerLoginName:
-              element.owner != null ? element.owner!.login! : "Null",
-          ownerAvatar: element.owner != null ? element.owner!.avatarUrl! : "",
-          numberOfStar: 10,
-          numberOfFork: 4);
+        repositoryName: element.name != null ? element.name! : "Null",
+        ownerLoginName: element.owner != null ? element.owner!.login! : "Null",
+        ownerAvatar: element.owner != null ? element.owner!.avatarUrl! : "",
+        numberOfStar: element.stargazersCount ?? 0,
+        numberOfFork: element.forks ?? 0,
+        score: element.score ?? 0.0,
+        watchers: element.watchers ?? 0,
+        description: element.description ?? "",
+      );
       repoList.add(repo);
     });
     _githubRepoController(repoList);

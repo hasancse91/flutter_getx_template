@@ -4,6 +4,9 @@ class GithubRepoUiData {
   String ownerAvatar;
   int numberOfStar;
   int numberOfFork;
+  String description;
+  double score;
+  int watchers;
 
   GithubRepoUiData({
     required this.repositoryName,
@@ -11,5 +14,8 @@ class GithubRepoUiData {
     required this.ownerAvatar,
     required this.numberOfStar,
     required this.numberOfFork,
+    required this.description,
+    required this.score,
+    required this.watchers,
   });
 }

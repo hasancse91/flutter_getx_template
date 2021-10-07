@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:flutter_getx_template/app/modules/RepoDetails/bindings/repo_details_binding.dart';
+import 'package:flutter_getx_template/app/modules/RepoDetails/views/repo_details_view.dart';
 import 'package:flutter_getx_template/app/modules/favorite/bindings/favorite_binding.dart';
 import 'package:flutter_getx_template/app/modules/favorite/views/favorite_view.dart';
 import 'package:flutter_getx_template/app/modules/home/bindings/home_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.OTHER,
       page: () => OtherView(),
       binding: OtherBinding(),
+    ),
+    GetPage(
+      name: _Paths.REPO_DETAILS,
+      page: () => RepoDetailsView(),
+      binding: RepoDetailsBinding(),
     ),
   ];
 }

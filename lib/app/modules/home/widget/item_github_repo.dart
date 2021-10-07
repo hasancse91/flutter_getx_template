@@ -4,6 +4,8 @@ import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
 import 'package:flutter_getx_template/app/core/widget/elevated_container.dart';
 import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
+import 'package:flutter_getx_template/app/routes/app_pages.dart';
+import 'package:get/get.dart';
 
 class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
   final GithubRepoUiData dataModel;
@@ -15,24 +17,27 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
 
   @override
   Widget body(BuildContext context) {
-    return ElevatedContainer(
-      child: Padding(
-        padding: const EdgeInsets.all(AppValues.padding),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                dataModel.ownerAvatar,
+    return InkWell(
+      onTap: _onTap,
+      child: ElevatedContainer(
+        child: Padding(
+          padding: const EdgeInsets.all(AppValues.padding),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(
+                  dataModel.ownerAvatar,
+                ),
+                radius: 30.0,
               ),
-              radius: 30.0,
-            ),
-            SizedBox(
-              width: 10.0,
-            ),
-            _getRepoDetails(),
-          ],
+              SizedBox(
+                width: 10.0,
+              ),
+              _getRepoDetails(),
+            ],
+          ),
         ),
       ),
     );
@@ -105,5 +110,9 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
         ],
       ),
     );
+  }
+
+  void _onTap() {
+    Get.toNamed(Routes.REPO_DETAILS);
   }
 }

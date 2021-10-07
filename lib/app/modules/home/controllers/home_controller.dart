@@ -24,16 +24,6 @@ class HomeController extends BaseController {
       ),
       onSuccess: _handleRepoListResponseSuccess,
     );
-    // _repository
-    //     .searchRepository(
-    //   GithubSearchQueryParam(
-    //     searchKeyWord: 'flutter getx template',
-    //     perPage: 10,
-    //     pageNumber: 1,
-    //   ),
-    // )
-    //     .then((response) {
-    // });
   }
 
   _handleRepoListResponseSuccess(GithubRepoSearchResponse response) {

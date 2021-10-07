@@ -8,7 +8,6 @@ class RemoteSourceBindings implements Bindings {
     Get.lazyPut<GithubRemoteDataSource>(
       () => GithubRemoteDataSourceImpl(),
       tag: (GithubRemoteDataSource).toString(),
-      fenix: true,
     );
   }
 }

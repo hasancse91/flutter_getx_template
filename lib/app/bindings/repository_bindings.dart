@@ -8,7 +8,6 @@ class RepositoryBindings implements Bindings {
     Get.lazyPut<GithubRepository>(
       () => GithubRepositoryImpl(),
       tag: (GithubRepository).toString(),
-      fenix: true,
     );
   }
 }

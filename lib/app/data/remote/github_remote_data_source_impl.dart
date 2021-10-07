@@ -16,7 +16,7 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     try {
       var response = await callApiWithErrorParser(dioCall);
 
-      return await _parseGithubSearchResponse(response);
+      return _parseGithubSearchResponse(response);
     } catch (e) {
       rethrow;
     }
@@ -28,8 +28,8 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     var dioCall = dioClient.get(endpoint);
   }
 
-  Future<GithubRepoSearchResponse> _parseGithubSearchResponse(
-      Response<dynamic> response) async {
-    return await GithubRepoSearchResponse.fromJson(response.data);
+  GithubRepoSearchResponse _parseGithubSearchResponse(
+      Response<dynamic> response) {
+    return GithubRepoSearchResponse.fromJson(response.data);
   }
 }

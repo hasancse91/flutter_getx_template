@@ -181,15 +181,11 @@ class Items {
     archived = json['archived'];
     disabled = json['disabled'];
     openIssuesCount = json['open_issues_count'];
-    license = json['license'];
+    license =
+        json['license'] != null ? License.fromJson(json['license']) : null;
     allowForking = json['allow_forking'];
     isTemplate = json['is_template'];
-    if (json['topics'] != null) {
-      topics = [];
-      json['topics'].forEach((v) {
-        topics?.add(dynamic.fromJson(v));
-      });
-    }
+    topics = json['topics'] != null ? json['topics'].cast<String>() : [];
     visibility = json['visibility'];
     forks = json['forks'];
     openIssues = json['open_issues'];
@@ -261,20 +257,20 @@ class Items {
   bool? hasWiki;
   bool? hasPages;
   int? forksCount;
-  dynamic mirrorUrl;
+  String? mirrorUrl;
   bool? archived;
   bool? disabled;
   int? openIssuesCount;
-  dynamic license;
+  License? license;
   bool? allowForking;
   bool? isTemplate;
-  List<dynamic>? topics;
+  List<String>? topics;
   String? visibility;
   int? forks;
   int? openIssues;
   int? watchers;
   String? defaultBranch;
-  int? score;
+  double? score;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -348,18 +344,51 @@ class Items {
     map['archived'] = archived;
     map['disabled'] = disabled;
     map['open_issues_count'] = openIssuesCount;
-    map['license'] = license;
+    if (license != null) {
+      map['license'] = license?.toJson();
+    }
     map['allow_forking'] = allowForking;
     map['is_template'] = isTemplate;
-    if (topics != null) {
-      map['topics'] = topics?.map((v) => v.toJson()).toList();
-    }
+    map['topics'] = topics;
     map['visibility'] = visibility;
     map['forks'] = forks;
     map['open_issues'] = openIssues;
     map['watchers'] = watchers;
     map['default_branch'] = defaultBranch;
     map['score'] = score;
+    return map;
+  }
+}
+
+class License {
+  License({
+    this.key,
+    this.name,
+    this.spdxId,
+    this.url,
+    this.nodeId,
+  });
+
+  License.fromJson(dynamic json) {
+    key = json['key'];
+    name = json['name'];
+    spdxId = json['spdx_id'];
+    url = json['url'];
+    nodeId = json['node_id'];
+  }
+  String? key;
+  String? name;
+  String? spdxId;
+  String? url;
+  String? nodeId;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['key'] = key;
+    map['name'] = name;
+    map['spdx_id'] = spdxId;
+    map['url'] = url;
+    map['node_id'] = nodeId;
     return map;
   }
 }

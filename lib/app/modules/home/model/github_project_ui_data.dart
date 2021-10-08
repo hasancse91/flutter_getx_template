@@ -1,4 +1,4 @@
-class GithubRepoUiData {
+class GithubProjectUiData {
   String repositoryName;
   String ownerLoginName;
   String ownerAvatar;
@@ -8,7 +8,7 @@ class GithubRepoUiData {
   double score;
   int watchers;
 
-  GithubRepoUiData({
+  GithubProjectUiData({
     this.repositoryName = "",
     this.ownerLoginName = "",
     this.ownerAvatar = "",

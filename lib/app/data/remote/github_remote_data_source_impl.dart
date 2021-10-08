@@ -1,14 +1,14 @@
 import 'package:dio/src/response.dart';
 import 'package:flutter_getx_template/app/core/base/base_remote_source.dart';
 import 'package:flutter_getx_template/app/core/model/github_search_query_param.dart';
-import 'package:flutter_getx_template/app/data/model/github_repo_search_response.dart';
+import 'package:flutter_getx_template/app/data/model/github_project_search_response.dart';
 import 'package:flutter_getx_template/app/data/remote/github_remote_data_source.dart';
 import 'package:flutter_getx_template/app/network/dio_provider.dart';
 
 class GithubRemoteDataSourceImpl extends BaseRemoteSource
     implements GithubRemoteDataSource {
   @override
-  Future<GithubRepoSearchResponse> searchGithubRepository(
+  Future<GithubProjectSearchResponse> searchGithubProject(
       GithubSearchQueryParam queryParam) async {
     var endpoint = "${DioProvider.baseUrl}/search/repositories";
     var dioCall = dioClient.get(endpoint, queryParameters: queryParam.toJson());
@@ -16,14 +16,14 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     try {
       var response = await callApiWithErrorParser(dioCall);
 
-      return _parseGithubSearchResponse(response);
+      return _parseGithubProjectSearchResponse(response);
     } catch (e) {
       rethrow;
     }
   }
 
   @override
-  Future<Projects> getGithubRepositoryDetails(
+  Future<Projects> getGithubProjectDetails(
       String userName, String repositoryName) async {
     var endpoint = "${DioProvider.baseUrl}/repos/$userName/$repositoryName";
     var dioCall = dioClient.get(endpoint);
@@ -31,18 +31,18 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     try {
       var response = await callApiWithErrorParser(dioCall);
 
-      return _parseGithubRepositoryResponse(response);
+      return _parseGithubProjectResponse(response);
     } catch (e) {
       rethrow;
     }
   }
 
-  GithubRepoSearchResponse _parseGithubSearchResponse(
+  GithubProjectSearchResponse _parseGithubProjectSearchResponse(
       Response<dynamic> response) {
-    return GithubRepoSearchResponse.fromJson(response.data);
+    return GithubProjectSearchResponse.fromJson(response.data);
   }
 
-  Projects _parseGithubRepositoryResponse(Response<dynamic> response) {
+  Projects _parseGithubProjectResponse(Response<dynamic> response) {
     return Projects.fromJson(response.data);
   }
 }

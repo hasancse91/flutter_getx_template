@@ -4,14 +4,14 @@ import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
 import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/elevated_container.dart';
-import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
+import 'package:flutter_getx_template/app/modules/home/model/github_project_ui_data.dart';
 import 'package:flutter_getx_template/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
-class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
-  final GithubRepoUiData dataModel;
+class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
+  final GithubProjectUiData dataModel;
 
-  ItemGithubRepo({
+  ItemGithubProject({
     Key? key,
     required this.dataModel,
   }) : super(key: key);
@@ -36,7 +36,7 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
               SizedBox(
                 width: 10.0,
               ),
-              _getRepoDetails(),
+              _getProjectDetails(),
             ],
           ),
         ),
@@ -44,7 +44,7 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
     );
   }
 
-  _getRepoDetails() {
+  _getProjectDetails() {
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,13 +67,13 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
           SizedBox(
             height: 4.0,
           ),
-          _getRepoBottomView(),
+          _getProjectBottomView(),
         ],
       ),
     );
   }
 
-  _getRepoBottomView() {
+  _getProjectBottomView() {
     return Row(
       children: [
         _getForkView(),
@@ -133,6 +133,6 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
   }
 
   void _onTap() {
-    Get.toNamed(Routes.REPO_DETAILS, arguments: dataModel);
+    Get.toNamed(Routes.PROJECT_DETAILS, arguments: dataModel);
   }
 }

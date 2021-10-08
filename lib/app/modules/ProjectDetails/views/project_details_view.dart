@@ -3,13 +3,13 @@ import 'package:flutter_getx_template/app/core/base/base_view.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
 import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
-import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
+import 'package:flutter_getx_template/app/modules/home/model/github_project_ui_data.dart';
 import 'package:get/get.dart';
 
-import '../controllers/repo_details_controller.dart';
+import '../controllers/project_details_controller.dart';
 
-class RepoDetailsView extends BaseView<RepoDetailsController> {
-  GithubRepoUiData? dataModel;
+class ProjectDetailsView extends BaseView<ProjectDetailsController> {
+  GithubProjectUiData? dataModel;
 
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
@@ -23,7 +23,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
   Widget body(BuildContext context) {
     if (ModalRoute.of(context) != null) {
       dataModel =
-          ModalRoute.of(context)!.settings.arguments as GithubRepoUiData;
+          ModalRoute.of(context)!.settings.arguments as GithubProjectUiData;
       if (dataModel != null) {
         controller.getGithubRepository(
           dataModel!.ownerLoginName,
@@ -42,7 +42,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
   }
 
   _getView() {
-    if (controller.repoUiData.repositoryName.isEmpty) {
+    if (controller.projectUiData.repositoryName.isEmpty) {
       return Container();
     } else {
       return Container(
@@ -54,7 +54,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              controller.repoUiData.repositoryName,
+              controller.projectUiData.repositoryName,
               style: cardTitleStyle,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
@@ -63,7 +63,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
             SizedBox(
               height: 4.0,
             ),
-            _getRepoOthersView(),
+            _getProjectOthersView(),
             SizedBox(
               height: 30.0,
             ),
@@ -78,14 +78,14 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
     return Row(
       children: [
         CircleAvatar(
-          backgroundImage: NetworkImage(controller.repoUiData.ownerAvatar),
+          backgroundImage: NetworkImage(controller.projectUiData.ownerAvatar),
           radius: 16.0,
         ),
         SizedBox(
           width: 6.0,
         ),
         Text(
-          controller.repoUiData.ownerLoginName,
+          controller.projectUiData.ownerLoginName,
           style: cardSubtitleStyle,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
@@ -94,7 +94,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
     );
   }
 
-  _getRepoOthersView() {
+  _getProjectOthersView() {
     return Container(
       margin: EdgeInsets.only(
         left: 40.0,
@@ -104,11 +104,11 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
           _getForkView(),
           _getDetailsView(
             Icons.star_border,
-            controller.repoUiData.numberOfStar.toString(),
+            controller.projectUiData.numberOfStar.toString(),
           ),
           _getDetailsView(
             Icons.visibility_outlined,
-            controller.repoUiData.watchers.toString(),
+            controller.projectUiData.watchers.toString(),
           ),
         ],
       ),
@@ -129,7 +129,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
             width: 2.0,
           ),
           Text(
-            controller.repoUiData.numberOfFork.toString(),
+            controller.projectUiData.numberOfFork.toString(),
             style: TextStyle(color: Colors.grey),
           ),
         ],
@@ -163,7 +163,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Text(
-          controller.repoUiData.description,
+          controller.projectUiData.description,
           style: TextStyle(
             fontSize: 16.0,
           ),

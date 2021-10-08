@@ -115,7 +115,7 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
       child: Row(
         children: [
           AssetImageView(
-            url: "images/ic_fork.svg",
+            fileName: "ic_fork.svg",
             height: 20.0,
             width: 20.0,
             color: Colors.grey,

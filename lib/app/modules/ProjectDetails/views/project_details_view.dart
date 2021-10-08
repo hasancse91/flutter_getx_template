@@ -63,7 +63,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
             SizedBox(
               height: 4.0,
             ),
-            _getProjectOthersView(),
+            _getRepoOthersView(),
             SizedBox(
               height: 30.0,
             ),
@@ -94,7 +94,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
     );
   }
 
-  _getProjectOthersView() {
+  _getRepoOthersView() {
     return Container(
       margin: EdgeInsets.only(
         left: 40.0,
@@ -120,7 +120,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
       child: Row(
         children: [
           AssetImageView(
-            url: "images/ic_fork.svg",
+            fileName: "ic_fork.svg",
             height: 20.0,
             width: 20.0,
             color: Colors.grey,

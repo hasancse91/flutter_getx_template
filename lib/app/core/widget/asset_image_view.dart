@@ -4,16 +4,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AssetImageView extends StatelessWidget {
   const AssetImageView({
     Key? key,
-    required this.url,
+    required this.fileName,
     this.height,
     this.width,
     this.color,
+    this.scale,
   }) : super(key: key);
 
-  final String url;
+  final String fileName;
   final double? height;
   final double? width;
   final Color? color;
+  final double? scale;
 
   @override
   Widget build(BuildContext context) {
@@ -21,53 +23,40 @@ class AssetImageView extends StatelessWidget {
   }
 
   Widget _getView() {
-    if (url.length > 4 &&
-        url.substring(url.length - 4, url.length - 3) == '.') {
-      String mimType = url.substring(url.length - 4, url.length).toLowerCase();
-      if (mimType == ".svg") {
-        return SvgPicture.asset(
-          url,
-          height: height,
-          width: width,
-          color: color ?? Colors.black,
-        );
-      } else if (mimType == ".png" || mimType == ".jpg") {
-        return Image.asset(
-          url,
-          height: height,
-          width: width,
-          color: color,
-        );
-      } else {
-        return Icon(
-          Icons.image_not_supported_outlined,
-          size: width,
-          color: color,
-        );
-      }
-    } else if (url.length > 5 &&
-        url.substring(url.length - 5, url.length - 4) == '.') {
-      String mimType = url.substring(url.length - 5, url.length).toLowerCase();
-      if (mimType == ".jpeg") {
-        return Image.asset(
-          url,
-          height: height,
-          width: width,
-          color: color,
-        );
-      } else {
-        return Icon(
-          Icons.image_not_supported_outlined,
-          size: width,
-          color: color,
-        );
-      }
-    } else {
+    String mimType = fileName.split(".").last;
+    String path = "images/$fileName";
+
+    if (mimType.isEmpty)
       return Icon(
         Icons.image_not_supported_outlined,
         size: width,
         color: color,
       );
+
+    switch (mimType) {
+      case "svg":
+        return SvgPicture.asset(
+          path,
+          height: height,
+          width: width,
+          color: color ?? Colors.black,
+        );
+      case "png":
+      case "jpg":
+      case "jpeg":
+        return Image.asset(
+          path,
+          height: height,
+          width: width,
+          color: color,
+          scale: scale,
+        );
+      default:
+        return Icon(
+          Icons.image_not_supported_outlined,
+          size: width,
+          color: color,
+        );
     }
   }
 }

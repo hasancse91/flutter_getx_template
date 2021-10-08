@@ -49,6 +49,14 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
                   maxLines: 1,
                 ),
                 _getAuthor(),
+                SizedBox(
+                  height: 4.0,
+                ),
+                _getRepoOthersView(),
+                SizedBox(
+                  height: 30.0,
+                ),
+                _getDescription(),
               ],
             ),
           ),
@@ -59,7 +67,80 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
 
   _getAuthor() {
     return Row(
-      children: [],
+      children: [
+        CircleAvatar(
+          backgroundImage: NetworkImage(controller.repoUiData.ownerAvatar),
+          radius: 16.0,
+        ),
+        SizedBox(
+          width: 6.0,
+        ),
+        Text(
+          controller.repoUiData.ownerLoginName,
+          style: cardSubtitleStyle,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
+    );
+  }
+
+  _getRepoOthersView() {
+    return Container(
+      margin: EdgeInsets.only(
+        left: 40.0,
+      ),
+      child: Row(
+        children: [
+          _getDetailsView(
+            Icons.account_tree_outlined,
+            controller.repoUiData.numberOfFork.toString(),
+          ),
+          _getDetailsView(
+            Icons.star_border,
+            controller.repoUiData.numberOfStar.toString(),
+          ),
+          _getDetailsView(
+            Icons.visibility_outlined,
+            controller.repoUiData.watchers.toString(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _getDetailsView(IconData iconData, String value) {
+    return Expanded(
+      child: Row(
+        children: [
+          Icon(
+            iconData,
+            size: 20.0,
+            color: Colors.grey,
+          ),
+          SizedBox(
+            width: 2.0,
+          ),
+          Text(
+            value,
+            style: TextStyle(color: Colors.grey),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _getDescription() {
+    return Expanded(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Text(
+          controller.repoUiData.description,
+          style: TextStyle(
+            fontSize: 16.0,
+          ),
+        ),
+      ),
     );
   }
 }

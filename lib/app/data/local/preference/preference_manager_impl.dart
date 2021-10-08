@@ -5,9 +5,9 @@ class PreferenceManagerImpl implements PreferenceManager {
   var _preference = SharedPreferences.getInstance();
 
   @override
-  Future<String> getString(String key, {String defValue = ""}) async {
+  Future<String> getString(String key, {String defaultValue = ""}) async {
     final SharedPreferences pref = await _preference;
-    return await pref.getString(key) ?? defValue;
+    return await pref.getString(key) ?? defaultValue;
   }
 
   @override
@@ -17,9 +17,9 @@ class PreferenceManagerImpl implements PreferenceManager {
   }
 
   @override
-  Future<int> getInt(String key, {int defValue = 0}) async {
+  Future<int> getInt(String key, {int defaultValue = 0}) async {
     final SharedPreferences pref = await _preference;
-    return await pref.getInt(key) ?? defValue;
+    return await pref.getInt(key) ?? defaultValue;
   }
 
   @override
@@ -29,9 +29,9 @@ class PreferenceManagerImpl implements PreferenceManager {
   }
 
   @override
-  Future<double> getDouble(String key, {double defValue = 0.0}) async {
+  Future<double> getDouble(String key, {double defaultValue = 0.0}) async {
     final SharedPreferences pref = await _preference;
-    return await pref.getDouble(key) ?? defValue;
+    return await pref.getDouble(key) ?? defaultValue;
   }
 
   @override
@@ -41,9 +41,9 @@ class PreferenceManagerImpl implements PreferenceManager {
   }
 
   @override
-  Future<bool> getBool(String key, {bool defValue = false}) async {
+  Future<bool> getBool(String key, {bool defaultValue = false}) async {
     final SharedPreferences pref = await _preference;
-    return await pref.getBool(key) ?? defValue;
+    return await pref.getBool(key) ?? defaultValue;
   }
 
   @override
@@ -54,9 +54,9 @@ class PreferenceManagerImpl implements PreferenceManager {
 
   @override
   Future<List<String>> getStringList(String key,
-      {List<String> defValue = const []}) async {
+      {List<String> defaultValue = const []}) async {
     final SharedPreferences pref = await _preference;
-    return await pref.getStringList(key) ?? defValue;
+    return await pref.getStringList(key) ?? defaultValue;
   }
 
   @override
@@ -69,5 +69,11 @@ class PreferenceManagerImpl implements PreferenceManager {
   Future<bool> remove(String key) async {
     final SharedPreferences pref = await _preference;
     return await pref.remove(key);
+  }
+
+  @override
+  Future<bool> clear() async {
+    final SharedPreferences pref = await _preference;
+    return await pref.clear();
   }
 }

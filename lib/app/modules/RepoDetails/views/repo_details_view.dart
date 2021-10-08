@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/base/base_view.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
+import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
 import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../controllers/repo_details_controller.dart';
@@ -119,8 +119,8 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
     return Expanded(
       child: Row(
         children: [
-          SvgPicture.asset(
-            "images/ic_fork.svg",
+          AssetImageView(
+            url: "images/ic_fork.svg",
             height: 20.0,
             width: 20.0,
             color: Colors.grey,

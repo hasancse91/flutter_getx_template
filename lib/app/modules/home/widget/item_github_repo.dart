@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
 import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
+import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/elevated_container.dart';
 import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
 import 'package:flutter_getx_template/app/routes/app_pages.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
@@ -114,8 +114,8 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
     return Expanded(
       child: Row(
         children: [
-          SvgPicture.asset(
-            "images/ic_fork.svg",
+          AssetImageView(
+            url: "images/ic_fork.svg",
             height: 20.0,
             width: 20.0,
             color: Colors.grey,

@@ -5,6 +5,7 @@ import 'package:flutter_getx_template/app/core/values/text_styles.dart';
 import 'package:flutter_getx_template/app/core/widget/elevated_container.dart';
 import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
 import 'package:flutter_getx_template/app/routes/app_pages.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
@@ -75,10 +76,7 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
   _getRepoBottomView() {
     return Row(
       children: [
-        _getDetailsView(
-          Icons.account_tree_outlined,
-          dataModel.numberOfFork.toString(),
-        ),
+        _getForkView(),
         _getDetailsView(
           Icons.star_border,
           dataModel.numberOfStar.toString(),
@@ -105,6 +103,28 @@ class ItemGithubRepo extends StatelessWidget with BaseWidgetMixin {
           ),
           Text(
             value,
+            style: TextStyle(color: Colors.grey),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _getForkView() {
+    return Expanded(
+      child: Row(
+        children: [
+          SvgPicture.asset(
+            "images/ic_fork.svg",
+            height: 20.0,
+            width: 20.0,
+            color: Colors.grey,
+          ),
+          SizedBox(
+            width: 2.0,
+          ),
+          Text(
+            dataModel.numberOfFork.toString(),
             style: TextStyle(color: Colors.grey),
           ),
         ],

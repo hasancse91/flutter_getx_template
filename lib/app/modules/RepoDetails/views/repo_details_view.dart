@@ -3,6 +3,7 @@ import 'package:flutter_getx_template/app/core/base/base_view.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
 import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
 import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../controllers/repo_details_controller.dart';
@@ -34,35 +35,43 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => Container(
-            margin: EdgeInsets.symmetric(
-              horizontal: 20.0,
-              vertical: 20.0,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  controller.repoUiData.repositoryName,
-                  style: cardTitleStyle,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
-                _getAuthor(),
-                SizedBox(
-                  height: 4.0,
-                ),
-                _getRepoOthersView(),
-                SizedBox(
-                  height: 30.0,
-                ),
-                _getDescription(),
-              ],
-            ),
-          ),
+          () => _getView(),
         ),
       ),
     );
+  }
+
+  _getView() {
+    if (controller.repoUiData.repositoryName.isEmpty) {
+      return Container();
+    } else {
+      return Container(
+        margin: EdgeInsets.symmetric(
+          horizontal: 20.0,
+          vertical: 20.0,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              controller.repoUiData.repositoryName,
+              style: cardTitleStyle,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
+            _getAuthor(),
+            SizedBox(
+              height: 4.0,
+            ),
+            _getRepoOthersView(),
+            SizedBox(
+              height: 30.0,
+            ),
+            _getDescription(),
+          ],
+        ),
+      );
+    }
   }
 
   _getAuthor() {
@@ -92,10 +101,7 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
       ),
       child: Row(
         children: [
-          _getDetailsView(
-            Icons.account_tree_outlined,
-            controller.repoUiData.numberOfFork.toString(),
-          ),
+          _getForkView(),
           _getDetailsView(
             Icons.star_border,
             controller.repoUiData.numberOfStar.toString(),
@@ -103,6 +109,28 @@ class RepoDetailsView extends BaseView<RepoDetailsController> {
           _getDetailsView(
             Icons.visibility_outlined,
             controller.repoUiData.watchers.toString(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _getForkView() {
+    return Expanded(
+      child: Row(
+        children: [
+          SvgPicture.asset(
+            "images/ic_fork.svg",
+            height: 20.0,
+            width: 20.0,
+            color: Colors.grey,
+          ),
+          SizedBox(
+            width: 2.0,
+          ),
+          Text(
+            controller.repoUiData.numberOfFork.toString(),
+            style: TextStyle(color: Colors.grey),
           ),
         ],
       ),

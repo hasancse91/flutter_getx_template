@@ -15,7 +15,8 @@ class GithubRepositoryImpl implements GithubRepository {
   }
 
   @override
-  void getRepository(String userName, String repositoryName) {
-    // TODO: implement getRepository
+  Future<Projects> getRepository(String userName, String repositoryName) async {
+    return await _remoteSource.getGithubRepositoryDetails(
+        userName, repositoryName);
   }
 }

@@ -9,13 +9,13 @@ class GithubRepoUiData {
   int watchers;
 
   GithubRepoUiData({
-    required this.repositoryName,
-    required this.ownerLoginName,
-    required this.ownerAvatar,
-    required this.numberOfStar,
-    required this.numberOfFork,
-    required this.description,
-    required this.score,
-    required this.watchers,
+    this.repositoryName = "",
+    this.ownerLoginName = "",
+    this.ownerAvatar = "",
+    this.numberOfStar = 0,
+    this.numberOfFork = 0,
+    this.description = "",
+    this.score = 0.0,
+    this.watchers = 0,
   });
 }

@@ -4,5 +4,6 @@ import 'package:flutter_getx_template/app/data/model/github_repo_search_response
 abstract class GithubRepository {
   Future<GithubRepoSearchResponse> searchRepository(
       GithubSearchQueryParam queryParam);
-  void getRepository(String userName, String repositoryName);
+
+  Future<Projects> getRepository(String userName, String repositoryName);
 }

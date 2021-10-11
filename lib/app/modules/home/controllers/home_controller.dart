@@ -1,44 +1,48 @@
 import 'package:flutter_getx_template/app/core/base/base_controller.dart';
 import 'package:flutter_getx_template/app/core/model/github_search_query_param.dart';
-import 'package:flutter_getx_template/app/data/model/github_repo_search_response.dart';
+import 'package:flutter_getx_template/app/data/model/github_project_search_response.dart';
 import 'package:flutter_getx_template/app/data/repository/github_repository.dart';
-import 'package:flutter_getx_template/app/modules/home/model/github_repo_ui_data.dart';
+import 'package:flutter_getx_template/app/modules/home/model/github_project_ui_data.dart';
 import 'package:get/get.dart';
 
 class HomeController extends BaseController {
   final GithubRepository _repository =
       Get.find(tag: (GithubRepository).toString());
 
-  final RxList<GithubRepoUiData> _githubRepoController = RxList.empty();
+  final RxList<GithubProjectUiData> _githubProjectController = RxList.empty();
 
-  List<GithubRepoUiData> get repositoryList => _githubRepoController.toList();
+  List<GithubProjectUiData> get projectList =>
+      _githubProjectController.toList();
 
-  getGithubGetxRepositoryList() {
+  getGithubGetxProjectList() {
     callDataService(
-      _repository.searchRepository(
+      _repository.searchProject(
         GithubSearchQueryParam(
           searchKeyWord: 'flutter getx template',
           perPage: 10,
           pageNumber: 1,
         ),
       ),
-      onSuccess: _handleRepoListResponseSuccess,
+      onSuccess: _handleProjectListResponseSuccess,
     );
   }
 
-  _handleRepoListResponseSuccess(GithubRepoSearchResponse response) {
-    List<GithubRepoUiData> repoList = [];
+  _handleProjectListResponseSuccess(GithubProjectSearchResponse response) {
+    List<GithubProjectUiData> repoList = [];
     response.items?.forEach((element) {
-      var repo = GithubRepoUiData(
-          repositoryName: element.name != null ? element.name! : "Null",
-          ownerLoginName:
-              element.owner != null ? element.owner!.login! : "Null",
-          ownerAvatar: element.owner != null ? element.owner!.avatarUrl! : "",
-          numberOfStar: 10,
-          numberOfFork: 4);
-      repoList.add(repo);
+      var project = GithubProjectUiData(
+        repositoryName: element.name != null ? element.name! : "Null",
+        ownerLoginName: element.owner != null ? element.owner!.login! : "Null",
+        ownerAvatar: element.owner != null ? element.owner!.avatarUrl! : "",
+        numberOfStar: element.stargazersCount ?? 0,
+        numberOfFork: element.forks ?? 0,
+        score: element.score ?? 0.0,
+        watchers: element.watchers ?? 0,
+        description: element.description ?? "",
+      );
+      repoList.add(project);
     });
-    _githubRepoController(repoList);
+    _githubProjectController(repoList);
     logger.d("Repo response: ${response.totalCount}");
   }
 }

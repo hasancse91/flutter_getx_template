@@ -1,23 +1,23 @@
-class GithubRepoSearchResponse {
-  GithubRepoSearchResponse({
+class GithubProjectSearchResponse {
+  GithubProjectSearchResponse({
     this.totalCount,
     this.incompleteResults,
     this.items,
   });
 
-  GithubRepoSearchResponse.fromJson(dynamic json) {
+  GithubProjectSearchResponse.fromJson(dynamic json) {
     totalCount = json['total_count'];
     incompleteResults = json['incomplete_results'];
     if (json['items'] != null) {
       items = [];
       json['items'].forEach((v) {
-        items?.add(Items.fromJson(v));
+        items?.add(Projects.fromJson(v));
       });
     }
   }
   int? totalCount;
   bool? incompleteResults;
-  List<Items>? items;
+  List<Projects>? items;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -30,8 +30,8 @@ class GithubRepoSearchResponse {
   }
 }
 
-class Items {
-  Items({
+class Projects {
+  Projects({
     this.name,
     this.owner,
     this.description,
@@ -41,7 +41,7 @@ class Items {
     this.score,
   });
 
-  Items.fromJson(dynamic json) {
+  Projects.fromJson(dynamic json) {
     name = json['name'];
     owner = json['owner'] != null ? Owner.fromJson(json['owner']) : null;
     description = json['description'];

@@ -9,6 +9,8 @@ A new Flutter project.
 - Run this command to create project in the required directory: `get create project`
 - Create `main_view` by running this command: `get create page:main`
 
+<img align="center" alt="1" src="repo_data/flutter_getx_template_1.png" />
+
 
 
 

@@ -40,5 +40,5 @@ abstract class AppColors {
   static const Color switchActiveColor = colorPrimary;
   static const Color switchInactiveColor = Color(0xFFABABAB);
 
-
+  static const Color iconColorDefault = Colors.grey;
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_getx_template/app/core/values/app_colors.dart';
 
 import 'app_bar_title.dart';
@@ -28,7 +27,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       automaticallyImplyLeading: isBackButtonEnabled,
       actions: actions,
-      iconTheme: IconThemeData(color: Theme.of(context).accentColor),
+      iconTheme: IconThemeData(color: Theme.of(context).buttonColor),
       title: AppBarTitle(text: appBarTitleText),
     );
   }

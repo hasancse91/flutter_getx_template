@@ -1,5 +1,5 @@
-import 'package:get/get.dart';
-
+import 'package:flutter_getx_template/app/modules/ProjectDetails/bindings/project_details_binding.dart';
+import 'package:flutter_getx_template/app/modules/ProjectDetails/views/project_details_view.dart';
 import 'package:flutter_getx_template/app/modules/favorite/bindings/favorite_binding.dart';
 import 'package:flutter_getx_template/app/modules/favorite/views/favorite_view.dart';
 import 'package:flutter_getx_template/app/modules/home/bindings/home_binding.dart';
@@ -10,6 +10,7 @@ import 'package:flutter_getx_template/app/modules/other/bindings/other_binding.d
 import 'package:flutter_getx_template/app/modules/other/views/other_view.dart';
 import 'package:flutter_getx_template/app/modules/settings/bindings/settings_binding.dart';
 import 'package:flutter_getx_template/app/modules/settings/views/settings_view.dart';
+import 'package:get/get.dart';
 
 part 'app_routes.dart';
 
@@ -43,6 +44,11 @@ class AppPages {
       name: _Paths.OTHER,
       page: () => OtherView(),
       binding: OtherBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROJECT_DETAILS,
+      page: () => ProjectDetailsView(),
+      binding: ProjectDetailsBinding(),
     ),
   ];
 }

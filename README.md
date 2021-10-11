@@ -1,6 +1,7 @@
 # Flutter GetX Template (GetX, Dio)
 
-A new Flutter project.
+A Flutter GetX template using MVVM (Model View Viewmodel) pattern. In this template GetX used for dependency injection
+and Dio used for network call.
 
 ## How to Build the project?
 - Create two configurations `main_dev` and `main_prod`

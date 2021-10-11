@@ -10,13 +10,12 @@ class GithubRepositoryImpl implements GithubRepository {
 
   @override
   Future<GithubProjectSearchResponse> searchProject(
-      GithubSearchQueryParam queryParam) async {
-    return await _remoteSource.searchGithubProject(queryParam);
+      GithubSearchQueryParam queryParam) {
+    return _remoteSource.searchGithubProject(queryParam);
   }
 
   @override
-  Future<Projects> getProject(String userName, String repositoryName) async {
-    return await _remoteSource.getGithubProjectDetails(
-        userName, repositoryName);
+  Future<Projects> getProject(String userName, String repositoryName) {
+    return _remoteSource.getGithubProjectDetails(userName, repositoryName);
   }
 }

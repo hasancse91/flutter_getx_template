@@ -43,6 +43,5 @@ class HomeController extends BaseController {
       repoList.add(project);
     });
     _githubProjectController(repoList);
-    logger.d("Repo response: ${response.totalCount}");
   }
 }

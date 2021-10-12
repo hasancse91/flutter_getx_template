@@ -60,11 +60,11 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
             ),
             _getAuthor(),
             SizedBox(
-              height: AppValues.margin_4,
+              height: AppValues.margin_4
             ),
             _getForkStarWatcherView(),
             SizedBox(
-              height: AppValues.margin_30,
+              height: AppValues.margin_30
             ),
             _getDescription(),
           ],
@@ -81,7 +81,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
           radius: AppValues.iconSmallSize,
         ),
         SizedBox(
-          width: AppValues.margin_6,
+          width: AppValues.margin_6
         ),
         Text(
           controller.projectUiData.ownerLoginName,

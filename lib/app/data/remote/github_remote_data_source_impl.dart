@@ -22,7 +22,7 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
   }
 
   @override
-  Future<Project> getGithubProjectDetails(
+  Future<Item> getGithubProjectDetails(
       String userName, String repositoryName) {
     var endpoint = "${DioProvider.baseUrl}/repos/$userName/$repositoryName";
     var dioCall = dioClient.get(endpoint);
@@ -40,7 +40,7 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     return GithubProjectSearchResponse.fromJson(response.data);
   }
 
-  Project _parseGithubProjectResponse(Response<dynamic> response) {
-    return Project.fromJson(response.data);
+  Item _parseGithubProjectResponse(Response<dynamic> response) {
+    return Item.fromJson(response.data);
   }
 }

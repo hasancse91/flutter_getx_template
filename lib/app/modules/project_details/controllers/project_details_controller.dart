@@ -19,11 +19,11 @@ class ProjectDetailsController extends BaseController {
     );
   }
 
-  void _handleProjectDetailsResponseSuccess(Project project) {
+  void _handleProjectDetailsResponseSuccess(Item project) {
     _projectUiData(
       GithubProjectUiData(
-        repositoryName: project.name != null ? project.name! : "Null",
-        ownerLoginName: project.owner != null ? project.owner!.login! : "Null",
+        repositoryName: project.name != null ? project.name! : "",
+        ownerLoginName: project.owner != null ? project.owner!.login! : "",
         ownerAvatar: project.owner != null ? project.owner!.avatarUrl! : "",
         numberOfStar: project.stargazersCount ?? 0,
         numberOfFork: project.forks ?? 0,

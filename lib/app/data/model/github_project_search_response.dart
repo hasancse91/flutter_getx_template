@@ -11,13 +11,13 @@ class GithubProjectSearchResponse {
     if (json['items'] != null) {
       items = [];
       json['items'].forEach((v) {
-        items?.add(Project.fromJson(v));
+        items?.add(Item.fromJson(v));
       });
     }
   }
   int? totalCount;
   bool? incompleteResults;
-  List<Project>? items;
+  List<Item>? items;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -30,8 +30,8 @@ class GithubProjectSearchResponse {
   }
 }
 
-class Project {
-  Project({
+class Item {
+  Item({
     this.name,
     this.owner,
     this.description,
@@ -41,7 +41,7 @@ class Project {
     this.score,
   });
 
-  Project.fromJson(dynamic json) {
+  Item.fromJson(dynamic json) {
     name = json['name'];
     owner = json['owner'] != null ? Owner.fromJson(json['owner']) : null;
     description = json['description'];

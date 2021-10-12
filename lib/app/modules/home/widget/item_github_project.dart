@@ -29,14 +29,10 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
-                backgroundImage: NetworkImage(
-                  dataModel.ownerAvatar,
-                ),
+                backgroundImage: NetworkImage(dataModel.ownerAvatar),
                 radius: AppValues.circularImageSize_30,
               ),
-              SizedBox(
-                width: AppValues.margin_10,
-              ),
+              SizedBox(width: AppValues.margin_10),
               _getDetailsView(),
             ],
           ),
@@ -56,18 +52,14 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
-          SizedBox(
-            height: AppValues.margin_4,
-          ),
+          SizedBox(height: AppValues.margin_4),
           Text(
             dataModel.ownerLoginName,
             style: cardSubtitleStyle,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(
-            height: AppValues.margin_4,
-          ),
+          SizedBox(height: AppValues.margin_4),
           _getForkStarWatcherView(),
         ],
       ),

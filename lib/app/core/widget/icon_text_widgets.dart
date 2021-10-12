@@ -38,19 +38,9 @@ class IconTextWidget extends StatelessWidget {
     return Expanded(
       child: Row(
         children: [
-          Icon(
-            icon,
-            size: size,
-            color: color,
-          ),
-          SizedBox(
-            width: AppValues.margin_2,
-          ),
-          if (value != null)
-            Text(
-              value!,
-              style: TextStyle(color: color),
-            ),
+          Icon(icon, size: size, color: color),
+          SizedBox(width: AppValues.margin_2),
+          if (value != null) Text(value!, style: TextStyle(color: color)),
         ],
       ),
     );
@@ -66,14 +56,8 @@ class IconTextWidget extends StatelessWidget {
             width: width,
             color: color,
           ),
-          SizedBox(
-            width: AppValues.margin_2,
-          ),
-          if (value != null)
-            Text(
-              value!,
-              style: TextStyle(color: color),
-            ),
+          SizedBox(width: AppValues.margin_2),
+          if (value != null) Text(value!, style: TextStyle(color: color)),
         ],
       ),
     );

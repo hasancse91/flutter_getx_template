@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/base/base_view.dart';
+import 'package:flutter_getx_template/app/core/values/app_colors.dart';
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
-import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
+import 'package:flutter_getx_template/app/core/widget/icon_text_widgets.dart';
 import 'package:flutter_getx_template/app/modules/home/model/github_project_ui_data.dart';
 import 'package:get/get.dart';
 
@@ -21,15 +23,12 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
 
   @override
   Widget body(BuildContext context) {
-    if (ModalRoute.of(context) != null) {
-      dataModel =
-          ModalRoute.of(context)!.settings.arguments as GithubProjectUiData;
-      if (dataModel != null) {
-        controller.getGithubRepository(
-          dataModel!.ownerLoginName,
-          dataModel!.repositoryName,
-        );
-      }
+    dataModel = Get.arguments;
+    if (dataModel != null) {
+      controller.getGithubRepository(
+        dataModel!.ownerLoginName,
+        dataModel!.repositoryName,
+      );
     }
 
     return Scaffold(
@@ -41,14 +40,14 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
     );
   }
 
-  _getView() {
+  Widget _getView() {
     if (controller.projectUiData.repositoryName.isEmpty) {
       return Container();
     } else {
       return Container(
         margin: EdgeInsets.symmetric(
-          horizontal: 20.0,
-          vertical: 20.0,
+          horizontal: AppValues.margin_20,
+          vertical: AppValues.margin_20,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,11 +60,11 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
             ),
             _getAuthor(),
             SizedBox(
-              height: 4.0,
+              height: AppValues.margin_4,
             ),
-            _getRepoOthersView(),
+            _getForkStarWatcherView(),
             SizedBox(
-              height: 30.0,
+              height: AppValues.margin_30,
             ),
             _getDescription(),
           ],
@@ -74,15 +73,15 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
     }
   }
 
-  _getAuthor() {
+  Widget _getAuthor() {
     return Row(
       children: [
         CircleAvatar(
           backgroundImage: NetworkImage(controller.projectUiData.ownerAvatar),
-          radius: 16.0,
+          radius: AppValues.iconSmallSize,
         ),
         SizedBox(
-          width: 6.0,
+          width: AppValues.margin_6,
         ),
         Text(
           controller.projectUiData.ownerLoginName,
@@ -94,80 +93,43 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
     );
   }
 
-  _getRepoOthersView() {
+  Widget _getForkStarWatcherView() {
     return Container(
       margin: EdgeInsets.only(
-        left: 40.0,
+        left: AppValues.margin_40,
       ),
       child: Row(
         children: [
-          _getForkView(),
-          _getDetailsView(
-            Icons.star_border,
-            controller.projectUiData.numberOfStar.toString(),
-          ),
-          _getDetailsView(
-            Icons.visibility_outlined,
-            controller.projectUiData.watchers.toString(),
-          ),
-        ],
-      ),
-    );
-  }
-
-  _getForkView() {
-    return Expanded(
-      child: Row(
-        children: [
-          AssetImageView(
+          IconTextWidget(
             fileName: "ic_fork.svg",
-            height: 20.0,
-            width: 20.0,
-            color: Colors.grey,
+            value: controller.projectUiData.numberOfFork.toString(),
+            height: AppValues.iconSize_20,
+            width: AppValues.iconSize_20,
+            color: AppColors.iconColorDefault,
           ),
-          SizedBox(
-            width: 2.0,
+          IconTextWidget(
+            icon: Icons.star_border,
+            value: controller.projectUiData.numberOfStar.toString(),
+            size: AppValues.iconSize_20,
+            color: AppColors.iconColorDefault,
           ),
-          Text(
-            controller.projectUiData.numberOfFork.toString(),
-            style: TextStyle(color: Colors.grey),
-          ),
-        ],
-      ),
-    );
-  }
-
-  _getDetailsView(IconData iconData, String value) {
-    return Expanded(
-      child: Row(
-        children: [
-          Icon(
-            iconData,
-            size: 20.0,
-            color: Colors.grey,
-          ),
-          SizedBox(
-            width: 2.0,
-          ),
-          Text(
-            value,
-            style: TextStyle(color: Colors.grey),
+          IconTextWidget(
+            icon: Icons.visibility_outlined,
+            value: controller.projectUiData.watchers.toString(),
+            size: AppValues.iconSize_20,
+            color: AppColors.iconColorDefault,
           ),
         ],
       ),
     );
   }
 
-  _getDescription() {
+  Widget _getDescription() {
     return Expanded(
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Text(
-          controller.projectUiData.description,
-          style: TextStyle(
-            fontSize: 16.0,
-          ),
-        ),
+        child: Text(controller.projectUiData.description,
+            style: descriptionTextStyle),
       ),
     );
   }

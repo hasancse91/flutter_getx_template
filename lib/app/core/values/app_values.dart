@@ -16,11 +16,16 @@ abstract class AppValues {
   static const double smallMargin = 8;
   static const double extraSmallMargin = 6;
   static const double largeMargin = 24;
+  static const double margin_40 = 40;
   static const double margin_32 = 32;
   static const double margin_18 = 18;
   static const double margin_2 = 2;
   static const double margin_4 = 4;
+  static const double margin_6 = 6;
   static const double margin_12 = 12;
+  static const double margin_10 = 10;
+  static const double margin_30 = 30;
+  static const double margin_20 = 20;
   static const double extraLargeMargin = 36;
   static const double marginBelowVerticalLine = 64;
   static const double extraLargeSpacing = 96;
@@ -40,6 +45,7 @@ abstract class AppValues {
   static const double largeElevation = 24;
 
   static const double circularImageDefaultSize = 90;
+  static const double circularImageSize_30 = 30;
   static const double circularImageDefaultBorderSize = 0;
   static const double circularImageDefaultElevation = 0;
   static const double momentThumbnailDefaultSize = 80;
@@ -55,6 +61,7 @@ abstract class AppValues {
 
   static const double iconDefaultSize = 24;
   static const double emoticonDefaultSize = 22;
+  static const double iconSize_20 = 20;
   static const double iconSize_22 = 22;
   static const double iconSize_18 = 18;
   static const double iconSmallSize = 16;

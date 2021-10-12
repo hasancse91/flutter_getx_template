@@ -12,14 +12,14 @@ class ProjectDetailsController extends BaseController {
 
   GithubProjectUiData get projectUiData => _projectUiData.value;
 
-  getGithubRepository(userName, repositoryName) {
+  void getGithubRepository(userName, repositoryName) {
     callDataService(
       _repository.getProject(userName, repositoryName),
       onSuccess: _handleProjectDetailsResponseSuccess,
     );
   }
 
-  _handleProjectDetailsResponseSuccess(Project project) {
+  void _handleProjectDetailsResponseSuccess(Project project) {
     _projectUiData(
       GithubProjectUiData(
         repositoryName: project.name != null ? project.name! : "Null",

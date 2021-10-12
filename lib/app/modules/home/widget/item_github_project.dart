@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
+import 'package:flutter_getx_template/app/core/values/app_colors.dart';
 import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
-import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/elevated_container.dart';
+import 'package:flutter_getx_template/app/core/widget/icon_text_widgets.dart';
 import 'package:flutter_getx_template/app/modules/home/model/github_project_ui_data.dart';
 import 'package:flutter_getx_template/app/routes/app_pages.dart';
 import 'package:get/get.dart';
@@ -31,12 +32,12 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
                 backgroundImage: NetworkImage(
                   dataModel.ownerAvatar,
                 ),
-                radius: 30.0,
+                radius: AppValues.circularImageSize_30,
               ),
               SizedBox(
-                width: 10.0,
+                width: AppValues.margin_10,
               ),
-              _getProjectDetails(),
+              _getDetailsView(),
             ],
           ),
         ),
@@ -44,7 +45,7 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
     );
   }
 
-  _getProjectDetails() {
+  Widget _getDetailsView() {
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +57,7 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
             maxLines: 1,
           ),
           SizedBox(
-            height: 4.0,
+            height: AppValues.margin_4,
           ),
           Text(
             dataModel.ownerLoginName,
@@ -65,70 +66,37 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
             overflow: TextOverflow.ellipsis,
           ),
           SizedBox(
-            height: 4.0,
+            height: AppValues.margin_4,
           ),
-          _getProjectBottomView(),
+          _getForkStarWatcherView(),
         ],
       ),
     );
   }
 
-  _getProjectBottomView() {
+  Widget _getForkStarWatcherView() {
     return Row(
       children: [
-        _getForkView(),
-        _getDetailsView(
-          Icons.star_border,
-          dataModel.numberOfStar.toString(),
+        IconTextWidget(
+          fileName: "ic_fork.svg",
+          value: dataModel.numberOfFork.toString(),
+          height: AppValues.iconSize_20,
+          width: AppValues.iconSize_20,
+          color: AppColors.iconColorDefault,
         ),
-        _getDetailsView(
-          Icons.visibility_outlined,
-          dataModel.watchers.toString(),
+        IconTextWidget(
+          icon: Icons.star_border,
+          value: dataModel.numberOfStar.toString(),
+          size: AppValues.iconSize_20,
+          color: AppColors.iconColorDefault,
+        ),
+        IconTextWidget(
+          icon: Icons.visibility_outlined,
+          value: dataModel.watchers.toString(),
+          size: AppValues.iconSize_20,
+          color: AppColors.iconColorDefault,
         ),
       ],
-    );
-  }
-
-  _getDetailsView(IconData iconData, String value) {
-    return Expanded(
-      child: Row(
-        children: [
-          Icon(
-            iconData,
-            size: 20.0,
-            color: Colors.grey,
-          ),
-          SizedBox(
-            width: 2.0,
-          ),
-          Text(
-            value,
-            style: TextStyle(color: Colors.grey),
-          ),
-        ],
-      ),
-    );
-  }
-
-  _getForkView() {
-    return Expanded(
-      child: Row(
-        children: [
-          AssetImageView(
-            fileName: "ic_fork.svg",
-            height: 20.0,
-            width: 20.0,
-            color: Colors.grey,
-          ),
-          SizedBox(
-            width: 2.0,
-          ),
-          Text(
-            dataModel.numberOfFork.toString(),
-            style: TextStyle(color: Colors.grey),
-          ),
-        ],
-      ),
     );
   }
 

@@ -29,6 +29,8 @@ abstract class AppColors {
   static const Color textColorWhite = Color(0xFFFFFFFF);
   static Color searchFieldTextColor = const Color(0xFF323232).withOpacity(0.5);
 
+  static const Color iconColorDefault = Colors.grey;
+
   static Color barrierColor = const Color(0xFF000000).withOpacity(0.5);
 
   static Color timelineDividerColor = const Color(0x5438686A);
@@ -39,6 +41,4 @@ abstract class AppColors {
 
   static const Color switchActiveColor = colorPrimary;
   static const Color switchInactiveColor = Color(0xFFABABAB);
-
-
 }

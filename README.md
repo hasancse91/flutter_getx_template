@@ -26,7 +26,7 @@ to your flavor then give a name and allow dart support for this project. See on 
 <img align="center" alt="4" src="repo_data/flutter_getx_template_4.png" />
 
 N.B: In this step you may need to setup your dart sdk path. If you get warned for 
-"dart sdk not found in specified location" then just click on "fix" then select your dart sdk path.
+"dart sdk not found in specified location" then just click on "fix" and select your dart sdk path.
 
 
 

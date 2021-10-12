@@ -15,7 +15,7 @@ class GithubRepositoryImpl implements GithubRepository {
   }
 
   @override
-  Future<Projects> getProject(String userName, String repositoryName) {
+  Future<Project> getProject(String userName, String repositoryName) {
     return _remoteSource.getGithubProjectDetails(userName, repositoryName);
   }
 }

@@ -19,7 +19,7 @@ class ProjectDetailsController extends BaseController {
     );
   }
 
-  _handleProjectDetailsResponseSuccess(Projects project) {
+  _handleProjectDetailsResponseSuccess(Project project) {
     _projectUiData(
       GithubProjectUiData(
         repositoryName: project.name != null ? project.name! : "Null",

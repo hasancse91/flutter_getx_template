@@ -5,6 +5,6 @@ abstract class GithubRemoteDataSource {
   Future<GithubProjectSearchResponse> searchGithubProject(
       GithubSearchQueryParam queryParam);
 
-  Future<Projects> getGithubProjectDetails(
+  Future<Item> getGithubProjectDetails(
       String userName, String repositoryName);
 }

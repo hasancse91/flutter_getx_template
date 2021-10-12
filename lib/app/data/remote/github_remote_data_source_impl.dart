@@ -9,29 +9,27 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     implements GithubRemoteDataSource {
   @override
   Future<GithubProjectSearchResponse> searchGithubProject(
-      GithubSearchQueryParam queryParam) async {
+      GithubSearchQueryParam queryParam) {
     var endpoint = "${DioProvider.baseUrl}/search/repositories";
     var dioCall = dioClient.get(endpoint, queryParameters: queryParam.toJson());
 
     try {
-      var response = await callApiWithErrorParser(dioCall);
-
-      return _parseGithubProjectSearchResponse(response);
+      return callApiWithErrorParser(dioCall)
+          .then((response) => _parseGithubProjectSearchResponse(response));
     } catch (e) {
       rethrow;
     }
   }
 
   @override
-  Future<Projects> getGithubProjectDetails(
-      String userName, String repositoryName) async {
+  Future<Item> getGithubProjectDetails(
+      String userName, String repositoryName) {
     var endpoint = "${DioProvider.baseUrl}/repos/$userName/$repositoryName";
     var dioCall = dioClient.get(endpoint);
 
     try {
-      var response = await callApiWithErrorParser(dioCall);
-
-      return _parseGithubProjectResponse(response);
+      return callApiWithErrorParser(dioCall)
+          .then((response) => _parseGithubProjectResponse(response));
     } catch (e) {
       rethrow;
     }
@@ -42,7 +40,7 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     return GithubProjectSearchResponse.fromJson(response.data);
   }
 
-  Projects _parseGithubProjectResponse(Response<dynamic> response) {
-    return Projects.fromJson(response.data);
+  Item _parseGithubProjectResponse(Response<dynamic> response) {
+    return Item.fromJson(response.data);
   }
 }

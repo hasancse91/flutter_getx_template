@@ -14,7 +14,7 @@ class HomeController extends BaseController {
   List<GithubProjectUiData> get projectList =>
       _githubProjectController.toList();
 
-  getGithubGetxProjectList() {
+  void getGithubGetxProjectList() {
     callDataService(
       _repository.searchProject(
         GithubSearchQueryParam(
@@ -27,7 +27,7 @@ class HomeController extends BaseController {
     );
   }
 
-  _handleProjectListResponseSuccess(GithubProjectSearchResponse response) {
+  void _handleProjectListResponseSuccess(GithubProjectSearchResponse response) {
     List<GithubProjectUiData> repoList = [];
     response.items?.forEach((element) {
       var project = GithubProjectUiData(
@@ -43,6 +43,5 @@ class HomeController extends BaseController {
       repoList.add(project);
     });
     _githubProjectController(repoList);
-    logger.d("Repo response: ${response.totalCount}");
   }
 }

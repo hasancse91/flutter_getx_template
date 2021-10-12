@@ -5,5 +5,5 @@ abstract class GithubRepository {
   Future<GithubProjectSearchResponse> searchProject(
       GithubSearchQueryParam queryParam);
 
-  Future<Projects> getProject(String userName, String repositoryName);
+  Future<Item> getProject(String userName, String repositoryName);
 }

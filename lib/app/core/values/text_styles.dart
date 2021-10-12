@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
@@ -140,11 +139,10 @@ const cardSmallTagStyle = TextStyle(
     color: AppColors.textColorGreyDark);
 
 const pageTitleStyle = TextStyle(
-  fontSize: 18,
-  fontWeight: FontWeight.w600,
-  height: 1.15,
-  color: AppColors.colorWhite
-);
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    height: 1.15,
+    color: AppColors.colorWhite);
 
 final pageTitleBlackStyle =
     pageTitleStyle.copyWith(color: AppColors.textColorPrimary);
@@ -180,6 +178,10 @@ const mediumTitleStyle = TextStyle(
   fontSize: 24,
   fontWeight: FontWeight.w500,
   height: 1.15,
+);
+
+const descriptionTextStyle = TextStyle(
+  fontSize: 16,
 );
 
 final bigTitleCyanStyle =

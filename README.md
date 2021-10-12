@@ -7,8 +7,8 @@ and Dio used for network call. Here Get CLI used to create this project.
 - Create two configurations `main_dev` and `main_prod`
 
 ## How was this project developed?
-- Run this command to create project in the required directory: `get create project`
-- Create `main_view` by running this command: `get create page:main`
+- Run [get cli](https://pub.dev/packages/get_cli) command to create project in the required directory: `get create project`
+- Create `main_view` by running this command: `get create page:main` and so on...
 
 ## How to configure and run this project?
 

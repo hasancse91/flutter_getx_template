@@ -12,11 +12,11 @@ and Dio used for network call. Here Get CLI used to create this project.
 
 ## How to configure and run this project?
 
-<b>Step 1:</b> At first click "Edit Configurations" as like below image 1:
+<b>Step 1:</b> At first click "Edit Configurations" as like image 1:
 
 <img align="center" alt="1" src="repo_data/flutter_getx_template_1.png" />
 
-<b>Step 2:</b>Choose "Flutter" from configuration list and select your Dart entrypoint path according
+<b>Step 2:</b> Choose "Flutter" from configuration list and select your Dart entrypoint path according
 to your flavor then give a name and allow dart support for this project. See on Image 2, 3 and 4:
 
 <img align="center" alt="2" src="repo_data/flutter_getx_template_2.png" />

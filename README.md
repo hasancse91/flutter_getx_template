@@ -1,6 +1,6 @@
 # Flutter GetX Template (GetX, Dio)
 
-A Flutter GetX template using MVVM (Model View Viewmodel) pattern. Dependency injected by GetX
+A Flutter GetX template using MVVM (Model View ViewModel) pattern. Dependency injected by GetX
 and Dio used for network call. Here Get CLI used to create this project. 
 
 ## How to Build the project?
@@ -27,6 +27,9 @@ to your flavor then give a name and allow dart support for this project. See on 
 
 N.B: In this step you may need to setup your dart sdk path. If you get warned for 
 "dart sdk not found in specified location" then just click on "fix" and select your dart sdk path.
+
+## What is MVVM (Model View ViewModel) architectural pattern?
+MVVM (Model View ViewModel) 
 
 
 

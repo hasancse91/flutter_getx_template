@@ -29,7 +29,12 @@ N.B: In this step you may need to setup your dart sdk path. If you get warned fo
 "dart sdk not found in specified location" then just click on "fix" and select your dart sdk path.
 
 ## What is MVVM (Model View ViewModel) architectural pattern?
-MVVM (Model View ViewModel) 
+MVVM (Model View ViewModel) is a most popular architectural pattern for Software development. Basically
+this pattern separates User interface from business-logic and backend-logic so that User interface
+is not dependent on any specific model platform. It's divided into three layers: Model layer, 
+View layer and View model layer. Let's explore it more deeply.
+
+<img align="center" alt="MVVM Flow" src="repo_data/mvvm_flow.png" />
 
 
 

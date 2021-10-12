@@ -34,7 +34,7 @@ class IconTextWidget extends StatelessWidget {
     }
   }
 
-  _getIcon(IconData iconData) {
+  Widget _getIcon(IconData iconData) {
     return Expanded(
       child: Row(
         children: [

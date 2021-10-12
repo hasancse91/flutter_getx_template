@@ -12,7 +12,7 @@ and Dio used for network call. Here Get CLI used to create this project.
 
 ## How to configure and run this project?
 
-<b>Step 1:</b> At first click "Edit Configurations" as like image 1:
+<b>Step 1:</b> First of all click "Edit Configurations" as like image 1:
 
 <img align="center" alt="1" src="repo_data/flutter_getx_template_1.png" />
 
@@ -35,6 +35,12 @@ is not dependent on any specific model platform. It's divided into three layers:
 View layer and View model layer. Let's explore it more deeply.
 
 <img align="center" alt="MVVM Flow" src="repo_data/mvvm_flow.png" />
+
+<b>ViewModel:</b> At first let's talk about ViewModel. Actually view model is a controller where we 
+implement our business logics.
+
+<b>View:</b> At first let's talk about View. Actually View is the collections of widgets like Text,
+Image, Dropdown etc. Which will be displayed to the users. Even  
 
 
 

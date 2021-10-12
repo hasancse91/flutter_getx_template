@@ -41,7 +41,7 @@ implement our business logics. It receives the data from the model and process t
 business logic and pushed into the live data observers which is observing by view.
 
 <b>View:</b> View is the collections of widgets like Text, Image, Dropdown etc. Which will be displayed
-to the users. Even it controls the user input. When it needs any data it command the view model (In this project controller)
+to the users. Even it controls the user input. When it needs any data it command the view model (In this project it's controller)
 for data and observe the response. Till then it may display a loader to the user.
 
 <b>Model:</b> Model is basically backend logic. It controls the data source.

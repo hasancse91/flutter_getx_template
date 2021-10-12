@@ -37,10 +37,14 @@ View layer and View model layer. Let's explore it more deeply.
 <img align="center" alt="MVVM Flow" src="repo_data/mvvm_flow.png" />
 
 <b>ViewModel:</b> At first let's talk about ViewModel. Actually view model is a controller where we 
-implement our business logics.
+implement our business logics. It receives the data from the model and process the data according to
+business logic and pushed into the live data observers which is observing by view.
 
-<b>View:</b> At first let's talk about View. Actually View is the collections of widgets like Text,
-Image, Dropdown etc. Which will be displayed to the users. Even  
+<b>View:</b> View is the collections of widgets like Text, Image, Dropdown etc. Which will be displayed
+to the users. Even it controls the user input. When it needs any data it command the view model (In this project controller)
+for data and observe the response. Till then it may display a loader to the user.
+
+<b>Model:</b> Model is basically backend logic. It controls the data source.
 
 
 

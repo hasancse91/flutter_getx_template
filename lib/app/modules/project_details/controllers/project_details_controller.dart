@@ -30,7 +30,7 @@ class ProjectDetailsController extends BaseController {
         score: project.score ?? 0.0,
         watchers: project.watchers ?? 0,
         description: project.description ?? "",
-      ),
+      )
     );
   }
 }

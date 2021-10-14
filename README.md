@@ -47,6 +47,7 @@ N.B: In this step you may need to setup your dart sdk path. If you get warned fo
 - Create `main_view` by running this command: `get create page:main` and so on...
 
 # Upcoming features:
-1. Local database integration
-2. Login/Authentication page
-3. Push notification
+1. iOS Flavor configuration for XCode
+2. Local database integration
+3. Login/Authentication page
+4. Push notification

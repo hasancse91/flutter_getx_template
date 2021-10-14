@@ -1,5 +1,6 @@
 # Miscellaneous
 *.class
+*.lock
 *.log
 *.pyc
 *.swp
@@ -95,3 +96,7 @@ build/
 
 # Local configuration file (sdk path, etc)
 local.properties
+
+# Flutter version manager related
+.fvm/
+.fvm/*

@@ -5,7 +5,7 @@ import 'package:flutter_getx_template/flavors/env_config.dart';
 import 'package:flutter_getx_template/flavors/environment.dart';
 
 void main() {
-  EnvConfig devConfig = EnvConfig(
+  EnvConfig prodConfig = EnvConfig(
     appName: "Flutter GetX Template Prod",
     baseUrl: "https://api.github.com",
     shouldCollectCrashLog: true,
@@ -13,7 +13,7 @@ void main() {
 
   BuildConfig.instantiate(
     envType: Environment.PRODUCTION,
-    envConfig: devConfig,
+    envConfig: prodConfig,
   );
 
   runApp(const MyApp());

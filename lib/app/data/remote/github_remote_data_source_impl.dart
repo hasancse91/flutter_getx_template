@@ -22,8 +22,7 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
   }
 
   @override
-  Future<Item> getGithubProjectDetails(
-      String userName, String repositoryName) {
+  Future<Item> getGithubProjectDetails(String userName, String repositoryName) {
     var endpoint = "${DioProvider.baseUrl}/repos/$userName/$repositoryName";
     var dioCall = dioClient.get(endpoint);
 

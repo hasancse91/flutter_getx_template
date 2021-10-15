@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:flutter_getx_template/app/network/pretty_dio_logger.dart';
 import 'package:flutter_getx_template/app/network/request_headers.dart';
@@ -41,7 +40,7 @@ class DioProvider {
   }
 
   ///returns a Dio client with Access token in header
-  static Dio get tokenClient{
+  static Dio get tokenClient {
     _addInterceptors();
 
     return _instance!;
@@ -55,12 +54,11 @@ class DioProvider {
     return _instance!;
   }
 
-  static _addInterceptors(){
+  static _addInterceptors() {
     _instance ??= httpDio;
     _instance!.interceptors.clear();
     _instance!.interceptors.add(RequestHeaderInterceptor());
     _instance!.interceptors.add(_prettyDioLogger);
-
   }
 
   static String _buildContentType(String version) {

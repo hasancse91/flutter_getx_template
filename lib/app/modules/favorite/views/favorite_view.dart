@@ -7,7 +7,9 @@ import 'package:flutter_getx_template/app/modules/favorite/controllers/favorite_
 class FavoriteView extends BaseView<FavoriteController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return CustomAppBar(appBarTitleText: 'Favorite',);
+    return CustomAppBar(
+      appBarTitleText: 'Favorite',
+    );
   }
 
   @override

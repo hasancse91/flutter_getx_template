@@ -13,7 +13,7 @@ class MainBinding extends Bindings {
       fenix: true,
     );
     Get.lazyPut<OtherController>(
-          () => OtherController(),
+      () => OtherController(),
       fenix: true,
     );
     Get.lazyPut<HomeController>(

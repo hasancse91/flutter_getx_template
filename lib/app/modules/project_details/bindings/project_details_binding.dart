@@ -5,7 +5,7 @@ class ProjectDetailsBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<ProjectDetailsController>(
-          () => ProjectDetailsController(),
+      () => ProjectDetailsController(),
     );
   }
 }

@@ -5,10 +5,11 @@ import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
 import 'package:flutter_getx_template/app/modules/settings/controllers/settings_controller.dart';
 
 class SettingsView extends BaseView<SettingsController> {
-
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return CustomAppBar(appBarTitleText: 'Settings',);
+    return CustomAppBar(
+      appBarTitleText: 'Settings',
+    );
   }
 
   @override

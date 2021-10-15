@@ -41,7 +41,7 @@ Exception _parseDioErrorResponse(DioError dioError) {
   String? serverMessage;
 
   try {
-    if(statusCode == -1 || statusCode == HttpStatus.ok){
+    if (statusCode == -1 || statusCode == HttpStatus.ok) {
       statusCode = dioError.response?.data["statusCode"];
     }
     status = dioError.response?.data["status"];

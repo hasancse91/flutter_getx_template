@@ -29,13 +29,13 @@ class BottomNavBar extends StatelessWidget {
     List<BottomNavItem> navItems = _getNavItems();
 
     return Obx(
-          () => BottomNavigationBar(
+      () => BottomNavigationBar(
         key: bottomNavKey,
         items: navItems
             .map(
               (BottomNavItem navItem) => BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                "images/${navItem.iconSvgName}",
+                  icon: SvgPicture.asset(
+                    "images/${navItem.iconSvgName}",
                     height: AppValues.iconDefaultSize,
                     width: AppValues.iconDefaultSize,
                     color:
@@ -43,9 +43,9 @@ class BottomNavBar extends StatelessWidget {
                             ? selectedItemColor
                             : unselectedItemColor,
                   ),
-              label: navItem.navTitle,
-              tooltip: ""),
-        )
+                  label: navItem.navTitle,
+                  tooltip: ""),
+            )
             .toList(),
         showSelectedLabels: true,
         showUnselectedLabels: true,

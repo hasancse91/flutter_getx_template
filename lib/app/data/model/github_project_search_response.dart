@@ -15,6 +15,7 @@ class GithubProjectSearchResponse {
       });
     }
   }
+
   int? totalCount;
   bool? incompleteResults;
   List<Item>? items;
@@ -51,6 +52,7 @@ class Item {
     watchers = json['watchers'];
     score = json['score'];
   }
+
   String? name;
   Owner? owner;
   int? stargazersCount;
@@ -85,6 +87,7 @@ class Owner {
     login = json['login'];
     avatarUrl = json['avatar_url'];
   }
+
   String? login;
   String? avatarUrl;
 

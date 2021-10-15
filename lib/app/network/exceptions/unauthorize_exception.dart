@@ -4,7 +4,8 @@ import 'package:flutter_getx_template/app/network/exceptions/base_api_exception.
 
 class UnauthorizedException extends BaseApiException {
   UnauthorizedException(String message)
-      : super(httpCode: HttpStatus.unauthorized,
-      message: message,
-      status: "unauthorized");
+      : super(
+            httpCode: HttpStatus.unauthorized,
+            message: message,
+            status: "unauthorized");
 }

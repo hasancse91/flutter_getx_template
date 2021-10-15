@@ -9,7 +9,6 @@ import 'package:flutter_getx_template/app/modules/project_details/controllers/pr
 import 'package:get/get.dart';
 
 class ProjectDetailsView extends BaseView<ProjectDetailsController> {
-
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
@@ -20,7 +19,6 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
 
   @override
   Widget body(BuildContext context) {
-
     return Scaffold(
       body: Center(
         child: Obx(() => _getView()),

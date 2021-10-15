@@ -1,6 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:logger/logger.dart';
+
 import '/app/core/model/page_state.dart';
 import '/app/network/exceptions/api_exception.dart';
 import '/app/network/exceptions/app_exception.dart';
@@ -10,8 +13,6 @@ import '/app/network/exceptions/not_found_exception.dart';
 import '/app/network/exceptions/service_unavailable_exception.dart';
 import '/app/network/exceptions/unauthorize_exception.dart';
 import '/flavors/build_config.dart';
-import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 
 abstract class BaseController extends GetxController {
   final Logger logger = BuildConfig.instance.config.logger;

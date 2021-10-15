@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 import '/app/modules/favorite/bindings/favorite_binding.dart';
 import '/app/modules/favorite/views/favorite_view.dart';
 import '/app/modules/home/bindings/home_binding.dart';
@@ -10,7 +12,6 @@ import '/app/modules/project_details/bindings/project_details_binding.dart';
 import '/app/modules/project_details/views/project_details_view.dart';
 import '/app/modules/settings/bindings/settings_binding.dart';
 import '/app/modules/settings/views/settings_view.dart';
-import 'package:get/get.dart';
 
 part 'app_routes.dart';
 

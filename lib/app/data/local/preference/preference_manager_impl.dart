@@ -1,5 +1,6 @@
-import '/app/data/local/preference/preference_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '/app/data/local/preference/preference_manager.dart';
 
 class PreferenceManagerImpl implements PreferenceManager {
   final _preference = SharedPreferences.getInstance();

@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:get/get.dart' as getx;
+
 import '/app/data/local/preference/preference_manager.dart';
 import '/app/network/dio_provider.dart';
-import 'package:get/get.dart' as getx;
 
 class DioRequestRetrier {
   final dioClient = DioProvider.tokenClient;

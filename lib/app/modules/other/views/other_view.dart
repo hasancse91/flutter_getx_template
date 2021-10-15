@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '/app/core/base/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
-
 import '../controllers/other_controller.dart';
-
 
 class OtherView extends BaseView<OtherController> {
   final String viewParam;

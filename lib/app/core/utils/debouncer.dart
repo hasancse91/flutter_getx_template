@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+
 import '/app/core/values/app_values.dart';
 
 class Debouncer {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '/app/core/base/base_view.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
@@ -6,7 +8,6 @@ import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/core/widget/icon_text_widgets.dart';
 import '/app/modules/project_details/controllers/project_details_controller.dart';
-import 'package:get/get.dart';
 
 class ProjectDetailsView extends BaseView<ProjectDetailsController> {
   @override

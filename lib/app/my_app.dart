@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+
 import '/app/bindings/initial_binding.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
-import 'package:get/get.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);

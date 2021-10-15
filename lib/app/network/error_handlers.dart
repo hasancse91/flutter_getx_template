@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+
 import '/app/network/exceptions/api_exception.dart';
 import '/app/network/exceptions/app_exception.dart';
 import '/app/network/exceptions/network_exception.dart';

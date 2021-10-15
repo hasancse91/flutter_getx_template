@@ -27,9 +27,3 @@ You will find at above link step by step instructions with screenshots.
 # How was this project developed?
 - Run [get cli](https://pub.dev/packages/get_cli) command to create project in the required directory: `get create project`
 - Create `main_view` by running this command: `get create page:main` and so on...
-
-# Upcoming features:
-1. iOS Flavor configuration for XCode
-2. Local database integration
-3. Login/Authentication page
-4. Push notification

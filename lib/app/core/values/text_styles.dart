@@ -141,7 +141,7 @@ const pageTitleStyle = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
     height: 1.15,
-    color: AppColors.colorWhite);
+    color: AppColors.appBarTextColor);
 
 final pageTitleBlackStyle =
     pageTitleStyle.copyWith(color: AppColors.textColorPrimary);

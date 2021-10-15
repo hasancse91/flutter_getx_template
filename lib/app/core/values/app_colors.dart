@@ -4,6 +4,8 @@ abstract class AppColors {
   static const Color pageBackground = Color(0xFFFAFBFD);
   static const Color statusBarColor = Color(0xFF38686A);
   static const Color appBarColor = Color(0xFF38686A);
+  static const Color appBarIconColor = Color(0xFFFFFFFF);
+  static const Color appBarTextColor = Color(0xFFFFFFFF);
 
   static const Color centerTextColor = Colors.grey;
   static const MaterialColor colorPrimarySwatch = Colors.cyan;

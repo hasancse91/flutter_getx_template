@@ -31,7 +31,6 @@ class _MyAppState extends State<MyApp> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.light,
         primaryColor: AppColors.colorPrimary,
-        accentColor: AppColors.colorAccent,
         textTheme: const TextTheme(
           button: TextStyle(
             color: Colors.white,
@@ -39,7 +38,6 @@ class _MyAppState extends State<MyApp> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        appBarTheme: const AppBarTheme(brightness: Brightness.light),
         fontFamily: 'Roboto',
       ),
       debugShowCheckedModeBanner: false,

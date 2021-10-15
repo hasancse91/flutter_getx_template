@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_getx_template/app/bindings/initial_binding.dart';
 import 'package:flutter_getx_template/app/core/values/app_colors.dart';
 import 'package:flutter_getx_template/app/routes/app_pages.dart';
 import 'package:flutter_getx_template/flavors/build_config.dart';
 import 'package:flutter_getx_template/flavors/env_config.dart';
 import 'package:get/get.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -39,9 +39,7 @@ class _MyAppState extends State<MyApp> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        appBarTheme: AppBarTheme(
-          brightness: Brightness.light
-        ),
+        appBarTheme: const AppBarTheme(brightness: Brightness.light),
         fontFamily: 'Roboto',
       ),
       debugShowCheckedModeBanner: false,

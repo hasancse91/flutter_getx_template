@@ -1,4 +1,4 @@
-import 'base_api_exception.dart';
+import 'package:flutter_getx_template/app/network/exceptions/base_api_exception.dart';
 
 class ApiException extends BaseApiException{
 

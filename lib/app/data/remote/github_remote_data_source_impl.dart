@@ -1,4 +1,4 @@
-import 'package:dio/src/response.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_getx_template/app/core/base/base_remote_source.dart';
 import 'package:flutter_getx_template/app/core/model/github_search_query_param.dart';
 import 'package:flutter_getx_template/app/data/model/github_project_search_response.dart';

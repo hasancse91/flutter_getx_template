@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/values/app_values.dart';
-
-import 'asset_image_view.dart';
+import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 
 class IconTextWidget extends StatelessWidget {
   const IconTextWidget({
@@ -39,7 +38,7 @@ class IconTextWidget extends StatelessWidget {
       child: Row(
         children: [
           Icon(icon, size: size, color: color),
-          SizedBox(width: AppValues.margin_2),
+          const SizedBox(width: AppValues.margin_2),
           if (value != null) Text(value!, style: TextStyle(color: color)),
         ],
       ),
@@ -56,7 +55,7 @@ class IconTextWidget extends StatelessWidget {
             width: width,
             color: color,
           ),
-          SizedBox(width: AppValues.margin_2),
+          const SizedBox(width: AppValues.margin_2),
           if (value != null) Text(value!, style: TextStyle(color: color)),
         ],
       ),

@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/base/base_view.dart';
+import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
+import 'package:flutter_getx_template/app/modules/other/controllers/other_controller.dart';
 
-import 'package:get/get.dart';
-
-import '../controllers/other_controller.dart';
-
-class OtherView extends GetView<OtherController> {
-
+class OtherView extends BaseView<OtherController> {
   final String viewParam;
 
   OtherView({this.viewParam = ""});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('OtherView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'OtherView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+  PreferredSizeWidget? appBar(BuildContext context) {
+    return CustomAppBar(appBarTitleText: viewParam);
+  }
+
+  @override
+  Widget body(BuildContext context) {
+    return const Center(
+      child: Text(
+        'OtherView is working',
+        style: TextStyle(fontSize: 20),
       ),
     );
   }

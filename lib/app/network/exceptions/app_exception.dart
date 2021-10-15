@@ -1,6 +1,6 @@
 
 
-import 'base_exception.dart';
+import 'package:flutter_getx_template/app/network/exceptions/base_exception.dart';
 
 class AppException extends BaseException{
   AppException({

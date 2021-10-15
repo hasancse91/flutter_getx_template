@@ -26,6 +26,7 @@ class GithubProjectSearchResponse {
     if (items != null) {
       map['items'] = items?.map((v) => v.toJson()).toList();
     }
+
     return map;
   }
 }
@@ -69,6 +70,7 @@ class Item {
     map['forks'] = forks;
     map['watchers'] = watchers;
     map['score'] = score;
+
     return map;
   }
 }
@@ -90,6 +92,7 @@ class Owner {
     final map = <String, dynamic>{};
     map['login'] = login;
     map['avatar_url'] = avatarUrl;
+
     return map;
   }
 }

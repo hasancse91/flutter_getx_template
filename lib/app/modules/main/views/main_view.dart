@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/base/base_view.dart';
 import 'package:flutter_getx_template/app/modules/favorite/views/favorite_view.dart';
 import 'package:flutter_getx_template/app/modules/home/views/home_view.dart';
+import 'package:flutter_getx_template/app/modules/main/controllers/main_controller.dart';
 import 'package:flutter_getx_template/app/modules/main/model/menu_code.dart';
 import 'package:flutter_getx_template/app/modules/main/views/bottom_nav_bar.dart';
 import 'package:flutter_getx_template/app/modules/other/views/other_view.dart';
 import 'package:flutter_getx_template/app/modules/settings/views/settings_view.dart';
 import 'package:get/get.dart';
 
-import '../controllers/main_controller.dart';
-
+// ignore: must_be_immutable
 class MainView extends BaseView<MainController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {

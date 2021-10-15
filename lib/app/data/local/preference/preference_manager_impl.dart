@@ -2,7 +2,7 @@ import 'package:flutter_getx_template/app/data/local/preference/preference_manag
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PreferenceManagerImpl implements PreferenceManager {
-  var _preference = SharedPreferences.getInstance();
+  final _preference = SharedPreferences.getInstance();
 
   @override
   Future<String> getString(String key, {String defaultValue = ""}) {

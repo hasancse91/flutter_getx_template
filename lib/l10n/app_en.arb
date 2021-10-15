@@ -1,3 +1,6 @@
 {
-  "bottomNavHome": "Home"
+  "bottomNavHome": "Home",
+  "bottomNavFavorite": "Favorite",
+  "bottomNavSettings": "Settings",
+  "titleOtherView": "OtherView"
 }

@@ -1,12 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_getx_template/app/core/values/app_colors.dart';
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/modules/main/controllers/bottom_nav_controller.dart';
 import 'package:flutter_getx_template/app/modules/main/model/menu_code.dart';
 import 'package:flutter_getx_template/app/modules/main/model/menu_item.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class BottomNavBar extends StatelessWidget {
   final Function(MenuCode menuCode) onNewMenuSelected;
 
@@ -26,23 +29,23 @@ class BottomNavBar extends StatelessWidget {
     List<BottomNavItem> navItems = _getNavItems();
 
     return Obx(
-      () => BottomNavigationBar(
+          () => BottomNavigationBar(
         key: bottomNavKey,
         items: navItems
             .map(
               (BottomNavItem navItem) => BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "images/${navItem.iconSvgName}",
-                    height: 24.0,
-                    width: 24.0,
+              icon: SvgPicture.asset(
+                "images/${navItem.iconSvgName}",
+                    height: AppValues.iconDefaultSize,
+                    width: AppValues.iconDefaultSize,
                     color:
                         navItems.indexOf(navItem) == navController.selectedIndex
                             ? selectedItemColor
                             : unselectedItemColor,
                   ),
-                  label: navItem.navTitle,
-                  tooltip: ""),
-            )
+              label: navItem.navTitle,
+              tooltip: ""),
+        )
             .toList(),
         showSelectedLabels: true,
         showUnselectedLabels: true,
@@ -67,11 +70,11 @@ class BottomNavBar extends StatelessWidget {
         menuCode: MenuCode.HOME,
       ),
       BottomNavItem(
-          navTitle: "Favorite",
+          navTitle: appLocalization.bottomNavFavorite,
           iconSvgName: "ic_favorite.svg",
           menuCode: MenuCode.FAVORITE),
       BottomNavItem(
-          navTitle: "Settings",
+          navTitle: appLocalization.bottomNavSettings,
           iconSvgName: "ic_settings.svg",
           menuCode: MenuCode.SETTINGS)
     ];

@@ -17,8 +17,7 @@ abstract class BaseRemoteSource {
       if (response.statusCode != HttpStatus.ok ||
           (response.data as Map<String, dynamic>)['statusCode'] !=
               HttpStatus.ok) {
-        // throw parseApiError(
-        //     BaseResponse.fromJsonMap(response.data as Map<String, dynamic>));
+        // TODO
       }
 
       return response;

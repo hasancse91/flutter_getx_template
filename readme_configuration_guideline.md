@@ -1,4 +1,4 @@
-## How to configure and run this project?
+# How to configure and run this project?
 
 <b>Step 1:</b> First of all click "Add/Edit Configurations" as like image 1:
 

@@ -1,4 +1,4 @@
-import 'package:flutter_getx_template/app/data/local/preference/preference_manager.dart';
+import '/app/data/local/preference/preference_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PreferenceManagerImpl implements PreferenceManager {

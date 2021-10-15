@@ -1,7 +1,10 @@
-import 'package:flutter_getx_template/app/bindings/local_source_bindings.dart';
-import 'package:flutter_getx_template/app/bindings/remote_source_bindings.dart';
-import 'package:flutter_getx_template/app/bindings/repository_bindings.dart';
+
+
 import 'package:get/get.dart';
+
+import 'local_source_bindings.dart';
+import 'remote_source_bindings.dart';
+import 'repository_bindings.dart';
 
 class InitialBinding implements Bindings {
   @override

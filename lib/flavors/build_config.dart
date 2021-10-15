@@ -1,5 +1,5 @@
-import 'package:flutter_getx_template/flavors/env_config.dart';
-import 'package:flutter_getx_template/flavors/environment.dart';
+import '/flavors/env_config.dart';
+import '/flavors/environment.dart';
 
 class BuildConfig {
   late final Environment environment;

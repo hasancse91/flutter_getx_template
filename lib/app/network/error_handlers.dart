@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_template/app/network/exceptions/api_exception.dart';
-import 'package:flutter_getx_template/app/network/exceptions/app_exception.dart';
-import 'package:flutter_getx_template/app/network/exceptions/network_exception.dart';
-import 'package:flutter_getx_template/app/network/exceptions/not_found_exception.dart';
-import 'package:flutter_getx_template/app/network/exceptions/service_unavailable_exception.dart';
-import 'package:flutter_getx_template/flavors/build_config.dart';
+import '/app/network/exceptions/api_exception.dart';
+import '/app/network/exceptions/app_exception.dart';
+import '/app/network/exceptions/network_exception.dart';
+import '/app/network/exceptions/not_found_exception.dart';
+import '/app/network/exceptions/service_unavailable_exception.dart';
+import '/flavors/build_config.dart';
 
 Exception handleError(String error) {
   final logger = BuildConfig.instance.config.logger;

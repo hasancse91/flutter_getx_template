@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/base/base_view.dart';
-import 'package:flutter_getx_template/app/core/values/text_styles.dart';
-import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
-import 'package:flutter_getx_template/app/modules/settings/controllers/settings_controller.dart';
+import '/app/core/base/base_view.dart';
+import '/app/core/values/text_styles.dart';
+import '/app/core/widget/custom_app_bar.dart';
+import '/app/modules/settings/controllers/settings_controller.dart';
 
 class SettingsView extends BaseView<SettingsController> {
   @override

@@ -1,11 +1,13 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/base/base_view.dart';
-import 'package:flutter_getx_template/app/core/values/app_values.dart';
-import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
-import 'package:flutter_getx_template/app/core/widget/paging_view.dart';
-import 'package:flutter_getx_template/app/modules/home/controllers/home_controller.dart';
-import 'package:flutter_getx_template/app/modules/home/widget/item_github_project.dart';
 import 'package:get/get.dart';
+import '/app/core/values/app_values.dart';
+import '/app/core/widget/custom_app_bar.dart';
+import '/app/core/widget/paging_view.dart';
+import '/app/modules/home/widget/item_github_project.dart';
+
+import '/app/core/base/base_view.dart';
+import '/app/modules/home/controllers/home_controller.dart';
 
 class HomeView extends BaseView<HomeController> {
   HomeView() {

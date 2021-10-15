@@ -1,4 +1,4 @@
-import 'package:flutter_getx_template/app/modules/other/controllers/other_controller.dart';
+import '/app/modules/other/controllers/other_controller.dart';
 import 'package:get/get.dart';
 
 class OtherBinding extends Bindings {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/my_app.dart';
-import 'package:flutter_getx_template/flavors/build_config.dart';
-import 'package:flutter_getx_template/flavors/env_config.dart';
-import 'package:flutter_getx_template/flavors/environment.dart';
+import '/app/my_app.dart';
+import '/flavors/build_config.dart';
+import '/flavors/env_config.dart';
+import '/flavors/environment.dart';
 
 void main() {
   EnvConfig devConfig = EnvConfig(

@@ -1,8 +1,8 @@
-import 'package:flutter_getx_template/app/modules/favorite/controllers/favorite_controller.dart';
-import 'package:flutter_getx_template/app/modules/home/controllers/home_controller.dart';
-import 'package:flutter_getx_template/app/modules/main/controllers/main_controller.dart';
-import 'package:flutter_getx_template/app/modules/other/controllers/other_controller.dart';
-import 'package:flutter_getx_template/app/modules/settings/controllers/settings_controller.dart';
+import '/app/modules/favorite/controllers/favorite_controller.dart';
+import '/app/modules/home/controllers/home_controller.dart';
+import '/app/modules/main/controllers/main_controller.dart';
+import '/app/modules/other/controllers/other_controller.dart';
+import '/app/modules/settings/controllers/settings_controller.dart';
 import 'package:get/get.dart';
 
 class MainBinding extends Bindings {

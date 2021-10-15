@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_template/app/data/local/preference/preference_manager.dart';
-import 'package:flutter_getx_template/app/network/dio_provider.dart';
+import '/app/data/local/preference/preference_manager.dart';
+import '/app/network/dio_provider.dart';
 import 'package:get/get.dart' as getx;
 
 class DioRequestRetrier {

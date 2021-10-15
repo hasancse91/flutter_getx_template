@@ -1,5 +1,5 @@
-import 'package:flutter_getx_template/app/core/model/github_search_query_param.dart';
-import 'package:flutter_getx_template/app/data/model/github_project_search_response.dart';
+import '/app/core/model/github_search_query_param.dart';
+import '/app/data/model/github_project_search_response.dart';
 
 abstract class GithubRepository {
   Future<GithubProjectSearchResponse> searchProject(

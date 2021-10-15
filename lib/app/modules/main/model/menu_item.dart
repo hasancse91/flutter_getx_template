@@ -1,4 +1,4 @@
-import 'package:flutter_getx_template/app/modules/main/model/menu_code.dart';
+import '/app/modules/main/model/menu_code.dart';
 
 class BottomNavItem {
   final String navTitle;

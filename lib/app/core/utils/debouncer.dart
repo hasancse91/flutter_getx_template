@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/values/app_values.dart';
+import '/app/core/values/app_values.dart';
 
 class Debouncer {
   final int milliseconds;

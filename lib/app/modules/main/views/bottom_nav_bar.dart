@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_getx_template/app/core/values/app_colors.dart';
-import 'package:flutter_getx_template/app/core/values/app_values.dart';
-import 'package:flutter_getx_template/app/modules/main/controllers/bottom_nav_controller.dart';
-import 'package:flutter_getx_template/app/modules/main/model/menu_code.dart';
-import 'package:flutter_getx_template/app/modules/main/model/menu_item.dart';
+import '/app/core/values/app_colors.dart';
+import '/app/core/values/app_values.dart';
+import '/app/modules/main/controllers/bottom_nav_controller.dart';
+import '/app/modules/main/model/menu_code.dart';
+import '/app/modules/main/model/menu_item.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 

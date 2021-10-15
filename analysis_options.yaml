@@ -14,7 +14,6 @@ analyzer:
     unnecessary_statements: warning
     non_constant_identifier_names: warning
 
-
 linter:
   rules:
     camel_case_types: true
@@ -22,8 +21,6 @@ linter:
     avoid_empty_else: true
     constant_identifier_names: false
     use_key_in_widget_constructors: false
-    always_use_package_imports: true
-
 
 dart_code_metrics:
   anti-patterns:

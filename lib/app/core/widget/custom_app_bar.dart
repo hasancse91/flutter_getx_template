@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/values/app_colors.dart';
-import 'package:flutter_getx_template/app/core/widget/app_bar_title.dart';
+import '/app/core/values/app_colors.dart';
+import '/app/core/widget/app_bar_title.dart';
 
 //Default appbar customized with the design of our app
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {

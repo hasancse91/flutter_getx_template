@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_template/app/core/base/base_remote_source.dart';
-import 'package:flutter_getx_template/app/core/model/github_search_query_param.dart';
-import 'package:flutter_getx_template/app/data/model/github_project_search_response.dart';
-import 'package:flutter_getx_template/app/data/remote/github_remote_data_source.dart';
-import 'package:flutter_getx_template/app/network/dio_provider.dart';
+import '/app/core/base/base_remote_source.dart';
+import '/app/core/model/github_search_query_param.dart';
+import '/app/data/model/github_project_search_response.dart';
+import '/app/data/remote/github_remote_data_source.dart';
+import '/app/network/dio_provider.dart';
 
 class GithubRemoteDataSourceImpl extends BaseRemoteSource
     implements GithubRemoteDataSource {

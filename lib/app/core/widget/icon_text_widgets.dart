@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/values/app_values.dart';
-import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
+import '/app/core/values/app_values.dart';
+import '/app/core/widget/asset_image_view.dart';
 
 class IconTextWidget extends StatelessWidget {
   const IconTextWidget({

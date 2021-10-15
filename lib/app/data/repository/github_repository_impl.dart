@@ -1,7 +1,7 @@
-import 'package:flutter_getx_template/app/core/model/github_search_query_param.dart';
-import 'package:flutter_getx_template/app/data/model/github_project_search_response.dart';
-import 'package:flutter_getx_template/app/data/remote/github_remote_data_source.dart';
-import 'package:flutter_getx_template/app/data/repository/github_repository.dart';
+import '/app/core/model/github_search_query_param.dart';
+import '/app/data/model/github_project_search_response.dart';
+import '/app/data/remote/github_remote_data_source.dart';
+import '/app/data/repository/github_repository.dart';
 import 'package:get/get.dart';
 
 class GithubRepositoryImpl implements GithubRepository {

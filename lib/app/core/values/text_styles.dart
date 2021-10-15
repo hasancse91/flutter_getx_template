@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'app_colors.dart';
+import 'package:flutter_getx_template/app/core/values/app_colors.dart';
 
 const centerTextStyle = TextStyle(
   fontSize: 28,
@@ -142,7 +141,7 @@ const pageTitleStyle = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
     height: 1.15,
-    color: AppColors.colorWhite);
+    color: AppColors.appBarTextColor);
 
 final pageTitleBlackStyle =
     pageTitleStyle.copyWith(color: AppColors.textColorPrimary);

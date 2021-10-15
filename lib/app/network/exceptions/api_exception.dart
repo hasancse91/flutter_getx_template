@@ -1,10 +1,9 @@
-import 'base_api_exception.dart';
+import 'package:flutter_getx_template/app/network/exceptions/base_api_exception.dart';
 
-class ApiException extends BaseApiException{
-
+class ApiException extends BaseApiException {
   ApiException({
     required int httpCode,
     required String status,
     String message = "",
-  }): super(httpCode: httpCode, status: status, message: message);
+  }) : super(httpCode: httpCode, status: status, message: message);
 }

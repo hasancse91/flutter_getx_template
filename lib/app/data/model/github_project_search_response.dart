@@ -15,6 +15,7 @@ class GithubProjectSearchResponse {
       });
     }
   }
+
   int? totalCount;
   bool? incompleteResults;
   List<Item>? items;
@@ -26,6 +27,7 @@ class GithubProjectSearchResponse {
     if (items != null) {
       map['items'] = items?.map((v) => v.toJson()).toList();
     }
+
     return map;
   }
 }
@@ -50,6 +52,7 @@ class Item {
     watchers = json['watchers'];
     score = json['score'];
   }
+
   String? name;
   Owner? owner;
   int? stargazersCount;
@@ -69,6 +72,7 @@ class Item {
     map['forks'] = forks;
     map['watchers'] = watchers;
     map['score'] = score;
+
     return map;
   }
 }
@@ -83,6 +87,7 @@ class Owner {
     login = json['login'];
     avatarUrl = json['avatar_url'];
   }
+
   String? login;
   String? avatarUrl;
 
@@ -90,6 +95,7 @@ class Owner {
     final map = <String, dynamic>{};
     map['login'] = login;
     map['avatar_url'] = avatarUrl;
+
     return map;
   }
 }

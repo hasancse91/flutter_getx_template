@@ -1,7 +1,4 @@
-
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_template/app/data/local/preference/preference_manager.dart';
-import 'package:flutter_getx_template/app/data/local/preference/preference_manager_impl.dart';
 
 class RequestHeaderInterceptor extends InterceptorsWrapper {
   @override

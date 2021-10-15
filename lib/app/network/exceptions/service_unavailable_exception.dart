@@ -1,7 +1,6 @@
 import 'dart:io';
 
-import 'base_api_exception.dart';
-
+import 'package:flutter_getx_template/app/network/exceptions/base_api_exception.dart';
 
 class ServiceUnavailableException extends BaseApiException {
   ServiceUnavailableException(String message)

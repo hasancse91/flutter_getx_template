@@ -1,3 +1,5 @@
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
+
 class GithubSearchQueryParam {
   String searchKeyWord;
   int perPage;
@@ -5,8 +7,8 @@ class GithubSearchQueryParam {
 
   GithubSearchQueryParam({
     required this.searchKeyWord,
-    required this.perPage,
-    required this.pageNumber,
+    this.perPage = AppValues.defaultPageSize,
+    this.pageNumber = AppValues.defaultPageNumber,
   });
 
   Map<String, dynamic> toJson() {

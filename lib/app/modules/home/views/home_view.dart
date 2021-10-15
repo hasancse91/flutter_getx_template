@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/base/base_view.dart';
 import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
+import 'package:flutter_getx_template/app/core/widget/paging_view.dart';
+import 'package:flutter_getx_template/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter_getx_template/app/modules/home/widget/item_github_project.dart';
 import 'package:get/get.dart';
-
-import '../controllers/home_controller.dart';
 
 class HomeView extends BaseView<HomeController> {
   HomeView() {
@@ -21,7 +21,13 @@ class HomeView extends BaseView<HomeController> {
 
   @override
   Widget body(BuildContext context) {
-    return SingleChildScrollView(
+    return PagingView(
+      onRefresh: () async {
+        controller.onRefreshPage();
+      },
+      onLoadNextPage: () {
+        controller.onLoadNextPage();
+      },
       child: Padding(
         padding: const EdgeInsets.all(AppValues.padding),
         child: Obx(
@@ -32,6 +38,7 @@ class HomeView extends BaseView<HomeController> {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               var model = controller.projectList[index];
+
               return ItemGithubProject(dataModel: model);
             },
             separatorBuilder: (BuildContext context, int index) =>

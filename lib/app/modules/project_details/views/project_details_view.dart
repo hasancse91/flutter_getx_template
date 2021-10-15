@@ -5,14 +5,10 @@ import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/values/text_styles.dart';
 import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
 import 'package:flutter_getx_template/app/core/widget/icon_text_widgets.dart';
-import 'package:flutter_getx_template/app/modules/home/model/github_project_ui_data.dart';
+import 'package:flutter_getx_template/app/modules/project_details/controllers/project_details_controller.dart';
 import 'package:get/get.dart';
 
-import '../controllers/project_details_controller.dart';
-
 class ProjectDetailsView extends BaseView<ProjectDetailsController> {
-  GithubProjectUiData? dataModel;
-
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
@@ -23,54 +19,35 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
 
   @override
   Widget body(BuildContext context) {
-    dataModel = Get.arguments;
-    if (dataModel != null) {
-      controller.getGithubRepository(
-        dataModel!.ownerLoginName,
-        dataModel!.repositoryName,
-      );
-    }
-
     return Scaffold(
       body: Center(
-        child: Obx(
-          () => _getView(),
-        ),
+        child: Obx(() => _getView()),
       ),
     );
   }
 
   Widget _getView() {
-    if (controller.projectUiData.repositoryName.isEmpty) {
-      return Container();
-    } else {
-      return Container(
-        margin: EdgeInsets.symmetric(
-          horizontal: AppValues.margin_20,
-          vertical: AppValues.margin_20,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              controller.projectUiData.repositoryName,
-              style: cardTitleStyle,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 1,
+    return controller.projectUiData.repositoryName.isEmpty
+        ? Container()
+        : Container(
+            margin: const EdgeInsets.all(AppValues.margin_20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  controller.projectUiData.repositoryName,
+                  style: cardTitleStyle,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
+                _getAuthor(),
+                const SizedBox(height: AppValues.margin_4),
+                _getForkStarWatcherView(),
+                const SizedBox(height: AppValues.margin_30),
+                _getDescription()
+              ],
             ),
-            _getAuthor(),
-            SizedBox(
-              height: AppValues.margin_4
-            ),
-            _getForkStarWatcherView(),
-            SizedBox(
-              height: AppValues.margin_30
-            ),
-            _getDescription(),
-          ],
-        ),
-      );
-    }
+          );
   }
 
   Widget _getAuthor() {
@@ -80,9 +57,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
           backgroundImage: NetworkImage(controller.projectUiData.ownerAvatar),
           radius: AppValues.iconSmallSize,
         ),
-        SizedBox(
-          width: AppValues.margin_6
-        ),
+        const SizedBox(width: AppValues.margin_6),
         Text(
           controller.projectUiData.ownerLoginName,
           style: cardSubtitleStyle,
@@ -95,9 +70,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
 
   Widget _getForkStarWatcherView() {
     return Container(
-      margin: EdgeInsets.only(
-        left: AppValues.margin_40,
-      ),
+      margin: const EdgeInsets.only(left: AppValues.margin_40),
       child: Row(
         children: [
           IconTextWidget(

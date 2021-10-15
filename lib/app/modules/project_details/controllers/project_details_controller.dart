@@ -12,6 +12,15 @@ class ProjectDetailsController extends BaseController {
 
   GithubProjectUiData get projectUiData => _projectUiData.value;
 
+  @override
+  void onInit() {
+    var dataModel = Get.arguments;
+    if (dataModel is GithubProjectUiData) {
+      getGithubRepository(dataModel.ownerLoginName, dataModel.repositoryName);
+    }
+    super.onInit();
+  }
+
   void getGithubRepository(userName, repositoryName) {
     callDataService(
       _repository.getProject(userName, repositoryName),
@@ -20,17 +29,15 @@ class ProjectDetailsController extends BaseController {
   }
 
   void _handleProjectDetailsResponseSuccess(Item project) {
-    _projectUiData(
-      GithubProjectUiData(
-        repositoryName: project.name != null ? project.name! : "",
-        ownerLoginName: project.owner != null ? project.owner!.login! : "",
-        ownerAvatar: project.owner != null ? project.owner!.avatarUrl! : "",
-        numberOfStar: project.stargazersCount ?? 0,
-        numberOfFork: project.forks ?? 0,
-        score: project.score ?? 0.0,
-        watchers: project.watchers ?? 0,
-        description: project.description ?? "",
-      )
-    );
+    _projectUiData(GithubProjectUiData(
+      repositoryName: project.name != null ? project.name! : "",
+      ownerLoginName: project.owner != null ? project.owner!.login! : "",
+      ownerAvatar: project.owner != null ? project.owner!.avatarUrl! : "",
+      numberOfStar: project.stargazersCount ?? 0,
+      numberOfFork: project.forks ?? 0,
+      score: project.score ?? 0.0,
+      watchers: project.watchers ?? 0,
+      description: project.description ?? "",
+    ));
   }
 }

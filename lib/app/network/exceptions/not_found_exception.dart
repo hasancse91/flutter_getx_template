@@ -1,7 +1,6 @@
 import 'dart:io';
 
-import 'api_exception.dart';
-
+import 'package:flutter_getx_template/app/network/exceptions/api_exception.dart';
 
 class NotFoundException extends ApiException {
   NotFoundException(String message, String status)

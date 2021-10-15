@@ -1,16 +1,14 @@
 import 'package:dio/dio.dart';
-import 'package:dio/src/response.dart';
 import 'package:flutter_getx_template/app/data/local/preference/preference_manager.dart';
-import 'package:get/get.dart' as GET;
-
-import 'dio_provider.dart';
+import 'package:flutter_getx_template/app/network/dio_provider.dart';
+import 'package:get/get.dart' as getx;
 
 class DioRequestRetrier {
   final dioClient = DioProvider.tokenClient;
   final RequestOptions requestOptions;
 
   final PreferenceManager _preferenceManager =
-      GET.Get.find(tag: (PreferenceManager).toString());
+      getx.Get.find(tag: (PreferenceManager).toString());
 
   DioRequestRetrier({required this.requestOptions});
 

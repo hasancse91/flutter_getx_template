@@ -26,12 +26,13 @@ class AssetImageView extends StatelessWidget {
     String mimType = fileName.split(".").last;
     String path = "images/$fileName";
 
-    if (mimType.isEmpty)
+    if (mimType.isEmpty) {
       return Icon(
         Icons.image_not_supported_outlined,
         size: width,
         color: color,
       );
+    }
 
     switch (mimType) {
       case "svg":

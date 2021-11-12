@@ -18,12 +18,15 @@ abstract class BaseView<Controller extends BaseController>
 
   final Logger logger = BuildConfig.instance.config.logger;
 
+  ThemeData get appTheme => Theme.of(Get.context!);
+
   Widget body(BuildContext context);
 
   PreferredSizeWidget? appBar(BuildContext context);
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       child: Stack(
         children: [
@@ -83,11 +86,11 @@ abstract class BaseView<Controller extends BaseController>
   }
 
   Color pageBackgroundColor() {
-    return AppColors.pageBackground;
+    return appTheme.canvasColor;
   }
 
   Color statusBarColor() {
-    return AppColors.pageBackground;
+    return appTheme.canvasColor;
   }
 
   Widget? floatingActionButton() {

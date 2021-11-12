@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/my_app/controllers/my_app_controller.dart';
+import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
-import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/settings/controllers/settings_controller.dart';
 
+// ignore: must_be_immutable
 class SettingsView extends BaseView<SettingsController> {
+
+  SettingsView(){
+    controller.getCurrentThemeMode();
+  }
+
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
@@ -15,11 +22,24 @@ class SettingsView extends BaseView<SettingsController> {
 
   @override
   Widget body(BuildContext context) {
-    return const Center(
-      child: Text(
-        'SettingsView is working',
-        style: titleStyle,
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Obx(()=>Text(controller.currentThemeText.value)),
+            Obx(()=>Switch(
+              value: controller.isCurrentThemeDarkMode.value,
+              onChanged: (value)=>_changeThemeMode(), //not using the value
+            )),
+          ],
+        ),
       ),
     );
+  }
+
+  _changeThemeMode(){
+    controller.changeTheme();
   }
 }

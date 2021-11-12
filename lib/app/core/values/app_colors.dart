@@ -17,6 +17,10 @@ abstract class AppColors {
   static const Color errorColor = Color(0xFFAB0B0B);
   static const Color colorDark = Color(0xFF323232);
 
+  // Dark theme colors
+  static const Color canvasColor = Color(0xFFFAFAFA);
+  static const Color canvasColorDark = Color(0xFF212121);
+
   static const Color buttonBgColor = colorPrimary;
   static const Color disabledButtonBgColor = Color(0xFFBFBFC0);
   static const Color defaultRippleColor = Color(0x0338686A);

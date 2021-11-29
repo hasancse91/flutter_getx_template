@@ -20,11 +20,16 @@ class MainView extends BaseView<MainController> {
 
   @override
   Widget body(BuildContext context) {
-    return Scaffold(
-      body: Obx(() => getPageOnSelectedMenu(controller.selectedMenuCode)),
-      bottomNavigationBar:
-          BottomNavBar(onNewMenuSelected: controller.onMenuSelected),
+    return Container(
+      key: UniqueKey(),
+      child: Obx(() => getPageOnSelectedMenu(controller.selectedMenuCode)),
     );
+  }
+
+  @override
+  Widget? bottomNavigationBar() {
+
+    return BottomNavBar(onNewMenuSelected: controller.onMenuSelected);
   }
 
   final HomeView homeView = HomeView();

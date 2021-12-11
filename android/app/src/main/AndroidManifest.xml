@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hellohasan.flutter_getx_template">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="flutter_getx_template"
         android:icon="@mipmap/ic_launcher">

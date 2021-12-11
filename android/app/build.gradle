@@ -48,6 +48,10 @@ android {
         versionName flutterVersionName
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
     signingConfigs {
         release {
             keyAlias keystoreProperties['keyAlias']

@@ -1,10 +1,5 @@
-def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
-if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
-        localProperties.load(reader)
-    }
-}
+def localProperties = loadPropertiesFile('local.properties')
+def keystoreProperties = loadPropertiesFile('key.properties')
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
@@ -19,6 +14,18 @@ if (flutterVersionCode == null) {
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
+}
+
+def loadPropertiesFile(String fileName) {
+    println(fileName)
+    def properties = new Properties()
+    def propertiesFile = rootProject.file(fileName)
+    if (propertiesFile.exists()) {
+        propertiesFile.withReader('UTF-8') { reader ->
+            properties.load(reader)
+        }
+    }
+    return properties
 }
 
 apply plugin: 'com.android.application'
@@ -41,11 +48,18 @@ android {
         versionName flutterVersionName
     }
 
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['password']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['password']
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 
@@ -54,9 +68,11 @@ android {
         dev {
             dimension "default"
             applicationIdSuffix ".dev"
+            flutter.target "lib/main_dev.dart"
         }
         prod {
             dimension "default"
+            flutter.target "lib/main_prod.dart"
         }
     }
 }

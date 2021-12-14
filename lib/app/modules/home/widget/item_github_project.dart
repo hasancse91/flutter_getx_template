@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_widget_mixin.dart';
@@ -20,9 +21,9 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
 
   @override
   Widget body(BuildContext context) {
-    return InkWell(
-      onTap: _onTap,
-      child: ElevatedContainer(
+    return ElevatedContainer(
+      child: Ripple(
+        onTap: _onTap,
         child: Padding(
           padding: const EdgeInsets.all(AppValues.padding),
           child: Row(

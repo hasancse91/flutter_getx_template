@@ -36,9 +36,11 @@ def getCurrentFlavor() {
     String  tskReqStr = gradle.getStartParameter().getTaskRequests().toString()
 
     Pattern pattern
-
+    println(tskReqStr)
     if( tskReqStr.contains( "assemble" ) )
         pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
+    else if( tskReqStr.contains("bundle") )
+        pattern = Pattern.compile("bundle(\\w+)(Release|Debug)")
     else
         pattern = Pattern.compile("generate(\\w+)(Release|Debug)")
 

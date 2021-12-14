@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/my_app/controllers/my_app_controller.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
@@ -8,8 +7,7 @@ import '/app/modules/settings/controllers/settings_controller.dart';
 
 // ignore: must_be_immutable
 class SettingsView extends BaseView<SettingsController> {
-
-  SettingsView(){
+  SettingsView() {
     controller.getCurrentThemeMode();
   }
 
@@ -28,18 +26,19 @@ class SettingsView extends BaseView<SettingsController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Obx(()=>Text(controller.currentThemeText.value)),
-            Obx(()=>Switch(
-              value: controller.isCurrentThemeDarkMode.value,
-              onChanged: (value)=>_changeThemeMode(), //not using the value
-            )),
+            Obx(() => Text(controller.currentThemeText.value)),
+            Obx(() => Switch(
+                  value: controller.isCurrentThemeDarkMode.value,
+                  onChanged: (value) =>
+                      _changeThemeMode(), //not using the value
+                )),
           ],
         ),
       ),
     );
   }
 
-  _changeThemeMode(){
+  _changeThemeMode() {
     controller.changeTheme();
   }
 }

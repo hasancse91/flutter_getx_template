@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_getx_template/app/core/utils/theme_service.dart';
 import 'package:flutter_getx_template/app/core/values/app_themes.dart';
 import 'package:flutter_getx_template/app/my_app/controllers/my_app_controller.dart';
 import 'package:get/get.dart';
 
 import '/app/bindings/initial_binding.dart';
-import '/app/core/values/app_colors.dart';
 import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
@@ -36,18 +34,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(()=>GetMaterialApp(
-      title: _envConfig.appName,
-      initialRoute: AppPages.INITIAL,
-      initialBinding: InitialBinding(),
-      getPages: AppPages.routes,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: _getSupportedLocal(),
-      theme: AppThemes.lightTheme,
-      darkTheme: AppThemes.darkTheme,
-      themeMode: controller.currentThemeMode.value,
-      debugShowCheckedModeBanner: false,
-    ));
+    return Obx(() => GetMaterialApp(
+          title: _envConfig.appName,
+          initialRoute: AppPages.INITIAL,
+          initialBinding: InitialBinding(),
+          getPages: AppPages.routes,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: _getSupportedLocal(),
+          theme: AppThemes.lightTheme,
+          darkTheme: AppThemes.darkTheme,
+          themeMode: controller.currentThemeMode.value,
+          debugShowCheckedModeBanner: false,
+        ));
   }
 
   List<Locale> _getSupportedLocal() {

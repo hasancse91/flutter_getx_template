@@ -6,7 +6,6 @@ import 'package:logger/logger.dart';
 
 import '/app/core/base/base_controller.dart';
 import '/app/core/model/page_state.dart';
-import '/app/core/values/app_colors.dart';
 import '/app/core/widget/loading.dart';
 import '/flavors/build_config.dart';
 
@@ -26,7 +25,6 @@ abstract class BaseView<Controller extends BaseController>
 
   @override
   Widget build(BuildContext context) {
-
     return GestureDetector(
       child: Stack(
         children: [

@@ -30,6 +30,6 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform(Environment.DEVELOPMENT),
   );
   FirebaseAnalytics analytics = FirebaseAnalytics.instanceFor(app: app);
-  analytics.logEvent(name: "CUSTOME_EVENT", parameters: {"VAL": "VALUE1"});
+  analytics.logEvent(name: "CUSTOM_EVENT", parameters: {"VAL": "VALUE1"});
   runApp(const MyApp());
 }

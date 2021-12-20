@@ -99,3 +99,5 @@ local.properties
 # Flutter version manager related
 .fvm/
 .fvm/*
+
+*.env

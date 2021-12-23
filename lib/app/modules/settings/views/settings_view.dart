@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/widget/paging_view.dart';
+import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 
 import '/app/core/base/base_view.dart';
 import '/app/core/values/text_styles.dart';
@@ -15,10 +17,26 @@ class SettingsView extends BaseView<SettingsController> {
 
   @override
   Widget body(BuildContext context) {
-    return const Center(
-      child: Text(
-        'SettingsView is working',
-        style: titleStyle,
+    return PagingView(
+      onRefresh: null,
+      onLoadNextPage: ()=>Container(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Ripple(
+            onTap: ()=>logger.d('Theme Clicked'),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.person),
+                SizedBox(width: 20),
+                Text('Theme'),
+                Spacer(),
+                Icon(Icons.arrow_forward_ios, color: Colors.grey),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

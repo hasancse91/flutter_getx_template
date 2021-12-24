@@ -10,6 +10,7 @@ import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/settings/controllers/settings_controller.dart';
 
 class SettingsView extends BaseView<SettingsController> {
+  bool switchValue = true;
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
@@ -32,12 +33,12 @@ class SettingsView extends BaseView<SettingsController> {
               onTap: ()=>logger.d('Theme Clicked'),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.person),
-                  SizedBox(width: 20),
-                  Text('Theme', style: titleStyle),
-                  Spacer(),
-                  Switch(value: true, onChanged: null),
+                children:  [
+                  const Icon(Icons.person),
+                  const SizedBox(width: 20),
+                  const Text('Theme', style: titleStyle),
+                  const Spacer(),
+                  Switch(value: switchValue, onChanged: (newValue)=>switchValue = newValue),
                 ],
               ),
             ),

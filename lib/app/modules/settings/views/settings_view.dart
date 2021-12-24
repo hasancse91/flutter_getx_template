@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
 import 'package:flutter_getx_template/app/core/widget/paging_view.dart';
 import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 
@@ -22,18 +24,38 @@ class SettingsView extends BaseView<SettingsController> {
       onLoadNextPage: ()=>Container(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Ripple(
-            onTap: ()=>logger.d('Theme Clicked'),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.person),
-                SizedBox(width: 20),
-                Text('Theme'),
-                Spacer(),
-                Icon(Icons.arrow_forward_ios, color: Colors.grey),
-              ],
+          Padding(
+            padding: const EdgeInsets.all(AppValues.padding),
+            child: Ripple(
+              onTap: ()=>logger.d('Theme Clicked'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.person),
+                  SizedBox(width: 20),
+                  Text('Theme', style: titleStyle),
+                  Spacer(),
+                  Switch(value: true, onChanged: null),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(AppValues.padding),
+            child: Ripple(
+                onTap: ()=>logger.d('Language clicked'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.language),
+                  SizedBox(width: 20),
+                  Text('Language', style: titleStyle),
+                  Spacer(),
+                  Icon(Icons.arrow_forward_ios, color: Colors.grey)
+                ],
+              ),
             ),
           ),
         ],

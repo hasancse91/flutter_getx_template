@@ -22,7 +22,8 @@ N.B: In this step you may need to setup your dart sdk path. If you get warned fo
 
 **Step 4:** Create 2 different firebase project for PROD and DEV flavor
 
-**Step 5:** Create a folder named **conf** at the root of the project and inside that folder create a file named **.env**. Now paste following lines in the file:
+**Step 5:** Create a folder named **conf** at the root of the project and inside that folder create a file named **.env** (if you face any problem to create .env file from file manager, please create it using Android Studio). Now paste following lines in the file (if you paste exact below lines without changing anything, it also will build for Android. But for iOS build you have to use actual value of below variables):
+
 ```
 PROD_FIREBASE_ANDROID_API_KEY=<API KEY FOR ANDROID APP IN PROD FIREBASE PROJECT>
 PROD_FIREBASE_ANDROID_APP_ID=<APP ID FOR ANDROID APP IN PROD FIREBASE PROJECT>

@@ -15,6 +15,7 @@ class SettingsView extends BaseView<SettingsController> {
   bool switchValue = true;
   static const dp16 = 16.0;
 
+
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
@@ -34,7 +35,8 @@ class SettingsView extends BaseView<SettingsController> {
           Padding(
             padding: const EdgeInsets.all(AppValues.padding),
             child: Ripple(
-              onTap: ()=>Fluttertoast.showToast(
+              onTap: ()=>
+                Fluttertoast.showToast(
                   msg: "Theme is clicked",
                   toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.CENTER,
@@ -45,11 +47,12 @@ class SettingsView extends BaseView<SettingsController> {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const  [
+                children:  [
                   Icon(FontAwesomeIcons.ethereum),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Text('Theme', style: titleStyle),
                   Spacer(),
+                  switchValue?Text('Light', style: cardSubtitleStyle):Text('Dark', style: cardSubtitleStyle),
                   Icon(Icons.arrow_forward_ios, color: Colors.grey),
                 ],
               ),
@@ -74,6 +77,7 @@ class SettingsView extends BaseView<SettingsController> {
                   SizedBox(width: 20),
                   Text('Language', style: titleStyle),
                   Spacer(),
+                  Text('English', style: cardSubtitleStyle),
                   Icon(Icons.arrow_forward_ios, color: Colors.grey)
                 ],
               ),
@@ -98,6 +102,7 @@ class SettingsView extends BaseView<SettingsController> {
                   SizedBox(width: 20),
                   Text('Font Size', style: titleStyle),
                   Spacer(),
+                  Text('Change Size', style: cardSubtitleStyle),
                   Icon(Icons.arrow_forward_ios, color: Colors.grey),
                 ],
               ),

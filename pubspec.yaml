@@ -22,6 +22,8 @@ dependencies:
   animations: ^2.0.2
   logger: ^1.1.0
   pretty_dio_logger: ^1.1.1
+  font_awesome_flutter: ^9.2.0
+  fluttertoast: ^8.0.8
 
 dev_dependencies:
   flutter_test:

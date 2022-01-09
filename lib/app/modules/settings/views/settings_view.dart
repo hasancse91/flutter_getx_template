@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/values/app_values.dart';
-import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 import 'package:flutter_getx_template/app/modules/settings/widgets/settings_widgets.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get.dart';
 import '/app/core/base/base_view.dart';
-import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/settings/controllers/settings_controller.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

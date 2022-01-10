@@ -38,7 +38,7 @@ class SettingsView extends BaseView<SettingsController> {
           ItemSettings(
             () => _show('Font Size clicked'),
             'ic_theme.svg',
-            'arrow_forward.png',
+            'arrow_forward.svg',
             'Font Size',
           ),
         ],

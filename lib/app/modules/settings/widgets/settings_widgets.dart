@@ -10,7 +10,7 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
   final String prefixImage;
   final String suffixImage;
   final String title;
-  final Function onTap;
+  final Function()? onTap;
 
   ItemSettings(this.onTap, this.prefixImage, this.suffixImage, this.title);
 
@@ -29,7 +29,7 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
             ),
             const SizedBox(width: 10),
             Text(title, style: titleStyle),
-            // const Spacer(),
+            const Spacer(),
             AssetImageView(
               fileName: suffixImage,
               color: AppColors.centerTextColor,

@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/values/app_values.dart';
-import 'package:flutter_getx_template/app/modules/settings/widgets/settings_widgets.dart';
+import 'package:flutter_getx_template/app/modules/settings/widgets/item_settings_widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
@@ -24,22 +23,22 @@ class SettingsView extends BaseView<SettingsController> {
   _getView() => Column(
         children: [
           ItemSettings(
-            () => _show('Theme clicked'),
-            'ic_theme.svg',
-            'arrow_forward.png',
-            'Theme',
+            title: 'Theme',
+            prefixImage: 'ic_theme.svg',
+            suffixImage: 'arrow_forward.svg',
+            onTap: () => _show('Theme clicked'),
           ),
           ItemSettings(
-            () => _show('Language clicked'),
-            'ic_theme.svg',
-            'arrow_forward.png',
-            'Language',
+            title: 'Language',
+            prefixImage: 'ic_language.svg',
+            suffixImage: 'arrow_forward.svg',
+            onTap: () => _show('Language clicked'),
           ),
           ItemSettings(
-            () => _show('Font Size clicked'),
-            'ic_theme.svg',
-            'arrow_forward.svg',
-            'Font Size',
+            title: 'Font Size',
+            prefixImage: 'ic_font_size.svg',
+            suffixImage: 'arrow_forward.svg',
+            onTap: () => _show('Font Size clicked'),
           ),
         ],
       );

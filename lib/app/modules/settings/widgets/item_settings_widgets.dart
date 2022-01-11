@@ -7,25 +7,29 @@ import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 
 class ItemSettings extends StatelessWidget with BaseWidgetMixin {
+  ItemSettings({
+    required this.prefixImage,
+    required this.suffixImage,
+    required this.title,
+    required this.onTap,
+  });
   final String prefixImage;
   final String suffixImage;
   final String title;
   final Function()? onTap;
-
-  ItemSettings(this.onTap, this.prefixImage, this.suffixImage, this.title);
 
   @override
   Widget body(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(AppValues.padding),
       child: Ripple(
-        onTap: () => onTap,
+        onTap: onTap,
         child: Row(
           children: [
             AssetImageView(
               fileName: prefixImage,
-              height: AppValues.margin_20,
-              width: AppValues.margin_20,
+              height: AppValues.iconSize_20,
+              width: AppValues.iconSize_20,
             ),
             const SizedBox(width: 10),
             Text(title, style: titleStyle),
@@ -33,8 +37,8 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
             AssetImageView(
               fileName: suffixImage,
               color: AppColors.centerTextColor,
-              height: AppValues.margin_20,
-              width: AppValues.margin_20,
+              height: AppValues.iconSize_20,
+              width: AppValues.iconSize_20,
             ),
           ],
         ),

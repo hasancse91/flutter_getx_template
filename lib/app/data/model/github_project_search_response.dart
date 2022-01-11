@@ -1,5 +1,8 @@
+import 'package:floor/floor.dart';
+
 class GithubProjectSearchResponse {
   GithubProjectSearchResponse({
+    this.id,
     this.totalCount,
     this.incompleteResults,
     this.items,
@@ -16,8 +19,11 @@ class GithubProjectSearchResponse {
     }
   }
 
+  @PrimaryKey(autoGenerate: true)
+  int? id;
   int? totalCount;
   bool? incompleteResults;
+  @ignore
   List<Item>? items;
 
   Map<String, dynamic> toJson() {
@@ -32,8 +38,21 @@ class GithubProjectSearchResponse {
   }
 }
 
+@entity
 class Item {
+  @PrimaryKey(autoGenerate: true)
+  int? id;
+  String? name;
+  int? stargazersCount;
+  int? forks;
+  int? watchers;
+  double? score;
+  String? description;
+  @ignore
+  Owner? owner;
+
   Item({
+    this.id,
     this.name,
     this.owner,
     this.description,
@@ -52,14 +71,6 @@ class Item {
     watchers = json['watchers'];
     score = json['score'];
   }
-
-  String? name;
-  Owner? owner;
-  int? stargazersCount;
-  int? forks;
-  int? watchers;
-  double? score;
-  String? description;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

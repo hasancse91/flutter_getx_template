@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/values/app_values.dart';
-import 'package:flutter_getx_template/app/modules/settings/widgets/item_settings_widgets.dart';
+import '/app/core/values/app_values.dart';
+import '/app/modules/settings/widgets/item_settings_widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';

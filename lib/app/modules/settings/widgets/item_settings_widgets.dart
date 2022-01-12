@@ -36,7 +36,7 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
             const Spacer(),
             AssetImageView(
               fileName: suffixImage,
-              color: AppColors.centerTextColor,
+              color: AppColors.suffixImageColor,
               height: AppValues.iconSize_20,
               width: AppValues.iconSize_20,
             ),

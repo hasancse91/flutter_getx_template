@@ -2,5 +2,8 @@
   "bottomNavHome": "হোম",
   "bottomNavFavorite": "ফেভারিট",
   "bottomNavSettings": "সেটিংস",
-  "titleOtherView": "অন্যান্য"
+  "titleOtherView": "অন্যান্য",
+  "settingsTheme": "থিম",
+  "settingsLanguage": "ভাষা",
+  "settingsFontSize": "অক্ষরের আকার"
 }

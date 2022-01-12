@@ -5,8 +5,11 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/settings/controllers/settings_controller.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsView extends BaseView<SettingsController> {
+  late final AppLocalizations appLocalizations;
+
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(

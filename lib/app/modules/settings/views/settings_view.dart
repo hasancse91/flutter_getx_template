@@ -8,8 +8,6 @@ import '/app/modules/settings/controllers/settings_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsView extends BaseView<SettingsController> {
-  late final AppLocalizations appLocalizations;
-
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
@@ -26,19 +24,19 @@ class SettingsView extends BaseView<SettingsController> {
   _getView() => Column(
         children: [
           ItemSettings(
-            title: 'Theme',
+            title: appLocalization.settingsTheme,
             prefixImage: 'ic_theme.svg',
             suffixImage: 'arrow_forward.svg',
             onTap: () => _show('Theme clicked'),
           ),
           ItemSettings(
-            title: 'Language',
+            title: appLocalization.settingsLanguage,
             prefixImage: 'ic_language.svg',
             suffixImage: 'arrow_forward.svg',
             onTap: () => _show('Language clicked'),
           ),
           ItemSettings(
-            title: 'Font Size',
+            title: appLocalization.settingsFontSize,
             prefixImage: 'ic_font_size.svg',
             suffixImage: 'arrow_forward.svg',
             onTap: () => _show('Font Size clicked'),

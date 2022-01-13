@@ -7,23 +7,24 @@ import '/app/core/widget/asset_image_view.dart';
 import '/app/core/widget/ripple.dart';
 
 class ItemSettings extends StatelessWidget with BaseWidgetMixin {
+  final String prefixImage;
+  final String suffixImage;
+  final String title;
+  final Function()? onTap;
+
   ItemSettings({
     required this.prefixImage,
     required this.suffixImage,
     required this.title,
     required this.onTap,
   });
-  final String prefixImage;
-  final String suffixImage;
-  final String title;
-  final Function()? onTap;
 
   @override
   Widget body(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(AppValues.padding),
-      child: Ripple(
-        onTap: onTap,
+    return Ripple(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.all(AppValues.padding),
         child: Row(
           children: [
             AssetImageView(
@@ -32,7 +33,7 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
               width: AppValues.iconSize_20,
             ),
             const SizedBox(width: AppValues.smallPadding),
-            Text(title, style: titleStyle),
+            Text(title, style: settingsItemStyle),
             const Spacer(),
             AssetImageView(
               fileName: suffixImage,

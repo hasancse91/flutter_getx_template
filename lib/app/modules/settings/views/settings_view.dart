@@ -23,20 +23,27 @@ class SettingsView extends BaseView<SettingsController> {
           suffixImage: 'arrow_forward.svg',
           onTap: _onThemeItemClicked,
         ),
+        _getHorizontalDivider(),
         ItemSettings(
           title: appLocalization.settingsLanguage,
           prefixImage: 'ic_language.svg',
           suffixImage: 'arrow_forward.svg',
           onTap: _onLanguageItemClicked,
         ),
+        _getHorizontalDivider(),
         ItemSettings(
           title: appLocalization.settingsFontSize,
           prefixImage: 'ic_font_size.svg',
           suffixImage: 'arrow_forward.svg',
           onTap: _onFontSizeItemClicked,
         ),
+        _getHorizontalDivider(),
       ],
     );
+  }
+
+  Widget _getHorizontalDivider() {
+    return const Divider(height: 1);
   }
 
   void _onThemeItemClicked() {

@@ -120,6 +120,11 @@ const titleStyle = TextStyle(
   height: 1.34,
 );
 
+const settingsItemStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+);
+
 final cardTagStyle = titleStyle.copyWith(color: AppColors.textColorGreyDark);
 
 const titleStyleWhite = TextStyle(

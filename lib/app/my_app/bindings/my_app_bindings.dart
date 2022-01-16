@@ -1,11 +1,11 @@
-import '../controllers/my_app_controller.dart';
+import '../../modules/theme/theme_controller.dart';
 import 'package:get/get.dart';
 
 class MyAppBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<MyAppController>(
-      () => MyAppController(),
+    Get.lazyPut<ThemeController>(
+      () => ThemeController(),
     );
   }
 }

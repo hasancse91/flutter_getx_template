@@ -5,5 +5,7 @@
   "titleOtherView": "অন্যান্য",
   "settingsTheme": "থিম",
   "settingsLanguage": "ভাষা",
-  "settingsFontSize": "অক্ষরের আকার"
+  "settingsFontSize": "অক্ষরের আকার",
+  "lightTheme": "Light Theme",
+  "darkTheme": "Dark Theme"
 }

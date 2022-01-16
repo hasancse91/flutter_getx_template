@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_getx_template/app/core/values/app_themes.dart';
-import 'package:flutter_getx_template/app/my_app/controllers/my_app_controller.dart';
+import 'package:flutter_getx_template/app/modules/theme/theme_controller.dart';
 import 'package:get/get.dart';
 
 import '/app/bindings/initial_binding.dart';
@@ -20,7 +20,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final EnvConfig _envConfig = BuildConfig.instance.config;
-  late MyAppController controller;
+  late ThemeController _themeController;
 
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     // we need to access SharedPreferences in [MyAppController]
     LocalSourceBindings().dependencies();
     MyAppBindings().dependencies();
-    controller = Get.find();
+    _themeController = Get.find<ThemeController>();
     super.initState();
   }
 
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
           supportedLocales: _getSupportedLocal(),
           theme: AppThemes.lightTheme,
           darkTheme: AppThemes.darkTheme,
-          themeMode: controller.currentThemeMode.value,
+          themeMode: _themeController.currentThemeMode.value,
           debugShowCheckedModeBanner: false,
         ));
   }

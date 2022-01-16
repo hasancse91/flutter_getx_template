@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-// <<<<<<< HEAD
-// import 'package:get/get.dart';
-//
-// =======
-import '/app/modules/settings/widgets/item_settings_widgets.dart';
-// >>>>>>> master
+import 'package:flutter_getx_template/app/modules/settings/dialogs/theme_changing_dialog.dart';
+import 'package:flutter_getx_template/app/modules/settings/widgets/item_settings_widgets.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/settings/controllers/settings_controller.dart';
@@ -25,53 +21,32 @@ class SettingsView extends BaseView<SettingsController> {
 
   @override
   Widget body(BuildContext context) {
-// <<<<<<< HEAD
-//     return Scaffold(
-//       body: Padding(
-//         padding: const EdgeInsets.all(10),
-//         child: Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             Obx(() => Text(controller.currentThemeText.value)),
-//             Obx(() => Switch(
-//                   value: controller.isCurrentThemeDarkMode.value,
-//                   onChanged: (value) =>
-//                       _changeThemeMode(), //not using the value
-//                 )),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-//
-//   _changeThemeMode() {
-//     controller.changeTheme();
-//   }
-// =======
-    return Column(
-      children: [
-        ItemSettings(
-          title: appLocalization.settingsTheme,
-          prefixImage: 'ic_theme.png',
-          suffixImage: 'arrow_forward.svg',
-          onTap: _onThemeItemClicked,
-        ),
-        _getHorizontalDivider(),
-        ItemSettings(
-          title: appLocalization.settingsLanguage,
-          prefixImage: 'ic_language.svg',
-          suffixImage: 'arrow_forward.svg',
-          onTap: _onLanguageItemClicked,
-        ),
-        _getHorizontalDivider(),
-        ItemSettings(
-          title: appLocalization.settingsFontSize,
-          prefixImage: 'ic_font_size.svg',
-          suffixImage: 'arrow_forward.svg',
-          onTap: _onFontSizeItemClicked,
-        ),
-        _getHorizontalDivider(),
-      ],
+    return Scaffold(
+      body: Column(
+        children: [
+          ItemSettings(
+            title: appLocalization.settingsTheme,
+            prefixImage: 'ic_theme.png',
+            suffixImage: 'arrow_forward.svg',
+            onTap: ()=>_onThemeItemClicked(context),
+          ),
+          _getHorizontalDivider(),
+          ItemSettings(
+            title: appLocalization.settingsLanguage,
+            prefixImage: 'ic_language.svg',
+            suffixImage: 'arrow_forward.svg',
+            onTap: _onLanguageItemClicked,
+          ),
+          _getHorizontalDivider(),
+          ItemSettings(
+            title: appLocalization.settingsFontSize,
+            prefixImage: 'ic_font_size.svg',
+            suffixImage: 'arrow_forward.svg',
+            onTap: _onFontSizeItemClicked,
+          ),
+          _getHorizontalDivider(),
+        ],
+      ),
     );
   }
 
@@ -79,8 +54,15 @@ class SettingsView extends BaseView<SettingsController> {
     return const Divider(height: 1);
   }
 
-  void _onThemeItemClicked() {
-    showToast('Theme: Development in progress');
+  void _onThemeItemClicked(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (ctx){
+        return AlertDialog(
+          content: ThemeChangingDialog(controller: controller),
+        );
+      },
+    );
   }
 
   void _onLanguageItemClicked() {
@@ -91,5 +73,4 @@ class SettingsView extends BaseView<SettingsController> {
     showToast('Font Size: Development in progress');
   }
 
-// >>>>>>> master
 }

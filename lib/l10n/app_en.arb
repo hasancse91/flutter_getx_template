@@ -5,5 +5,7 @@
   "titleOtherView": "OtherView",
   "settingsTheme": "Theme",
   "settingsLanguage": "Language",
-  "settingsFontSize": "Font Size"
+  "settingsFontSize": "Font Size",
+  "lightTheme": "Light Theme",
+  "darkTheme": "Dark Theme"
 }

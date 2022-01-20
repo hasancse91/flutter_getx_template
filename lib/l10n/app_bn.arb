@@ -7,5 +7,6 @@
   "settingsLanguage": "ভাষা",
   "settingsFontSize": "অক্ষরের আকার",
   "lightTheme": "Light Theme",
-  "darkTheme": "Dark Theme"
+  "darkTheme": "Dark Theme",
+  "systemDefault": "System Default",
 }

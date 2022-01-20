@@ -1,21 +1,11 @@
-import 'package:flutter/material.dart';
+
+import 'package:flutter_getx_template/app/core/base/base_controller.dart';
+import 'package:flutter_getx_template/app/modules/theme/theme_controller.dart';
 import 'package:get/get.dart';
-
 import '../../theme/theme_controller.dart';
-import '/app/core/base/base_controller.dart';
 
-class SettingsController extends BaseController {
+class SettingsController extends BaseController{
 
-  final ThemeController _themeController = Get.find<ThemeController>();
-  final Rx<ThemeMode?> selectedThemeMode = Rx<ThemeMode?>(null);
+  ThemeController themeController = Get.find<ThemeController>();
 
-  void changeTheme() async {
-    _themeController.changeThemeMode();
-    getCurrentThemeMode();
-  }
-
-  getCurrentThemeMode() async {
-    final ThemeMode themeMode = _themeController.currentThemeMode.value;
-    selectedThemeMode.value = themeMode;
-  }
 }

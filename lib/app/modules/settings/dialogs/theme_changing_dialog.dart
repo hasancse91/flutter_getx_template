@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
 import 'package:get/get.dart';
 
+import '../../../core/base/base_widget_mixin.dart';
+import '../../theme/theme_controller.dart';
 import '../controllers/settings_controller.dart';
 
 // ignore: must_be_immutable
 class ThemeChangingDialog extends StatelessWidget with BaseWidgetMixin {
   final SettingsController controller;
+  final ThemeController _themeController;
 
-  ThemeChangingDialog({Key? key, required this.controller}) : super(key: key);
+  ThemeChangingDialog({Key? key, required this.controller})
+      : _themeController = controller.themeController,
+        super(key: key);
 
-  ThemeMode? selectedMode;
-
+  ThemeMode? _selectedMode;
 
   @override
   Widget body(BuildContext context) {
     return Obx(() {
-      selectedMode = controller.selectedThemeMode.value;
+      _selectedMode = _themeController.currentThemeMode.value;
 
-      return selectedMode == null ? _loadingWidget() : _bodyWidget(context);
+      return _selectedMode == null ? _loadingWidget() : _bodyWidget(context);
     });
   }
 
-  Widget _loadingWidget(){
+  Widget _loadingWidget() {
     return Center(
       child: CircularProgressIndicator(
         color: appTheme.primaryColor,
@@ -30,29 +33,38 @@ class ThemeChangingDialog extends StatelessWidget with BaseWidgetMixin {
     );
   }
 
-  Widget _bodyWidget(BuildContext context){
+  Widget _bodyWidget(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         RadioListTile(
           value: ThemeMode.light,
-          groupValue: selectedMode,
-          onChanged: (ThemeMode? mode) => _onThemeChanged(mode, context),
-          title: const Text("Light"),
+          groupValue: _selectedMode,
+          onChanged: (_) {
+            _themeController.setLightThemeMode();
+            Navigator.pop(context);
+          },
+          title: Text(appLocalization.lightTheme),
         ),
         RadioListTile(
           value: ThemeMode.dark,
-          groupValue: selectedMode,
-          onChanged: (ThemeMode? mode) => _onThemeChanged(mode, context),
-          title: const Text("Dark"),
+          groupValue: _selectedMode,
+          onChanged: (_) {
+            _themeController.setDarkThemeMode();
+            Navigator.pop(context);
+          },
+          title: Text(appLocalization.darkTheme),
+        ),
+        RadioListTile(
+          value: ThemeMode.system,
+          groupValue: _selectedMode,
+          onChanged: (_) {
+            _themeController.setSystemThemeMode();
+            Navigator.pop(context);
+          },
+          title: Text(appLocalization.systemDefault),
         ),
       ],
     );
   }
-
-  void _onThemeChanged(ThemeMode? mode, BuildContext context) {
-    controller.changeTheme();
-    Navigator.pop(context);
-  }
-
 }

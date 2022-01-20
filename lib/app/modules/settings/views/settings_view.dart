@@ -8,7 +8,7 @@ import '/app/modules/settings/controllers/settings_controller.dart';
 // ignore: must_be_immutable
 class SettingsView extends BaseView<SettingsController> {
   SettingsView() {
-    controller.getCurrentThemeMode();
+    controller.themeController.getCurrentThemeMode();
   }
 
   @override

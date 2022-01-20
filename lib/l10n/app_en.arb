@@ -7,5 +7,6 @@
   "settingsLanguage": "Language",
   "settingsFontSize": "Font Size",
   "lightTheme": "Light Theme",
-  "darkTheme": "Dark Theme"
+  "darkTheme": "Dark Theme",
+  "systemDefault": "System Default"
 }

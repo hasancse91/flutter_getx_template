@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/modules/theme/theme_service.dart';
 import 'package:get/get.dart';
 
-class ThemeController extends GetxController {
+import '../../core/base/base_controller.dart';
+import 'theme_service.dart';
+
+class ThemeController extends BaseController {
   final ThemeService themeService = ThemeService();
-  final Rx<ThemeMode> currentThemeMode = Rx<ThemeMode>(ThemeMode.light);
+  final Rx<ThemeMode> currentThemeMode = Rx<ThemeMode>(ThemeMode.system);
 
   ThemeController() {
     getCurrentThemeMode();
@@ -14,16 +16,18 @@ class ThemeController extends GetxController {
     currentThemeMode.value = await themeService.themeMode;
   }
 
-  void setCurrentThemeMode(ThemeMode themeMode) {
-    currentThemeMode.value = themeMode;
+  void setDarkThemeMode() async {
+    await themeService.setDarkMode();
+    getCurrentThemeMode();
   }
 
-  void changeThemeMode(){
-    if(currentThemeMode.value == ThemeMode.light){
-      themeService.changeThemeMode(true);
-    }else {
-      themeService.changeThemeMode(false);
-    }
+  void setLightThemeMode() async {
+    await themeService.setLightMode();
+    getCurrentThemeMode();
   }
 
+  void setSystemThemeMode() async {
+    await themeService.setSystemMode();
+    getCurrentThemeMode();
+  }
 }

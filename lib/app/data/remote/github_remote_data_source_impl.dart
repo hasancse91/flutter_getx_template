@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import '/app/core/base/base_remote_source.dart';
 import '/app/core/model/github_search_query_param.dart';
 import '/app/data/model/github_project_search_response.dart';
+import '/app/data/model/item.dart';
 import '/app/data/remote/github_remote_data_source.dart';
 import '/app/network/dio_provider.dart';
 

@@ -1,7 +1,21 @@
+import 'package:floor/floor.dart';
+
 import '/app/data/model/owner.dart';
 
+@Entity(tableName: 'repo')
 class Item {
+  @PrimaryKey()
+  int? id;
+  String? name;
+  Owner? owner;
+  int? stargazersCount;
+  int? forks;
+  int? watchers;
+  double? score;
+  String? description;
+
   Item({
+    this.id,
     this.name,
     this.owner,
     this.description,
@@ -12,6 +26,7 @@ class Item {
   });
 
   Item.fromJson(dynamic json) {
+    id = json['id'];
     name = json['name'];
     owner = json['owner'] != null ? Owner.fromJson(json['owner']) : null;
     description = json['description'];
@@ -21,16 +36,9 @@ class Item {
     score = json['score'];
   }
 
-  String? name;
-  Owner? owner;
-  int? stargazersCount;
-  int? forks;
-  int? watchers;
-  double? score;
-  String? description;
-
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
+    map['id'] = id;
     map['name'] = name;
     if (owner != null) {
       map['owner'] = owner?.toJson();

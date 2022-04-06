@@ -9,10 +9,6 @@ import '/app/modules/home/controllers/home_controller.dart';
 import '/app/modules/home/widget/item_github_project.dart';
 
 class HomeView extends BaseView<HomeController> {
-  HomeView() {
-    controller.getGithubGetxProjectList();
-  }
-
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
@@ -23,6 +19,7 @@ class HomeView extends BaseView<HomeController> {
   @override
   Widget body(BuildContext context) {
     return PagingView(
+      pagingController: controller.pagingController,
       onRefresh: () async {
         controller.onRefreshPage();
       },

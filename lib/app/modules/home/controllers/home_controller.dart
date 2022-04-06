@@ -20,10 +20,6 @@ class HomeController extends BaseController {
   final pagingController = PagingController<GithubProjectUiData>();
 
   void getGithubGetxProjectList() {
-    if (!pagingController.canLoadNextPage()) return;
-
-    pagingController.isLoadingPage = true;
-
     var queryParam = GithubSearchQueryParam(
       searchKeyWord: 'flutter getx template',
       pageNumber: pagingController.pageNumber,
@@ -33,20 +29,16 @@ class HomeController extends BaseController {
 
     callDataService(
       githubRepoSearchService,
+      onStart: pagingController.isInitialLoad ? null : () {},
       onSuccess: _handleProjectListResponseSuccess,
     );
-
-    pagingController.isLoadingPage = false;
   }
 
   onRefreshPage() {
-    pagingController.initRefresh();
     getGithubGetxProjectList();
   }
 
   onLoadNextPage() {
-    logger.i("On load next");
-
     getGithubGetxProjectList();
   }
 
@@ -64,18 +56,20 @@ class HomeController extends BaseController {
             ))
         .toList();
 
-    if (_isLastPage(repoList!.length, response.totalCount!)) {
-      pagingController.appendLastPage(repoList);
-    } else {
-      pagingController.appendPage(repoList);
-    }
+    pagingController.appendData(repoList ?? []);
 
-    var newList = [...pagingController.listItems];
-
-    _githubProjectListController(newList);
+    _githubProjectListController([...pagingController.listItems]);
   }
 
-  bool _isLastPage(int newListItemCount, int totalCount) {
-    return (projectList.length + newListItemCount) >= totalCount;
+  @override
+  void onInit() {
+    getGithubGetxProjectList();
+    super.onInit();
+  }
+
+  @override
+  void onClose() {
+    _githubProjectListController.close();
+    super.onClose();
   }
 }

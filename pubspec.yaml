@@ -24,7 +24,7 @@ dependencies:
   pretty_dio_logger: ^1.1.1
   font_awesome_flutter: ^9.2.0
   fluttertoast: ^8.0.9
-  floor: ^1.2.0
+#  floor: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -34,8 +34,8 @@ dev_dependencies:
   dart_code_metrics: any
   change_app_package_name: ^1.0.0
   flutter_launcher_icons: ^0.9.2
-  floor_generator: ^1.2.0
-  build_runner: ^2.1.2
+#  floor_generator: ^1.2.0
+#  build_runner: ^2.1.2
 
 flutter_icons:
   android: "ic_launcher"

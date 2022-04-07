@@ -1,10 +1,6 @@
-import 'package:floor/floor.dart';
-
 import '/app/data/model/owner.dart';
 
-@Entity(tableName: 'repo')
 class Item {
-  @PrimaryKey()
   int? id;
   String? name;
   Owner? owner;

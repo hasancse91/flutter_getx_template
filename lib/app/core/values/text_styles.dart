@@ -125,6 +125,12 @@ const settingsItemStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
+const buttonTextStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  color: Colors.white
+);
+
 final cardTagStyle = titleStyle.copyWith(color: AppColors.textColorGreyDark);
 
 const titleStyleWhite = TextStyle(

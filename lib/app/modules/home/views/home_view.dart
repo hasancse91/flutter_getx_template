@@ -16,7 +16,7 @@ class HomeView extends BaseView<HomeController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
-      appBarTitleText: 'GetX Templates on GitHub',
+      appBarTitleText: appLocalization.homeViewAppBarTitle,
     );
   }
 

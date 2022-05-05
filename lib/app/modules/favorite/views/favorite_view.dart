@@ -9,15 +9,15 @@ class FavoriteView extends BaseView<FavoriteController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
-      appBarTitleText: 'Favorite',
+      appBarTitleText: appLocalization.bottomNavFavorite,
     );
   }
 
   @override
   Widget body(BuildContext context) {
-    return const Center(
+    return Center(
       child: Text(
-        'FavoriteView is working',
+        appLocalization.favoriteViewMessage,
         style: titleStyle,
       ),
     );

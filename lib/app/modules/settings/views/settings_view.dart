@@ -69,17 +69,20 @@ class SettingsView extends BaseView<SettingsController> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              InkWell(
+              ElevatedButton(
                 child: Text(
                   appLocalization.cancelText,
-                  style: settingsItemStyle,
+                  style: buttonTextStyle,
                 ),
-                onTap: () {
+                style: ElevatedButton.styleFrom(
+                  primary: AppColors.appBarColor,
+                ),
+                onPressed: () {
                   Get.back();
                 },
               ),
               const SizedBox(
-                width: 16.0,
+                width: 4.0,
               ),
               ElevatedButton(
                 onPressed: () {

@@ -19,17 +19,24 @@ class AlertWidget extends StatelessWidget {
           child: Row(
             children: [
               Obx(() => InkWell(
-                child: controller.selectedLangCode.contains('en')
-                    ? const Icon(Icons.radio_button_checked)
-                    : const Icon(Icons.radio_button_off),
+                    child: controller.selectedLangCode.contains('en')
+                        ? const Icon(Icons.radio_button_checked)
+                        : const Icon(Icons.radio_button_off),
+                    onTap: () {
+                      controller.updateLanguage('en');
+                    },
+                  )),
+              const SizedBox(
+                width: 8.0,
+              ),
+              InkWell(
                 onTap: () {
                   controller.updateLanguage('en');
                 },
-              )),
-              const SizedBox(width: 8.0,),
-              const Text(
-                'English',
-                style: settingsItemStyle,
+                child: const Text(
+                  'English',
+                  style: settingsItemStyle,
+                ),
               ),
             ],
           ),
@@ -38,7 +45,7 @@ class AlertWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: 18.0, bottom: 0.0),
           child: Row(children: [
             Obx(
-                  () => InkWell(
+              () => InkWell(
                 child: controller.selectedLangCode.contains('bn')
                     ? const Icon(Icons.radio_button_checked)
                     : const Icon(Icons.radio_button_off),
@@ -47,12 +54,17 @@ class AlertWidget extends StatelessWidget {
                 },
               ),
             ),
-            const SizedBox(width: 8.0,),
-            const Text('বাংলা', style: settingsItemStyle),
+            const SizedBox(
+              width: 8.0,
+            ),
+            InkWell(
+                onTap: () {
+                  controller.updateLanguage('bn');
+                },
+                child: const Text('বাংলা', style: settingsItemStyle)),
           ]),
         ),
       ],
     );
   }
-
 }

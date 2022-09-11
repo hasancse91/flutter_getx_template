@@ -23,6 +23,10 @@ for data and observe the response. Till then it may display a loader to the user
 # To configure and run this project [check here](readme_configuration_guideline.md) 
 You will find at above link step by step instructions with screenshots.
 
+# run this project by command line
+Dev: flutter run --flavor dev lib/main_dev.dart
+Prod: flutter run --flavor dev lib/main_prod.dart
+
 # How to update app information and continue development for your own project?
 
 1. Rename root folder name

@@ -2,5 +2,8 @@
   "bottomNavHome": "Home",
   "bottomNavFavorite": "Favorite",
   "bottomNavSettings": "Settings",
-  "titleOtherView": "OtherView"
+  "titleOtherView": "OtherView",
+  "settingsTheme": "Theme",
+  "settingsLanguage": "Language",
+  "settingsFontSize": "Font Size"
 }

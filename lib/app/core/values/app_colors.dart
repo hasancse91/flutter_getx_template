@@ -44,4 +44,5 @@ abstract class AppColors {
   static const Color switchActiveColor = colorPrimary;
   static const Color switchInactiveColor = Color(0xFFABABAB);
   static Color elevatedContainerColorOpacity = Colors.grey.withOpacity(0.5);
+  static const Color suffixImageColor = Colors.grey;
 }

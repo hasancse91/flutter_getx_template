@@ -99,19 +99,9 @@ android {
         dev {
             dimension "default"
             applicationIdSuffix ".dev"
-            resValue "string", "google_api_key", localProperties["DEV_FIREBASE_ANDROID_API_KEY"]
-            resValue "string", "google_app_id", localProperties["DEV_FIREBASE_ANDROID_APP_ID"]
-            resValue "string", "gcm_defaultSenderId", localProperties["DEV_FIREBASE_ANDROID_MESSAGING_SENDER_ID"]
-            resValue "string", "google_storage_bucket", localProperties["DEV_FIREBASE_ANDROID_STORAGE_BUCKET"]
-            resValue "string", "project_id", localProperties["DEV_FIREBASE_ANDROID_PROJECT_ID"]
         }
         prod {
             dimension "default"
-            resValue "string", "google_api_key", localProperties["PROD_FIREBASE_ANDROID_API_KEY"]
-            resValue "string", "google_app_id", localProperties["PROD_FIREBASE_ANDROID_APP_ID"]
-            resValue "string", "gcm_defaultSenderId", localProperties["PROD_FIREBASE_ANDROID_MESSAGING_SENDER_ID"]
-            resValue "string", "google_storage_bucket", localProperties["PROD_FIREBASE_ANDROID_STORAGE_BUCKET"]
-            resValue "string", "project_id", localProperties["PROD_FIREBASE_ANDROID_PROJECT_ID"]
         }
     }
 }

@@ -26,7 +26,7 @@ You will find at above link step by step instructions with screenshots.
 # run this project by command line
 Dev: `flutter run --flavor dev lib/main_dev.dart`
 
-Prod: `flutter run --flavor dev lib/main_prod.dart`
+Prod: `flutter run --flavor prod lib/main_prod.dart`
 
 # How to update app information and continue development for your own project?
 

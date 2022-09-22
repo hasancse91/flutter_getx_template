@@ -1,9 +1,11 @@
+
+import 'package:flutter_getx_template/app/core/base/base_controller.dart';
+import 'package:flutter_getx_template/app/modules/theme/theme_controller.dart';
 import 'package:get/get.dart';
+import '../../theme/theme_controller.dart';
 
-import '/app/core/base/base_controller.dart';
+class SettingsController extends BaseController{
 
-class SettingsController extends BaseController {
-  final count = 0.obs;
+  ThemeController themeController = Get.find<ThemeController>();
 
-  void increment() => count.value++;
 }

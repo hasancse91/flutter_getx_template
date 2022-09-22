@@ -7,7 +7,6 @@ import 'package:logger/logger.dart';
 
 import '/app/core/base/base_controller.dart';
 import '/app/core/model/page_state.dart';
-import '/app/core/values/app_colors.dart';
 import '/app/core/widget/loading.dart';
 import '/flavors/build_config.dart';
 
@@ -18,6 +17,8 @@ abstract class BaseView<Controller extends BaseController>
   AppLocalizations get appLocalization => AppLocalizations.of(Get.context!)!;
 
   final Logger logger = BuildConfig.instance.config.logger;
+
+  ThemeData get appTheme => Theme.of(Get.context!);
 
   Widget body(BuildContext context);
 
@@ -92,11 +93,11 @@ abstract class BaseView<Controller extends BaseController>
   }
 
   Color pageBackgroundColor() {
-    return AppColors.pageBackground;
+    return appTheme.canvasColor;
   }
 
   Color statusBarColor() {
-    return AppColors.pageBackground;
+    return appTheme.canvasColor;
   }
 
   Widget? floatingActionButton() {

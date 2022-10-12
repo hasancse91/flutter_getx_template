@@ -5,5 +5,13 @@
   "titleOtherView": "অন্যান্য",
   "settingsTheme": "থিম",
   "settingsLanguage": "ভাষা",
-  "settingsFontSize": "অক্ষরের আকার"
+  "settingsFontSize": "অক্ষরের আকার",
+  "languageToast": "ভাষা: ভাষা পরিবর্তন হয়েছে",
+  "fontSizeToast": "অক্ষরের আকার: অক্ষরের আকার পরিবর্তনের  কাজ চলছে",
+  "themeToast": "থিম: থিম পরিবর্তনের  কাজ চলছে",
+  "favoriteViewMessage": "ফেভারিট স্ক্রিন এর কাজ চলছে",
+  "homeViewAppBarTitle": "GitHub এর GetX টেমপ্লেটসমূহ",
+  "languageSelectorTitle": "ভাষা নির্বাচন",
+  "cancelText": "বাতিল করুন",
+  "confirmText": "নিশ্চিত করুন"
 }

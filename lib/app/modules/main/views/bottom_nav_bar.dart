@@ -16,7 +16,7 @@ class BottomNavBar extends StatelessWidget {
   BottomNavBar({Key? key, required this.onNewMenuSelected}) : super(key: key);
   late AppLocalizations appLocalization;
 
-  final navController = BottomNavController();
+  final navController = Get.put(BottomNavController());
 
   final Key bottomNavKey = GlobalKey();
 

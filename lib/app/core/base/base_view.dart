@@ -76,7 +76,7 @@ abstract class BaseView<Controller extends BaseController>
 
   Widget showErrorSnackBar(String message) {
     final snackBar = SnackBar(content: Text(message));
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       ScaffoldMessenger.of(Get.context!).showSnackBar(snackBar);
     });
 
@@ -85,10 +85,7 @@ abstract class BaseView<Controller extends BaseController>
 
   void showToast(String message) {
     Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_SHORT,
-        timeInSecForIosWeb: 1
-    );
+        msg: message, toastLength: Toast.LENGTH_SHORT, timeInSecForIosWeb: 1);
   }
 
   Color pageBackgroundColor() {

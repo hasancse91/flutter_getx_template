@@ -5,22 +5,22 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-  flutter: '2.8.0'
+  flutter: '3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.4
-  get: ^4.5.1
-  flutter_svg: ^0.22.0
-  dio: ^4.0.4
-  shared_preferences: ^2.0.10
+  get: ^4.6.5
+  flutter_svg: any
+  dio: ^4.0.6
+  shared_preferences: any
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
+  intl: any
   cached_network_image: ^3.2.0
   animations: ^2.0.2
-  logger: ^1.1.0
+  logger: any
   pretty_dio_logger: ^1.1.1
   font_awesome_flutter: ^9.2.0
   fluttertoast: ^8.0.8

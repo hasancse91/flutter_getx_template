@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 
+import '/generated/locales.g.dart';
 import '/app/bindings/initial_binding.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/routes/app_pages.dart';
@@ -25,8 +25,8 @@ class _MyAppState extends State<MyApp> {
       initialRoute: AppPages.INITIAL,
       initialBinding: InitialBinding(),
       getPages: AppPages.routes,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: _getSupportedLocal(),
+      translationsKeys: AppTranslation.translations,
+      locale: const Locale('en', 'US'),
       theme: ThemeData(
         primarySwatch: AppColors.colorPrimarySwatch,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -43,12 +43,5 @@ class _MyAppState extends State<MyApp> {
       ),
       debugShowCheckedModeBanner: false,
     );
-  }
-
-  List<Locale> _getSupportedLocal() {
-    return [
-      const Locale('en', ''),
-      const Locale('bn', ''),
-    ];
   }
 }

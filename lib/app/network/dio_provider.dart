@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_template/flavors/environment.dart';
 
 import '/app/network/pretty_dio_logger.dart';
 import '/app/network/request_headers.dart';
 import '/flavors/build_config.dart';
+import '/flavors/environment.dart';
 
 class DioProvider {
   static final String baseUrl = BuildConfig.instance.config.baseUrl;

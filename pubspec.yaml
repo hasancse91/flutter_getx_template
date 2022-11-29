@@ -10,14 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^1.0.4
   get: ^4.6.5
   flutter_svg: any
   dio: ^4.0.6
   shared_preferences: any
-  flutter_localizations:
-    sdk: flutter
-  intl: any
+
   cached_network_image: ^3.2.0
   animations: ^2.0.2
   logger: any
@@ -28,6 +28,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: any
   flutter_lints: ^1.0.4
   analyzer: any
   dart_code_metrics: any
@@ -43,19 +44,20 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    - images/
+    - assets/images/
+    - assets/fonts/
   fonts:
     - family: Roboto
       fonts:
-        - asset: fonts/Roboto-Thin.ttf
+        - asset: assets/fonts/Roboto-Thin.ttf
           weight: 200
-        - asset: fonts/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto-Light.ttf
           weight: 200
-        - asset: fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Regular.ttf
           weight: 200
-        - asset: fonts/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
           weight: 300
-        - asset: fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
           weight: 600
-        - asset: fonts/Roboto-Italic.ttf
+        - asset: assets/fonts/Roboto-Italic.ttf
           style: italic

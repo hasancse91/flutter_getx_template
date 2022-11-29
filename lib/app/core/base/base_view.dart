@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
@@ -14,8 +13,6 @@ import '/flavors/build_config.dart';
 abstract class BaseView<Controller extends BaseController>
     extends GetView<Controller> {
   final GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
-
-  AppLocalizations get appLocalization => AppLocalizations.of(Get.context!)!;
 
   final Logger logger = BuildConfig.instance.config.logger;
 

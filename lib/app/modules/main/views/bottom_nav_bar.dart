@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '/generated/locales.g.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
 import '/app/modules/main/controllers/bottom_nav_controller.dart';
@@ -14,7 +14,6 @@ class BottomNavBar extends StatelessWidget {
   final Function(MenuCode menuCode) onNewMenuSelected;
 
   BottomNavBar({Key? key, required this.onNewMenuSelected}) : super(key: key);
-  late AppLocalizations appLocalization;
 
   final navController = BottomNavController();
 
@@ -22,8 +21,6 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    appLocalization = AppLocalizations.of(context)!;
-
     Color selectedItemColor = Colors.white;
     Color unselectedItemColor = Colors.grey;
     List<BottomNavItem> navItems = _getNavItems();
@@ -35,7 +32,7 @@ class BottomNavBar extends StatelessWidget {
             .map(
               (BottomNavItem navItem) => BottomNavigationBarItem(
                   icon: SvgPicture.asset(
-                    "images/${navItem.iconSvgName}",
+                    "assets/images/${navItem.iconSvgName}",
                     height: AppValues.iconDefaultSize,
                     width: AppValues.iconDefaultSize,
                     color:
@@ -65,16 +62,16 @@ class BottomNavBar extends StatelessWidget {
   List<BottomNavItem> _getNavItems() {
     return [
       BottomNavItem(
-        navTitle: appLocalization.bottomNavHome,
+        navTitle: LocaleKeys.bottomNavHome.tr,
         iconSvgName: "ic_home.svg",
         menuCode: MenuCode.HOME,
       ),
       BottomNavItem(
-          navTitle: appLocalization.bottomNavFavorite,
+          navTitle: LocaleKeys.bottomNavFavorite.tr,
           iconSvgName: "ic_favorite.svg",
           menuCode: MenuCode.FAVORITE),
       BottomNavItem(
-          navTitle: appLocalization.bottomNavSettings,
+          navTitle: LocaleKeys.bottomNavSettings.tr,
           iconSvgName: "ic_settings.svg",
           menuCode: MenuCode.SETTINGS)
     ];

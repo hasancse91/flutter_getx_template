@@ -20,6 +20,7 @@ class MainView extends BaseView<MainController> {
 
   @override
   Widget body(BuildContext context) {
+    logger.d("");
     return Container(
       key: UniqueKey(),
       child: Obx(() => getPageOnSelectedMenu(controller.selectedMenuCode)),
@@ -28,7 +29,6 @@ class MainView extends BaseView<MainController> {
 
   @override
   Widget? bottomNavigationBar() {
-
     return BottomNavBar(onNewMenuSelected: controller.onMenuSelected);
   }
 

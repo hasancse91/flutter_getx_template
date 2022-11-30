@@ -20,11 +20,15 @@ class MainView extends BaseView<MainController> {
 
   @override
   Widget body(BuildContext context) {
-    logger.d("");
     return Container(
       key: UniqueKey(),
       child: Obx(() => getPageOnSelectedMenu(controller.selectedMenuCode)),
     );
+  }
+
+  @override
+  Widget pageContent(BuildContext context) {
+    return body(context);
   }
 
   @override

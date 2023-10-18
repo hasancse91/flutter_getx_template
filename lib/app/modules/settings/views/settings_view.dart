@@ -55,6 +55,11 @@ class SettingsView extends BaseView<SettingsController> {
 
   void _onLanguageItemClicked() {
     showToast('Language: Development in progress');
+    if (Get.locale?.languageCode == "en") {
+      Get.updateLocale(const Locale("zh", "cn"));
+    } else {
+      Get.updateLocale(const Locale("en", "us"));
+    }
   }
 
   void _onFontSizeItemClicked() {

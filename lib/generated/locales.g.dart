@@ -22,13 +22,13 @@ class LocaleKeys {
 
 class Locales {
   static const zh_CN = {
-    'bottomNavHome': 'Home',
-    'bottomNavFavorite': 'Favorite',
-    'bottomNavSettings': 'Settings',
-    'titleOtherView': 'OtherView',
-    'settingsTheme': 'Theme',
-    'settingsLanguage': 'Language',
-    'settingsFontSize': 'Font Size',
+    'bottomNavHome': ' 首页',
+    'bottomNavFavorite': '收藏',
+    'bottomNavSettings': ' 设置',
+    'titleOtherView': '其他',
+    'settingsTheme': '主题',
+    'settingsLanguage': '语言',
+    'settingsFontSize': '字体大小',
   };
   static const en_US = {
     'bottomNavHome': 'Home',

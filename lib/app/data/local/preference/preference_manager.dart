@@ -1,6 +1,12 @@
 abstract class PreferenceManager {
   static const keyToken = "token";
 
+  Future<T?> getObj<T>(String key, T Function(Map v) f, {T? defValue});
+
+  Future<Map?> getObject(String key);
+
+  Future<bool> setObject(String key, Object value);
+
   Future<String> getString(String key, {String defaultValue = ""});
 
   Future<bool> setString(String key, String value);

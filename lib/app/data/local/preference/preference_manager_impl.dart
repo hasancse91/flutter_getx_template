@@ -1,9 +1,33 @@
+import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '/app/data/local/preference/preference_manager.dart';
 
 class PreferenceManagerImpl implements PreferenceManager {
   final _preference = SharedPreferences.getInstance();
+
+  @override
+  Future<T?> getObj<T>(String key, T Function(Map v) f, {T? defValue}) {
+    return _preference.then((preference) {
+      String? _data = preference.getString(key);
+      Map? map = (_data == null || _data.isEmpty) ? null : json.decode(_data);
+      return map == null ? defValue : f(map);
+    });
+  }
+
+  @override
+  Future<Map?> getObject(String key) {
+    return _preference.then((preference) {
+      String? _data = preference.getString(key);
+      return (_data == null || _data.isEmpty) ? null : json.decode(_data);
+    });
+  }
+
+  @override
+  Future<bool> setObject(String key, Object value) {
+    return _preference
+        .then((preference) => preference.setString(key, json.encode(value)));
+  }
 
   @override
   Future<String> getString(String key, {String defaultValue = ""}) {

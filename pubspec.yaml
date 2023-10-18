@@ -7,22 +7,27 @@ environment:
   flutter: 3.0.0
 
 dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^1.0.4
   get: ^4.6.5
   flutter_svg: any
-  dio: ^4.0.6
+  dio: ^5.3.3
+  cached_network_image: ^3.2.1
   shared_preferences: any
-  cached_network_image: ^3.2.0
   animations: ^2.0.2
   logger: any
   pretty_dio_logger: ^1.1.1
   font_awesome_flutter: ^9.2.0
   fluttertoast: ^8.0.8
-  common_utils: 2.1.0
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
+  decimal: ^2.3.3
+  rational: ^2.2.2
+  path_provider: ^2.0.15
+  synchronized: ^3.0.0+3
+  url_launcher: ^6.1.10
+  flutter_easyrefresh: ^2.2.2
 
 dev_dependencies:
   build_runner: any

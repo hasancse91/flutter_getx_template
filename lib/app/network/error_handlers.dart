@@ -10,31 +10,35 @@ import '/app/network/exceptions/not_found_exception.dart';
 import '/app/network/exceptions/service_unavailable_exception.dart';
 import '/flavors/build_config.dart';
 
-Exception handleError(String error) {
+Exception handleException(String error) {
   final logger = BuildConfig.instance.config.logger;
   logger.e("Generic exception: $error");
 
   return AppException(message: error);
 }
 
-Exception handleDioError(DioError dioError) {
-  switch (dioError.type) {
-    case DioErrorType.cancel:
-      return AppException(message: "Request to API server was cancelled");
-    case DioErrorType.connectTimeout:
+Exception handleDioException(DioException dioException) {
+  switch (dioException.type) {
+    case DioExceptionType.connectionTimeout:
       return AppException(message: "Connection timeout with API server");
-    case DioErrorType.other:
-      return NetworkException("There is no internet connection");
-    case DioErrorType.receiveTimeout:
-      return TimeoutException("Receive timeout in connection with API server");
-    case DioErrorType.sendTimeout:
+    case DioExceptionType.sendTimeout:
       return TimeoutException("Send timeout in connection with API server");
-    case DioErrorType.response:
-      return _parseDioErrorResponse(dioError);
+    case DioExceptionType.receiveTimeout:
+      return TimeoutException("Receive timeout in connection with API server");
+    case DioExceptionType.badCertificate:
+      return AppException(message: "Bad certificate");
+    case DioExceptionType.cancel:
+      return AppException(message: "Request to API server was cancelled");
+    case DioExceptionType.connectionError:
+      return NetworkException("There is no internet connection");
+    case DioExceptionType.unknown:
+      return NetworkException("There is no internet connection");
+    case DioExceptionType.badResponse:
+      return _parseDioExceptionResponse(dioException);
   }
 }
 
-Exception _parseDioErrorResponse(DioError dioError) {
+Exception _parseDioExceptionResponse(DioException dioError) {
   final logger = BuildConfig.instance.config.logger;
 
   int statusCode = dioError.response?.statusCode ?? -1;

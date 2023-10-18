@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:flutter_easyrefresh/ball_pulse_header.dart';
+import 'package:flutter_easyrefresh/ball_pulse_footer.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
@@ -22,13 +25,7 @@ class HomeView extends BaseView<HomeController> {
 
   @override
   Widget body(BuildContext context) {
-    return PagingView(
-      onRefresh: () async {
-        controller.onRefreshPage();
-      },
-      onLoadNextPage: () {
-        controller.onLoadNextPage();
-      },
+    return EasyRefresh(
       child: Padding(
         padding: const EdgeInsets.all(AppValues.padding),
         child: Obx(
@@ -47,6 +44,12 @@ class HomeView extends BaseView<HomeController> {
           ),
         ),
       ),
+      onRefresh: () async {
+        controller.onRefreshPage();
+      },
+      onLoad: () async {
+        controller.onLoadNextPage();
+      },
     );
   }
 }

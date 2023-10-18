@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 
 import '/app/core/values/app_values.dart';
 
-class Debouncer {
+class DebouncerUtil {
   final int milliseconds;
   VoidCallback? action;
   Timer? _timer;
 
-  Debouncer({this.milliseconds = AppValues.defaultDebounceTimeInMilliSeconds});
+  DebouncerUtil(
+      {this.milliseconds = AppValues.defaultDebounceTimeInMilliSeconds});
 
   run(VoidCallback action) {
     if (_timer != null) {

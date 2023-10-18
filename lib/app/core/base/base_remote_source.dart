@@ -18,12 +18,12 @@ abstract class BaseRemoteSource {
       if (response.statusCode != HttpStatus.ok ||
           (response.data as Map<String, dynamic>)['statusCode'] !=
               HttpStatus.ok) {
-        // TODO
+        // TODO: network parse
       }
 
       return response;
-    } on DioError catch (dioError) {
-      Exception exception = handleDioError(dioError);
+    } on DioException catch (dioError) {
+      Exception exception = handleDioException(dioError);
       logger.e(
           "Throwing error from repository: >>>>>>> $exception : ${(exception as BaseException).message}");
       throw exception;
@@ -34,7 +34,7 @@ abstract class BaseRemoteSource {
         rethrow;
       }
 
-      throw handleError("$error");
+      throw handleException("$error");
     }
   }
 }

@@ -10,13 +10,17 @@ abstract class Routes {
   static const SETTINGS = _Paths.SETTINGS;
   static const OTHER = _Paths.OTHER;
   static const PROJECT_DETAILS = _Paths.PROJECT_DETAILS;
+  static const SPLASH = _Paths.SPLASH;
+  static const WEB = _Paths.WEB;
 }
 
 abstract class _Paths {
+  static const SPLASH = '/splash';
   static const MAIN = '/main';
   static const HOME = '/home';
   static const FAVORITE = '/favorite';
   static const SETTINGS = '/settings';
   static const OTHER = '/other';
   static const PROJECT_DETAILS = '/project-details';
+  static const WEB = '/web';
 }

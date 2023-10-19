@@ -3,7 +3,6 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
-import '/app/core/values/app_values.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/home/controllers/home_controller.dart';
 import '/app/modules/home/widget/item_github_project.dart';
@@ -22,31 +21,26 @@ class HomeView extends BaseView<HomeController> {
 
   @override
   Widget body(BuildContext context) {
-    return EasyRefresh(
-      child: Padding(
-        padding: const EdgeInsets.all(AppValues.padding),
-        child: Obx(
-          () => ListView.separated(
-            shrinkWrap: true,
-            itemCount: controller.projectList.length,
-            primary: false,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              var model = controller.projectList[index];
-
-              return ItemGithubProject(dataModel: model);
-            },
-            separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(height: AppValues.smallMargin),
-          ),
-        ),
-      ),
-      onRefresh: () async {
-        controller.onRefreshPage();
-      },
-      onLoad: () async {
-        controller.onLoadNextPage();
-      },
-    );
+    return Obx(() => EasyRefresh.custom(
+          header: BallPulseHeader(),
+          footer: BallPulseFooter(),
+          onRefresh: () async {
+            controller.onRefreshPage();
+          },
+          onLoad: () async {
+            controller.onLoadNextPage();
+          },
+          slivers: [
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  var model = controller.projectList[index];
+                  return ItemGithubProject(dataModel: model);
+                },
+                childCount: controller.projectList.length,
+              ),
+            ),
+          ],
+        ));
   }
 }

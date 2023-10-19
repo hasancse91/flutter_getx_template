@@ -41,6 +41,13 @@ class SettingsView extends BaseView<SettingsController> {
           onTap: _onFontSizeItemClicked,
         ),
         _getHorizontalDivider(),
+        ItemSettings(
+          title: "WebView",
+          prefixImage: 'ic_font_size.svg',
+          suffixImage: 'arrow_forward.svg',
+          onTap: _onWebViewItemClicked,
+        ),
+        _getHorizontalDivider(),
       ],
     );
   }
@@ -64,5 +71,10 @@ class SettingsView extends BaseView<SettingsController> {
 
   void _onFontSizeItemClicked() {
     showToast('Font Size: Development in progress');
+  }
+
+  void _onWebViewItemClicked() {
+    Get.toNamed("/web?url=https://flutter.dev",
+        arguments: {'url': 'https://flutter.dev'});
   }
 }

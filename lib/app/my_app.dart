@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/values/app_theme.dart';
 import 'package:get/get.dart';
 
 import '/generated/locales.g.dart';
 import '/app/bindings/initial_binding.dart';
-import '/app/core/values/app_colors.dart';
+
 import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
@@ -27,20 +28,8 @@ class _MyAppState extends State<MyApp> {
       getPages: AppPages.routes,
       translationsKeys: AppTranslation.translations,
       locale: const Locale('en', 'US'),
-      theme: ThemeData(
-        primarySwatch: AppColors.colorPrimarySwatch,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        brightness: Brightness.light,
-        primaryColor: AppColors.colorPrimary,
-        textTheme: const TextTheme(
-          button: TextStyle(
-            color: Colors.white,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        fontFamily: 'Roboto',
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
     );
   }

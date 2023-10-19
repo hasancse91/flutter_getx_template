@@ -16,7 +16,7 @@ class WebController extends BaseController {
     if (Get.parameters["url"] != null) {
       url = Get.parameters["url"] ?? '';
     }
-    if (Get.arguments["url"] != null) {
+    if (Get.arguments?["url"] != null) {
       url = Get.arguments["url"];
     }
 

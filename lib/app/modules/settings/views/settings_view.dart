@@ -43,7 +43,7 @@ class SettingsView extends BaseView<SettingsController> {
         _getHorizontalDivider(),
         ItemSettings(
           title: "WebView",
-          prefixImage: 'ic_font_size.svg',
+          prefixImage: 'ic_language.svg',
           suffixImage: 'arrow_forward.svg',
           onTap: _onWebViewItemClicked,
         ),
@@ -57,15 +57,17 @@ class SettingsView extends BaseView<SettingsController> {
   }
 
   void _onThemeItemClicked() {
-    showToast('Theme: Development in progress');
+    Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+    showToast('Switch Theme: ${Get.isDarkMode ? 'light' : 'dark'}');
   }
 
   void _onLanguageItemClicked() {
-    showToast('Language: Development in progress');
     if (Get.locale?.languageCode == "en") {
       Get.updateLocale(const Locale("zh", "cn"));
+      showToast('Switch Language: Chinese');
     } else {
       Get.updateLocale(const Locale("en", "us"));
+      showToast('Switch Language: English');
     }
   }
 
@@ -74,7 +76,6 @@ class SettingsView extends BaseView<SettingsController> {
   }
 
   void _onWebViewItemClicked() {
-    Get.toNamed("/web?url=https://flutter.dev",
-        arguments: {'url': 'https://flutter.dev'});
+    Get.toNamed("/web?url=https://flutter.dev");
   }
 }

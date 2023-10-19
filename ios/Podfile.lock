@@ -6,21 +6,25 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - path_provider_ios (0.0.1):
+  - path_provider_foundation (0.0.1):
     - Flutter
+    - FlutterMacOS
   - shared_preferences_ios (0.0.1):
     - Flutter
   - sqflite (0.0.2):
     - Flutter
     - FMDB (>= 2.7.5)
   - Toast (4.0.0)
+  - url_launcher_ios (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
-  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
 SPEC REPOS:
   trunk:
@@ -32,22 +36,25 @@ EXTERNAL SOURCES:
     :path: Flutter
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
-  path_provider_ios:
-    :path: ".symlinks/plugins/path_provider_ios/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/ios"
   shared_preferences_ios:
     :path: ".symlinks/plugins/shared_preferences_ios/ios"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   fluttertoast: 74526702fea2c060ea55dde75895b7e1bde1c86b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  url_launcher_ios: ae1517e5e344f5544fb090b079e11f399dfbe4d2
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: 9b0951430557f8d89d3a90a0de6f449497f684ed
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

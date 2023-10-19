@@ -31,6 +31,11 @@ class HomeView extends BaseView<HomeController> {
             controller.onLoadNextPage();
           },
           slivers: [
+            SliverToBoxAdapter(
+              child: Container(
+                height: 10,
+              ),
+            ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {

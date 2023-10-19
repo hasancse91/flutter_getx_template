@@ -7,7 +7,7 @@ class SplashController extends BaseController {
   @override
   void onReady() {
     super.onReady();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Get.offNamed(Routes.MAIN);
     });
   }

@@ -21,22 +21,25 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
 
   @override
   Widget body(BuildContext context) {
-    return ElevatedContainer(
-      child: Ripple(
-        onTap: _onTap,
-        child: Padding(
-          padding: const EdgeInsets.all(AppValues.padding),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(dataModel.ownerAvatar),
-                radius: AppValues.circularImageSize_30,
-              ),
-              const SizedBox(width: AppValues.margin_10),
-              _getDetailsView(),
-            ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0, left: 10, right: 10),
+      child: ElevatedContainer(
+        child: Ripple(
+          onTap: _onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(AppValues.padding),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  backgroundImage: NetworkImage(dataModel.ownerAvatar),
+                  radius: AppValues.circularImageSize_30,
+                ),
+                const SizedBox(width: AppValues.margin_10),
+                _getDetailsView(),
+              ],
+            ),
           ),
         ),
       ),

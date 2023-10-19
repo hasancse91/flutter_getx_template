@@ -1,7 +1,6 @@
+import 'package:flutter_getx_template/app/core/utils/utils.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'package:fluttertoast/fluttertoast.dart';
 
 /// Common Util.
 class CommonUtil {
@@ -10,7 +9,7 @@ class CommonUtil {
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      Fluttertoast.showToast(msg: "暂不能处理这条链接:$url");
+      ToastUtil.toast("暂不能处理这条链接:$url");
     }
   }
 

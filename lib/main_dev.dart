@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/app_init.dart';
 
-import '/app/my_app.dart';
+import 'app/app_init.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
 import '/flavors/environment.dart';
@@ -17,5 +18,5 @@ void main() {
     envConfig: devConfig,
   );
 
-  runApp(const MyApp());
+  AppInit.run();
 }

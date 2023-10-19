@@ -21,7 +21,6 @@ dependencies:
   logger: any
   pretty_dio_logger: ^1.1.1
   font_awesome_flutter: ^9.2.0
-  fluttertoast: ^8.0.8
   decimal: ^2.3.3
   rational: ^2.2.2
   path_provider: ^2.0.15
@@ -31,6 +30,7 @@ dependencies:
   package_info_plus: ^3.1.2
   webview_flutter: ^4.0.7
   webview_flutter_web: ^0.2.2+1
+  oktoast: ^3.3.2+1
 
 dev_dependencies:
   build_runner: any

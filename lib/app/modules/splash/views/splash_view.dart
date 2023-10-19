@@ -12,10 +12,12 @@ class SplashView extends BaseView<SplashController> {
 
   @override
   Widget body(BuildContext context) {
-    return const Center(
-      child: Text(
-        'SplashView is working',
-        style: TextStyle(fontSize: 20),
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.white,
+      ),
+      child: const Center(
+        child: FlutterLogo(size: 96),
       ),
     );
   }

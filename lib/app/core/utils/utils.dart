@@ -12,4 +12,5 @@ export './text_util.dart';
 export './timeline_util.dart';
 export './timer_util.dart';
 export './widget_util.dart';
+export './toast_util.dart';
 export './common_util.dart';

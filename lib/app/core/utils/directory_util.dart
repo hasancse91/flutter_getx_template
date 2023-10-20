@@ -46,14 +46,6 @@ void setInitDir({
   _initStorageDir = initStorageDir ?? _initStorageDir;
 }
 
-/**
- * @Author: Sky24n
- * @GitHub: https://github.com/Sky24n
- * @Email: sky24no@gmail.com
- * @Description: Directory Util.
- * @Date: 2019/05/09
- */
-
 /// DirectoryUtil。
 class DirectoryUtil {
   static DirectoryUtil? _singleton;

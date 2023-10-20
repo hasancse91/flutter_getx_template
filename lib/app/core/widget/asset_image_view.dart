@@ -9,6 +9,7 @@ class AssetImageView extends StatelessWidget {
     this.width,
     this.color,
     this.scale,
+    this.fit,
   }) : super(key: key);
 
   final String fileName;
@@ -16,6 +17,7 @@ class AssetImageView extends StatelessWidget {
   final double? width;
   final Color? color;
   final double? scale;
+  final BoxFit? fit;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +53,7 @@ class AssetImageView extends StatelessWidget {
           width: width,
           color: color,
           scale: scale,
+          fit: fit,
         );
       default:
         return Icon(

@@ -1,4 +1,6 @@
 PODS:
+  - devicelocale (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -19,6 +21,7 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - devicelocale (from `.symlinks/plugins/devicelocale/ios`)
   - Flutter (from `Flutter`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
@@ -32,6 +35,8 @@ SPEC REPOS:
     - FMDB
 
 EXTERNAL SOURCES:
+  devicelocale:
+    :path: ".symlinks/plugins/devicelocale/ios"
   Flutter:
     :path: Flutter
   package_info_plus:
@@ -48,6 +53,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
 
 SPEC CHECKSUMS:
+  devicelocale: b22617f40038496deffba44747101255cee005b0
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e

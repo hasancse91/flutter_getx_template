@@ -2,6 +2,7 @@ enum PageState {
   DEFAULT,
   LOADING,
   SUCCESS,
+  EMPTY,
   FAILED,
   UPDATED,
   CREATED,

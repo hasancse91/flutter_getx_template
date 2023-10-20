@@ -7,6 +7,7 @@ import '/app/core/base/base_controller.dart';
 import '/app/core/model/page_state.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/widget/loading.dart';
+import '/app/core/widget/empty_widget.dart';
 import '/app/core/utils/utils.dart';
 import '/flavors/build_config.dart';
 
@@ -67,7 +68,17 @@ abstract class BaseView<Controller extends BaseController>
 
   Widget pageContent(BuildContext context) {
     return SafeArea(
-      child: body(context),
+      child: Stack(
+        children: [
+          body(context),
+          Obx(() => controller.pageState == PageState.EMPTY
+              ? emptyPlaceholder()
+              : Container()),
+          Obx(() => controller.pageState == PageState.NO_INTERNET
+              ? noInternalPlaceholder()
+              : Container()),
+        ],
+      ),
     );
   }
 
@@ -102,6 +113,52 @@ abstract class BaseView<Controller extends BaseController>
 
   Widget? drawer() {
     return null;
+  }
+
+  Widget emptyPlaceholder() {
+    return Container(
+      color: pageBackgroundColor(),
+      constraints: const BoxConstraints.expand(),
+      child: const EmptyWidget(
+        image: null,
+        title: 'No Record',
+        subTitle: null,
+        titleTextStyle: TextStyle(
+          fontSize: 22,
+          color: Color(0xff9da9c7),
+          fontWeight: FontWeight.w500,
+        ),
+        subtitleTextStyle: TextStyle(
+          fontSize: 14,
+          color: Color(0xffabb8d6),
+        ),
+        hideBackgroundAnimation: true,
+      ),
+    );
+  }
+
+  Widget noInternalPlaceholder() {
+    return Container(
+      color: pageBackgroundColor(),
+      constraints: const BoxConstraints.expand(),
+      child: EmptyWidget(
+        image: null,
+        title: 'No Internet',
+        subTitle: null,
+        buttonTitle: 'Reload',
+        buttonAction: controller.refreshData,
+        titleTextStyle: const TextStyle(
+          fontSize: 22,
+          color: Color(0xff9da9c7),
+          fontWeight: FontWeight.w500,
+        ),
+        subtitleTextStyle: const TextStyle(
+          fontSize: 14,
+          color: Color(0xffabb8d6),
+        ),
+        hideBackgroundAnimation: true,
+      ),
+    );
   }
 
   Widget _showLoading() {

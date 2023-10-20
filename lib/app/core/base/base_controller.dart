@@ -18,12 +18,12 @@ abstract class BaseController extends GetxController {
 
   final logoutController = false.obs;
 
-  //Reload the page
+  // Reload the page
   final _refreshController = false.obs;
 
   refreshPage(bool refresh) => _refreshController(refresh);
 
-  //Controls page state
+  // Controls page state
   final _pageSateController = PageState.DEFAULT.obs;
 
   PageState get pageState => _pageSateController.value;
@@ -32,29 +32,37 @@ abstract class BaseController extends GetxController {
 
   resetPageState() => _pageSateController(PageState.DEFAULT);
 
+  // Control loading
   showLoading() => updatePageState(PageState.LOADING);
 
   hideLoading() => resetPageState();
 
+  // Message
   final _messageController = ''.obs;
 
   String get message => _messageController.value;
 
   showMessage(String msg) => _messageController(msg);
 
+  // Error Message
   final _errorMessageController = ''.obs;
 
   String get errorMessage => _errorMessageController.value;
 
-  showErrorMessage(String msg) {
-    _errorMessageController(msg);
-  }
+  showErrorMessage(String msg) => _errorMessageController(msg);
 
+  // Success Message
   final _successMessageController = ''.obs;
 
   String get successMessage => _messageController.value;
 
   showSuccessMessage(String msg) => _successMessageController(msg);
+
+  // Controls data
+
+  void loadData() {}
+
+  void refreshData() {}
 
   // ignore: long-parameter-list
   dynamic callDataService<T>(

@@ -16,6 +16,7 @@ class AppTheme {
       ),
     ),
     fontFamily: 'Roboto',
+    useMaterial3: true,
   );
 
   /// 暗黑主题
@@ -32,5 +33,6 @@ class AppTheme {
       ),
     ),
     fontFamily: 'Roboto',
+    useMaterial3: true,
   );
 }

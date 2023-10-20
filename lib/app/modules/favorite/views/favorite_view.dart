@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '/app/core/base/base_view.dart';
-import '/app/core/widget/custom_app_bar.dart';
-import '/app/core/widget/network_image_view.dart';
+import '/app/core/widget/widgets.dart';
 import '/app/modules/favorite/controllers/favorite_controller.dart';
 
 class FavoriteView extends BaseView<FavoriteController> {
@@ -10,6 +9,18 @@ class FavoriteView extends BaseView<FavoriteController> {
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
       appBarTitleText: 'Favorite',
+      actions: [
+        IconButton(
+          tooltip: "",
+          icon: const Icon(
+            Icons.switch_left,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            controller.switchPageState();
+          },
+        ),
+      ],
     );
   }
 

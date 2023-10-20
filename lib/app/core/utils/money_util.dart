@@ -15,6 +15,8 @@ enum MoneyFormat {
 
 /// Money Util.
 class MoneyUtil {
+  MoneyUtil._internal();
+
   static const String YUAN = '¥';
   static const String YUAN_ZH = '元';
   static const String DOLLAR = '\$';

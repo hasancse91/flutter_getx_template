@@ -43,6 +43,8 @@ Map<int, int> MONTH_DAY = {
 
 /// Date Util.
 class DateUtil {
+  DateUtil._internal();
+
   /// get DateTime By DateStr.
   static DateTime? getDateTime(String dateStr, {bool? isUtc}) {
     DateTime? dateTime = DateTime.tryParse(dateStr);

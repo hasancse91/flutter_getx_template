@@ -1,7 +1,11 @@
+import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-import '../modules/web/bindings/web_binding.dart';
-import '../modules/web/views/web_view.dart';
+import '/app/middlewares/router_auth.dart';
+import '/app/modules/login/bindings/login_binding.dart';
+import '/app/modules/login/views/login_view.dart';
+import '/app/core/widget/not_found_view.dart';
 import '/app/modules/favorite/bindings/favorite_binding.dart';
 import '/app/modules/favorite/views/favorite_view.dart';
 import '/app/modules/home/bindings/home_binding.dart';
@@ -16,6 +20,10 @@ import '/app/modules/settings/bindings/settings_binding.dart';
 import '/app/modules/settings/views/settings_view.dart';
 import '/app/modules/splash/bindings/splash_binding.dart';
 import '/app/modules/splash/views/splash_view.dart';
+import '/app/modules/web/bindings/web_binding.dart';
+import '/app/modules/web/views/web_view.dart';
+
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 part 'app_routes.dart';
 
@@ -23,6 +31,11 @@ class AppPages {
   AppPages._();
 
   static const INITIAL = Routes.SPLASH;
+
+  static final UNKNOWN = GetPage(
+    name: Routes.NOTFOUND,
+    page: () => const NotfoundView(),
+  );
 
   static final routes = [
     GetPage(
@@ -56,6 +69,9 @@ class AppPages {
       name: _Paths.OTHER,
       page: () => OtherView(),
       binding: OtherBinding(),
+      middlewares: [
+        RouteAuthMiddleware(priority: 1),
+      ],
     ),
     GetPage(
       name: _Paths.PROJECT_DETAILS,
@@ -66,6 +82,11 @@ class AppPages {
       name: _Paths.WEB,
       page: () => WebView(),
       binding: WebBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LoginView(),
+      binding: LoginBinding(),
     ),
   ];
 }

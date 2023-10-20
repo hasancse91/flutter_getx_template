@@ -1,5 +1,7 @@
 /// Text Util.
 class TextUtil {
+  TextUtil._internal();
+
   /// isEmpty
   static bool isEmpty(String? text) {
     return text == null || text.isEmpty;

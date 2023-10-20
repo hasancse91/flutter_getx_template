@@ -239,6 +239,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.3.3"
+  devicelocale:
+    dependency: "direct main"
+    description:
+      name: devicelocale
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.7.0"
   dio:
     dependency: "direct main"
     description:

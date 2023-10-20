@@ -1,5 +1,7 @@
 /// Object Util.
 class ObjectUtil {
+  ObjectUtil._internal();
+
   /// Returns true if the string is null or 0-length.
   static bool isEmptyString(String? str) {
     return str == null || str.isEmpty;

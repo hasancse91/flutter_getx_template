@@ -4,6 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 /// Common Util.
 class CommonUtil {
+  CommonUtil._internal();
+
   ///处理链接
   static void launchURL(Uri url) async {
     if (await canLaunchUrl(url)) {

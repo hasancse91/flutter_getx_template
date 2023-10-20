@@ -48,6 +48,20 @@ class SettingsView extends BaseView<SettingsController> {
           onTap: _onWebViewItemClicked,
         ),
         _getHorizontalDivider(),
+        ItemSettings(
+          title: "OtherView",
+          prefixImage: 'ic_language.svg',
+          suffixImage: 'arrow_forward.svg',
+          onTap: _onOtherViewItemClicked,
+        ),
+        _getHorizontalDivider(),
+        ItemSettings(
+          title: "NotFoundView",
+          prefixImage: 'ic_language.svg',
+          suffixImage: 'arrow_forward.svg',
+          onTap: _onNotFoundViewItemClicked,
+        ),
+        _getHorizontalDivider(),
       ],
     );
   }
@@ -77,5 +91,13 @@ class SettingsView extends BaseView<SettingsController> {
 
   void _onWebViewItemClicked() {
     Get.toNamed("/web?url=https://flutter.dev");
+  }
+
+  void _onOtherViewItemClicked() {
+    Get.toNamed("/other");
+  }
+
+  void _onNotFoundViewItemClicked() {
+    Get.toNamed("/webview");
   }
 }

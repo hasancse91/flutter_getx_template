@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 
 /// Widget Util.
 class WidgetUtil {
+  WidgetUtil._internal();
+
   bool _hasMeasured = false;
   double _width = 0;
   double _height = 0;

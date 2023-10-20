@@ -41,6 +41,8 @@ List<String> ID_CARD_PROVINCE_DICT = [
 
 /// Regex Util.
 class RegexUtil {
+  RegexUtil._internal();
+
   /// Regex of simple mobile.
   static const String regexMobileSimple = '^[1]\\d{10}\$';
 

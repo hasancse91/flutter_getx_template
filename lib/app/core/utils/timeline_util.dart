@@ -242,6 +242,8 @@ void setLocaleInfo(String locale, TimelineInfo timelineInfo) {
 
 /// TimelineUtil
 class TimelineUtil {
+  TimelineUtil._internal();
+
   /// format time by DateTime.
   /// dateTime
   /// locDateTime: current time or schedule time.

@@ -12,6 +12,8 @@ abstract class Routes {
   static const PROJECT_DETAILS = _Paths.PROJECT_DETAILS;
   static const SPLASH = _Paths.SPLASH;
   static const WEB = _Paths.WEB;
+  static const NOTFOUND = _Paths.NOTFOUND;
+  static const LOGIN = _Paths.LOGIN;
 }
 
 abstract class _Paths {
@@ -23,4 +25,6 @@ abstract class _Paths {
   static const OTHER = '/other';
   static const PROJECT_DETAILS = '/project-details';
   static const WEB = '/web';
+  static const NOTFOUND = '/notfound';
+  static const LOGIN = '/login';
 }

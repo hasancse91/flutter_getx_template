@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
     return ToastUtil.init(
       GetMaterialApp(
         title: _envConfig.appName,
+        unknownRoute: AppPages.UNKNOWN,
         initialRoute: AppPages.INITIAL,
         initialBinding: InitialBinding(),
         getPages: AppPages.routes,

@@ -2,6 +2,7 @@ export './date_util.dart';
 export './debouncer_util.dart';
 export './directory_util.dart';
 export './json_util.dart';
+export './locale_util.dart';
 export './money_util.dart';
 export './num_util.dart';
 export './object_util.dart';

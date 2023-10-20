@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
 import '/app/modules/splash/controllers/splash_controller.dart';

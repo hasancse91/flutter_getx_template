@@ -4,6 +4,8 @@ import 'dart:convert';
 
 /// Json Util.
 class JsonUtil {
+  JsonUtil._internal();
+
   /// Converts object [value] to a JSON string.
   static String? encodeObj(dynamic value) {
     return value == null ? null : json.encode(value);

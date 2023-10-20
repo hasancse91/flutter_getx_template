@@ -1,6 +1,7 @@
-import 'package:flutter_getx_template/app/core/utils/utils.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '/app/core/utils/utils.dart';
 
 /// Common Util.
 class CommonUtil {

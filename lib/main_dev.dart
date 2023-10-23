@@ -1,4 +1,6 @@
-import '/app/app_init.dart';
+import 'package:flutter/material.dart';
+
+import 'app/init_app.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
 import '/flavors/environment.dart';
@@ -15,5 +17,7 @@ void main() {
     envConfig: devConfig,
   );
 
-  AppInit.run();
+  WidgetsFlutterBinding.ensureInitialized();
+  InitApp.initServices();
+  InitApp.run();
 }

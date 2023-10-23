@@ -18,7 +18,7 @@ abstract class BaseRemoteSource {
       if (response.statusCode != HttpStatus.ok ||
           (response.data as Map<String, dynamic>)['statusCode'] !=
               HttpStatus.ok) {
-        // TODO: network parse
+        // network doing something
       }
 
       return response;

@@ -3,16 +3,26 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 
-import '/flavors/build_config.dart';
 import '/app/my_app.dart';
+import '/app/services/initial_service.dart';
+import '/flavors/build_config.dart';
 
 //应用初始化
-class AppInit {
+class InitApp {
   static void run() {
     //捕获异常
     catchException(() => runApp(const MyApp()));
+  }
+
+  /// 初始化服务
+  static void initServices() async {
+    final Logger logger = BuildConfig.instance.config.logger;
+    logger.i('starting services ...');
+    await Get.putAsync(() => InitialService().init());
+    logger.i('All services started...');
   }
 
   ///异常捕获处理

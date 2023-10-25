@@ -14,22 +14,21 @@ import '/app/modules/settings/views/settings_view.dart';
 // ignore: must_be_immutable
 class MainView extends BaseView<MainController> {
   @override
-  PreferredSizeWidget? appBar(BuildContext context) {
-    return null;
-  }
+  PreferredSizeWidget? appBar(BuildContext context) => null;
 
   @override
   Widget body(BuildContext context) {
     return Container(
       key: UniqueKey(),
-      child: Obx(() => getPageOnSelectedMenu(controller.selectedMenuCode)),
+      child: Obx(
+        () => getPageOnSelectedMenu(controller.selectedMenuCode),
+      ),
     );
   }
 
   @override
   Widget? bottomNavigationBar() {
-
-    return BottomNavBar(onNewMenuSelected: controller.onMenuSelected);
+    return BottomNavBar(onItemSelected: controller.onMenuSelected);
   }
 
   final HomeView homeView = HomeView();

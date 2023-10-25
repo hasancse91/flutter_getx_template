@@ -36,7 +36,7 @@ class BottomNavBar extends StatelessWidget {
             .map(
               (BottomNavItem navItem) => BottomNavigationBarItem(
                 icon: AssetImageView(
-                  fileName: "images/${navItem.iconSvgName}",
+                  fileName: navItem.iconSvgName,
                   height: AppValues.iconDefaultSize,
                   width: AppValues.iconDefaultSize,
                   color:

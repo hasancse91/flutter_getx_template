@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         brightness: Brightness.light,
         primaryColor: AppColors.colorPrimary,
         textTheme: const TextTheme(
-          button: TextStyle(
+          labelLarge: TextStyle(
             color: Colors.white,
             fontSize: 20.0,
             fontWeight: FontWeight.bold,

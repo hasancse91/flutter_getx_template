@@ -9,6 +9,7 @@ class AssetImageView extends StatelessWidget {
     this.width,
     this.color,
     this.scale,
+    this.fit,
   }) : super(key: key);
 
   final String fileName;
@@ -16,6 +17,7 @@ class AssetImageView extends StatelessWidget {
   final double? width;
   final Color? color;
   final double? scale;
+  final BoxFit? fit;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,8 @@ class AssetImageView extends StatelessWidget {
           path,
           height: height,
           width: width,
-          color: color ?? Colors.black,
+          colorFilter: color == null? null: ColorFilter.mode(color ?? Colors.black, BlendMode.srcIn),
+          fit: fit ?? BoxFit.contain,
         );
       case "png":
       case "jpg":

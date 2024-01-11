@@ -10,7 +10,6 @@ import 'package:flutter_getx_template/app/data/local/preference/preference_manag
 import 'package:get/get.dart';
 
 import '/app/bindings/initial_binding.dart';
-import '/app/core/values/app_colors.dart';
 import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';

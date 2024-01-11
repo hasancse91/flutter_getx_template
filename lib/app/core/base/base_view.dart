@@ -135,7 +135,7 @@ abstract class BaseView<Controller extends BaseController>
   }
 
   Widget _showLoading() {
-    return const Loading();
+    return Loading();
   }
 
   Widget? _bottomSheet() {

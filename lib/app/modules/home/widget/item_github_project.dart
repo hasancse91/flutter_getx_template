@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 import 'package:get/get.dart';
 
-import '/app/core/base/base_widget_mixin.dart';
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
-import '/app/core/values/text_styles.dart';
-import '/app/core/widget/elevated_container.dart';
-import '/app/core/widget/icon_text_widgets.dart';
-import '/app/modules/home/model/github_project_ui_data.dart';
-import '/app/routes/app_pages.dart';
+import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
+import 'package:flutter_getx_template/app/core/widget/elevated_container.dart';
+import 'package:flutter_getx_template/app/core/widget/icon_text_widgets.dart';
+import 'package:flutter_getx_template/app/modules/home/model/github_project_ui_data.dart';
+import 'package:flutter_getx_template/app/routes/app_pages.dart';
 
+// ignore: must_be_immutable
 class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
   final GithubProjectUiData dataModel;
 
@@ -50,14 +49,14 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
         children: [
           Text(
             dataModel.repositoryName,
-            style: cardTitleStyle,
+            style: textTheme.titleMedium,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
           const SizedBox(height: AppValues.margin_4),
           Text(
             dataModel.ownerLoginName,
-            style: cardSubtitleStyle,
+            style: textTheme.labelMedium?.copyWith(color: theme.hintColor),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -76,19 +75,19 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
           value: dataModel.numberOfFork.toString(),
           height: AppValues.iconSize_20,
           width: AppValues.iconSize_20,
-          color: AppColors.iconColorDefault,
+          color: theme.iconTheme.color,
         ),
         IconTextWidget(
           icon: Icons.star_border,
           value: dataModel.numberOfStar.toString(),
           size: AppValues.iconSize_20,
-          color: AppColors.iconColorDefault,
+          color: theme.iconTheme.color,
         ),
         IconTextWidget(
           icon: Icons.visibility_outlined,
           value: dataModel.watchers.toString(),
           size: AppValues.iconSize_20,
-          color: AppColors.iconColorDefault,
+          color: theme.iconTheme.color,
         ),
       ],
     );

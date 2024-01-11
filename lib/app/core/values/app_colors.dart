@@ -47,7 +47,7 @@ abstract class AppColors {
   static Color elevatedContainerColorOpacity = Colors.grey.withOpacity(0.5);
   static const Color suffixImageColor = Colors.grey;
 
-  static const Color primary = Color(0xFF38686A);
+  static const Color primary = Color(0xFF0080C5);
   static const Color primaryDark = colorWhite;
   static const Color bgPageLight = Color(0xFFFDF8FF);
   static const Color bgPageDark = Color(0xFF1C192B);
@@ -64,4 +64,5 @@ abstract class AppColors {
   static const Color basicGreyDark = Color(0xFFFFFFFF);
   static const Color errorContainerLight = Color(0xFFFED0B5);
   static const Color errorContainerDark = bgCardDark;
+  static const Color loaderBackground = Color(0x32000000);
 }

@@ -30,6 +30,7 @@ class AppThemeData {
       bottomSheetTheme: _bottomSheetThemeDataDark,
       dialogTheme: _dialogThemeDark,
       popupMenuTheme: _popupMenuThemeDark,
+      shadowColor: Colors.black12,
     );
   }
 
@@ -41,7 +42,7 @@ class AppThemeData {
       primaryColorDark: AppColors.primaryDark,
       primaryColorLight: AppColors.primary,
       cardColor: AppColors.bgCardLight,
-      iconTheme: const IconThemeData(color: AppColors.colorBlack),
+      iconTheme: const IconThemeData(color: Colors.grey),
       indicatorColor: AppColors.colorBlack,
       buttonTheme: const ButtonThemeData(alignedDropdown: true),
       dividerColor: AppColors.divider,
@@ -58,6 +59,7 @@ class AppThemeData {
       bottomSheetTheme: _bottomSheetThemeDataLight,
       dialogTheme: _dialogThemeLight,
       popupMenuTheme: _popupMenuThemeLight,
+      shadowColor: Colors.black12,
     );
   }
 
@@ -65,7 +67,7 @@ class AppThemeData {
       const BottomNavigationBarThemeData(
         backgroundColor: AppColors.bgCardDark,
         selectedItemColor: AppColors.colorWhite,
-        unselectedItemColor: AppColors.basicGrey,
+        unselectedItemColor: AppColors.lightGreyColor,
         selectedLabelStyle: labelMediumTextStyleDark,
         unselectedLabelStyle: labelMediumTextStyleDark,
       );
@@ -73,8 +75,8 @@ class AppThemeData {
   static BottomNavigationBarThemeData get _bottomNavigationBarThemeDataLight =>
       const BottomNavigationBarThemeData(
         backgroundColor: AppColors.bgCardLight,
-        selectedItemColor: AppColors.colorPrimary,
-        unselectedItemColor: AppColors.basicGrey,
+        selectedItemColor: AppColors.primary,
+        unselectedItemColor: AppColors.lightGreyColor,
         selectedLabelStyle: labelMediumTextStyle,
         unselectedLabelStyle: labelMediumTextStyle,
       );

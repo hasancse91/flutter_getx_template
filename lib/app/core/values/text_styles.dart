@@ -24,7 +24,7 @@ const TextStyle primaryButtonTextStyle = TextStyle(
 const TextStyle secondaryButtonTextStyle = TextStyle(
   fontSize: FontSize.titleLarge,
   fontWeight: FontWeight.w500,
-  color: AppColors.colorPrimary,
+  color: AppColors.primary,
 );
 
 const TextStyle bodySmallTextStyle = TextStyle(

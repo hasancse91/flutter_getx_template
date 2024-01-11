@@ -1,74 +1,50 @@
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '/app/data/local/preference/preference_manager.dart';
 
 class PreferenceManagerImpl implements PreferenceManager {
-  final _preference = SharedPreferences.getInstance();
+  final GetStorage _storage = GetStorage(PreferenceManager.DATABASE_NAME);
 
   @override
-  Future<String> getString(String key, {String defaultValue = ""}) {
-    return _preference
-        .then((preference) => preference.getString(key) ?? defaultValue);
-  }
+  String getString(String key, {String defaultValue = ""}) =>
+      _storage.read(key) ?? defaultValue;
 
   @override
-  Future<bool> setString(String key, String value) {
-    return _preference.then((preference) => preference.setString(key, value));
-  }
+  void setString(String key, String value) => _storage.write(key, value);
 
   @override
-  Future<int> getInt(String key, {int defaultValue = 0}) {
-    return _preference
-        .then((preference) => preference.getInt(key) ?? defaultValue);
-  }
+  int getInt(String key, {int defaultValue = 0}) =>
+      _storage.read(key) ?? defaultValue;
 
   @override
-  Future<bool> setInt(String key, int value) {
-    return _preference.then((preference) => preference.setInt(key, value));
-  }
+  void setInt(String key, int value) => _storage.write(key, value);
 
   @override
-  Future<double> getDouble(String key, {double defaultValue = 0.0}) {
-    return _preference
-        .then((preference) => preference.getDouble(key) ?? defaultValue);
-  }
+  double getDouble(String key, {double defaultValue = 0.0}) =>
+      _storage.read(key) ?? defaultValue;
 
   @override
-  Future<bool> setDouble(String key, double value) {
-    return _preference.then((preference) => preference.setDouble(key, value));
-  }
+  void setDouble(String key, double value) => _storage.write(key, value);
 
   @override
-  Future<bool> getBool(String key, {bool defaultValue = false}) {
-    return _preference
-        .then((preference) => preference.getBool(key) ?? defaultValue);
-  }
+  bool getBool(String key, {bool defaultValue = false}) =>
+      _storage.read(key) ?? defaultValue;
 
   @override
-  Future<bool> setBool(String key, bool value) {
-    return _preference.then((preference) => preference.setBool(key, value));
-  }
+  void setBool(String key, bool value) => _storage.write(key, value);
 
   @override
-  Future<List<String>> getStringList(String key,
-      {List<String> defaultValue = const []}) {
-    return _preference
-        .then((preference) => preference.getStringList(key) ?? defaultValue);
-  }
+  List<String> getStringList(String key,
+          {List<String> defaultValue = const []}) =>
+      _storage.read(key) ?? defaultValue;
 
   @override
-  Future<bool> setStringList(String key, List<String> value) {
-    return _preference
-        .then((preference) => preference.setStringList(key, value));
-  }
+  void setStringList(String key, List<String> value) =>
+      _storage.write(key, value);
 
   @override
-  Future<bool> remove(String key) {
-    return _preference.then((preference) => preference.remove(key));
-  }
+  void remove(String key) => _storage.remove(key);
 
   @override
-  Future<bool> clear() {
-    return _preference.then((preference) => preference.clear());
-  }
+  void clear() => _storage.erase();
 }

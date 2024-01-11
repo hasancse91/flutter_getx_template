@@ -8,13 +8,12 @@ class DioRequestRetrier {
   final dioClient = DioProvider.tokenClient;
   final RequestOptions requestOptions;
 
-  final PreferenceManager _preferenceManager =
-      getx.Get.find(tag: (PreferenceManager).toString());
+  final PreferenceManager _preferenceManager = getx.Get.find();
 
   DioRequestRetrier({required this.requestOptions});
 
   Future<Response<T>> retry<T>() async {
-    var header = await getCustomHeaders();
+    var header = getCustomHeaders();
 
     return await dioClient.request(
       requestOptions.path,
@@ -27,9 +26,9 @@ class DioRequestRetrier {
     );
   }
 
-  Future<Map<String, String>> getCustomHeaders() async {
+  Map<String, String> getCustomHeaders() {
     final String accessToken =
-        await _preferenceManager.getString(PreferenceManager.keyToken);
+        _preferenceManager.getString(PreferenceManager.KEY_TOKEN);
     var customHeaders = {'content-type': 'application/json'};
     if (accessToken.trim().isNotEmpty) {
       customHeaders.addAll({

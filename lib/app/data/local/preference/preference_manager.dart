@@ -1,28 +1,31 @@
 abstract class PreferenceManager {
-  static const keyToken = "token";
+  static const DATABASE_NAME = "flutter_getx_template";
+  static const KEY_TOKEN = "token";
+  static const THEME = "theme";
+  static const LANGUAGE = "language";
 
-  Future<String> getString(String key, {String defaultValue = ""});
+  String getString(String key, {String defaultValue = ""});
 
-  Future<bool> setString(String key, String value);
+  void setString(String key, String value);
 
-  Future<int> getInt(String key, {int defaultValue = 0});
+  int getInt(String key, {int defaultValue = 0});
 
-  Future<bool> setInt(String key, int value);
+  void setInt(String key, int value);
 
-  Future<double> getDouble(String key, {double defaultValue = 0.0});
+  double getDouble(String key, {double defaultValue = 0.0});
 
-  Future<bool> setDouble(String key, double value);
+  void setDouble(String key, double value);
 
-  Future<bool> getBool(String key, {bool defaultValue = false});
+  bool getBool(String key, {bool defaultValue = false});
 
-  Future<bool> setBool(String key, bool value);
+  void setBool(String key, bool value);
 
-  Future<List<String>> getStringList(String key,
+  List<String> getStringList(String key,
       {List<String> defaultValue = const []});
 
-  Future<bool> setStringList(String key, List<String> value);
+  void setStringList(String key, List<String> value);
 
-  Future<bool> remove(String key);
+  void remove(String key);
 
-  Future<bool> clear();
+  void clear();
 }

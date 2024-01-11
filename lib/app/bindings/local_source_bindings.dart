@@ -8,7 +8,6 @@ class LocalSourceBindings implements Bindings {
   void dependencies() {
     Get.lazyPut<PreferenceManager>(
       () => PreferenceManagerImpl(),
-      tag: (PreferenceManager).toString(),
       fenix: true,
     );
   }

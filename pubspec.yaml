@@ -20,10 +20,10 @@ dependencies:
   fluttertoast: 8.2.2
   flutter_svg: 2.0.8
   get: 4.6.6
+  get_storage: 2.1.1
   intl: 0.18.1
   logger: 2.0.2+1
   pretty_dio_logger: 1.3.1
-  shared_preferences: 2.2.2
 
 dev_dependencies:
   flutter_test:

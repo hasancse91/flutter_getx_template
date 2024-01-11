@@ -20,7 +20,7 @@ for data and observe the response. Till then it may display a loader to the user
 
 <b>Model:</b> Model is basically backend logic. It controls the data source.
 
-# To configure and run this project [check here](readme_configuration_guideline.md) 
+# To configure and run this project [check here](README_CONFIGURATION_GUIDELINE.md) 
 You will find at above link step by step instructions with screenshots.
 
 # run this project by command line

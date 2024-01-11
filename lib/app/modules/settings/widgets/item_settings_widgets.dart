@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import '/app/core/base/base_widget_mixin.dart';
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
-import '/app/core/values/text_styles.dart';
-import '/app/core/widget/asset_image_view.dart';
-import '/app/core/widget/ripple.dart';
+import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
+import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
+import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 
+// ignore: must_be_immutable
 class ItemSettings extends StatelessWidget with BaseWidgetMixin {
   final String prefixImage;
   final String suffixImage;
@@ -31,13 +30,14 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
               fileName: prefixImage,
               height: AppValues.iconSize_20,
               width: AppValues.iconSize_20,
+              color: theme.iconTheme.color,
             ),
             const SizedBox(width: AppValues.smallPadding),
-            Text(title, style: settingsItemStyle),
+            Text(title, style: textTheme.labelLarge),
             const Spacer(),
             AssetImageView(
               fileName: suffixImage,
-              color: AppColors.suffixImageColor,
+              color: theme.iconTheme.color,
               height: AppValues.iconSize_20,
               width: AppValues.iconSize_20,
             ),

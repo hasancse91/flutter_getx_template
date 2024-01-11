@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
 
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
 
-class ElevatedContainer extends StatelessWidget {
+// ignore: must_be_immutable
+class ElevatedContainer extends StatelessWidget with BaseWidgetMixin {
   final Widget child;
   final Color bgColor;
   final EdgeInsetsGeometry? padding;
   final double borderRadius;
 
-  const ElevatedContainer({
+  ElevatedContainer({
     Key? key,
     required this.child,
     this.bgColor = AppColors.pageBackground,
@@ -18,20 +20,21 @@ class ElevatedContainer extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget body(BuildContext context) {
     return Container(
       padding: padding,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.elevatedContainerColorOpacity,
-              spreadRadius: 3,
-              blurRadius: 8,
-              offset: const Offset(0, 3), // changes position of shadow
-            ),
-          ],
-          color: AppColors.pageBackground),
+        borderRadius: BorderRadius.circular(borderRadius),
+        boxShadow: [
+          BoxShadow(
+            color: theme.shadowColor,
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: const Offset(0, 3), // changes position of shadow
+          ),
+        ],
+        color: theme.cardColor,
+      ),
       child: child,
     );
   }

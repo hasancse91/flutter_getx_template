@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '/app/core/base/base_view.dart';
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
-import '/app/core/values/text_styles.dart';
-import '/app/core/widget/custom_app_bar.dart';
-import '/app/core/widget/icon_text_widgets.dart';
-import '/app/modules/project_details/controllers/project_details_controller.dart';
+import 'package:flutter_getx_template/app/core/base/base_view.dart';
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
+import 'package:flutter_getx_template/app/core/widget/custom_app_bar.dart';
+import 'package:flutter_getx_template/app/core/widget/icon_text_widgets.dart';
+import 'package:flutter_getx_template/app/modules/project_details/controllers/project_details_controller.dart';
 
+// ignore:must_be_immutable
 class ProjectDetailsView extends BaseView<ProjectDetailsController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
@@ -37,7 +36,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
               children: [
                 Text(
                   controller.projectUiData.repositoryName,
-                  style: cardTitleStyle,
+                  style: textTheme.titleMedium,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                 ),
@@ -61,7 +60,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
         const SizedBox(width: AppValues.margin_6),
         Text(
           controller.projectUiData.ownerLoginName,
-          style: cardSubtitleStyle,
+          style: textTheme.labelLarge,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -79,19 +78,19 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
             value: controller.projectUiData.numberOfFork.toString(),
             height: AppValues.iconSize_20,
             width: AppValues.iconSize_20,
-            color: AppColors.iconColorDefault,
+            color: theme.iconTheme.color,
           ),
           IconTextWidget(
             icon: Icons.star_border,
             value: controller.projectUiData.numberOfStar.toString(),
             size: AppValues.iconSize_20,
-            color: AppColors.iconColorDefault,
+            color: theme.iconTheme.color,
           ),
           IconTextWidget(
             icon: Icons.visibility_outlined,
             value: controller.projectUiData.watchers.toString(),
             size: AppValues.iconSize_20,
-            color: AppColors.iconColorDefault,
+            color: theme.iconTheme.color,
           ),
         ],
       ),
@@ -102,8 +101,10 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
     return Expanded(
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Text(controller.projectUiData.description,
-            style: descriptionTextStyle),
+        child: Text(
+          controller.projectUiData.description,
+          style: textTheme.bodyMedium,
+        ),
       ),
     );
   }

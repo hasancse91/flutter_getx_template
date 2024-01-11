@@ -3,14 +3,14 @@ import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
 import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:get/get.dart';
 
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
-import '/app/modules/main/controllers/bottom_nav_controller.dart';
-import '/app/modules/main/model/menu_code.dart';
-import '/app/modules/main/model/menu_item.dart';
+import 'package:flutter_getx_template/app/core/values/app_values.dart';
+import 'package:flutter_getx_template/app/modules/main/controllers/bottom_nav_controller.dart';
+import 'package:flutter_getx_template/app/modules/main/model/menu_code.dart';
+import 'package:flutter_getx_template/app/modules/main/model/menu_item.dart';
 
 typedef OnBottomNavItemSelected = Function(MenuCode menuCode);
 
+// ignore: must_be_immutable
 class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
   BottomNavBar({
     Key? key,
@@ -20,8 +20,6 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
   final OnBottomNavItemSelected onItemSelected;
   final navController = BottomNavController();
   final Key bottomNavKey = GlobalKey();
-  final Color selectedItemColor = Colors.white;
-  final Color unselectedItemColor = Colors.grey;
 
   @override
   Widget body(BuildContext context) {
@@ -34,9 +32,9 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.colorAccent,
-        selectedItemColor: selectedItemColor,
-        unselectedItemColor: unselectedItemColor,
+        backgroundColor: theme.bottomNavigationBarTheme.backgroundColor,
+        selectedItemColor: theme.bottomNavigationBarTheme.selectedItemColor,
+        unselectedItemColor: theme.bottomNavigationBarTheme.unselectedItemColor,
         currentIndex: navController.selectedIndex,
         onTap: (index) {
           navController.updateSelectedIndex(index);
@@ -66,7 +64,9 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
         fileName: navItem.iconSvgName,
         height: AppValues.iconDefaultSize,
         width: AppValues.iconDefaultSize,
-        color: isSelected ? selectedItemColor : unselectedItemColor,
+        color: isSelected
+            ? theme.bottomNavigationBarTheme.selectedItemColor
+            : theme.bottomNavigationBarTheme.unselectedItemColor,
       ),
       label: navItem.navTitle,
       tooltip: navItem.navTitle,

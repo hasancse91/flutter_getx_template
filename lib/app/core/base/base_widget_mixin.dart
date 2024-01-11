@@ -9,8 +9,19 @@ mixin BaseWidgetMixin on StatelessWidget {
   AppLocalizations get appLocalization => AppLocalizations.of(Get.context!)!;
   final Logger logger = BuildConfig.instance.config.logger;
 
+  late TextTheme _textTheme;
+
+  TextTheme get textTheme => _textTheme;
+
+  late ThemeData _theme;
+
+  ThemeData get theme => _theme;
+
   @override
   Widget build(BuildContext context) {
+    _textTheme = context.textTheme;
+    _theme = context.theme;
+
     return Container(
       child: body(context),
     );

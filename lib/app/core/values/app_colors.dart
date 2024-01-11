@@ -13,6 +13,7 @@ abstract class AppColors {
   static const Color colorAccent = Color(0xFF38686A);
   static const Color colorLightGreen = Color(0xFF00EFA7);
   static const Color colorWhite = Color(0xFFFFFFFF);
+  static const Color colorBlack = Color(0xFF000000);
   static const Color lightGreyColor = Color(0xFFC4C4C4);
   static const Color errorColor = Color(0xFFAB0B0B);
   static const Color colorDark = Color(0xFF323232);
@@ -45,4 +46,22 @@ abstract class AppColors {
   static const Color switchInactiveColor = Color(0xFFABABAB);
   static Color elevatedContainerColorOpacity = Colors.grey.withOpacity(0.5);
   static const Color suffixImageColor = Colors.grey;
+
+  static const Color primary = Color(0xFF38686A);
+  static const Color primaryDark = colorWhite;
+  static const Color bgPageLight = Color(0xFFFDF8FF);
+  static const Color bgPageDark = Color(0xFF1C192B);
+  static const Color bgCardLight = Color(0xFFF4EEFF);
+  static const Color bgCardDark = Color(0xFF484459);
+  static const Color appBarTextLight = colorBlack;
+  static const Color appBarTextDark = colorWhite;
+  static const Color textPrimaryLight = colorBlack;
+  static const Color textPrimaryDark = colorWhite;
+  static const Color textPrimaryButton = colorWhite;
+  static const Color divider = Color(0xFFF4EEFF);
+  static const Color dividerDark = Color(0xFF484459);
+  static const Color basicGrey = Color(0xFF66708C);
+  static const Color basicGreyDark = Color(0xFFFFFFFF);
+  static const Color errorContainerLight = Color(0xFFFED0B5);
+  static const Color errorContainerDark = bgCardDark;
 }

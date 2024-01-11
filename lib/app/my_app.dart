@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_getx_template/app/core/base/app_theme_data.dart';
+import 'package:flutter_getx_template/app/core/model/theme.dart';
 import 'package:flutter_getx_template/app/core/values/app_languages.dart';
 import 'package:flutter_getx_template/app/data/local/preference/preference_manager.dart';
 import 'package:flutter_getx_template/app/data/local/preference/preference_manager_impl.dart';
@@ -37,22 +39,32 @@ class _MyAppState extends State<MyApp> {
       getPages: AppPages.routes,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: _getSupportedLocal(),
-      theme: ThemeData(
-        primarySwatch: AppColors.colorPrimarySwatch,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        brightness: Brightness.light,
-        primaryColor: AppColors.colorPrimary,
-        textTheme: const TextTheme(
-          labelLarge: TextStyle(
-            color: Colors.white,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        fontFamily: 'Roboto',
-      ),
+      theme: _getTheme(),
       debugShowCheckedModeBanner: false,
     );
+  }
+
+  ThemeData _getTheme() {
+    String savedTheme = _preference.getString(
+      PreferenceManager.THEME,
+      defaultValue: AppTheme.SYSTEM.name,
+    );
+
+    _envConfig.logger.i("Saved Theme: $savedTheme");
+
+    if (savedTheme == AppTheme.DARK.name) {
+      return AppThemeData.getDarkTheme();
+    } else if (savedTheme == AppTheme.LIGHT.name) {
+      return AppThemeData.getLightTheme();
+    } else {
+      return _getThemeSameAsSystem();
+    }
+  }
+
+  ThemeData _getThemeSameAsSystem() {
+    return Get.isPlatformDarkMode
+        ? AppThemeData.getDarkTheme()
+        : AppThemeData.getLightTheme();
   }
 
   void _localizeApp() {

@@ -5,6 +5,7 @@ import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/favorite/controllers/favorite_controller.dart';
 
+// ignore: must_be_immutable
 class FavoriteView extends BaseView<FavoriteController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
@@ -15,10 +16,10 @@ class FavoriteView extends BaseView<FavoriteController> {
 
   @override
   Widget body(BuildContext context) {
-    return const Center(
+    return Center(
       child: Text(
         'FavoriteView is working',
-        style: titleStyle,
+        style: textTheme.titleLarge,
       ),
     );
   }

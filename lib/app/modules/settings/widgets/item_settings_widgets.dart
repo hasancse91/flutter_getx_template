@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
 import 'package:flutter_getx_template/app/core/values/app_values.dart';
-import 'package:flutter_getx_template/app/core/values/text_styles.dart';
 import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 
@@ -34,7 +33,7 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
               color: theme.iconTheme.color,
             ),
             const SizedBox(width: AppValues.smallPadding),
-            Text(title, style: settingsItemStyle),
+            Text(title, style: textTheme.labelLarge),
             const Spacer(),
             AssetImageView(
               fileName: suffixImage,
